@@ -1,0 +1,21 @@
+" vim:set foldmethod=marker:
+version 6.0
+
+" let VIMFILES variable be vim root directory
+
+" if on windows platform
+if has('win32') || has('win64')
+    let $VIMFILES = '~/dotfiles/vim'
+elseif has('unix') || has('mac')
+    let $VIMFILES = '~/.vim'
+end
+
+
+" source original vimrc
+if filereadable(expand($VIMFILES."/setup/vimrc.vim"))
+    source $VIMFILES/setup/vimrc.vim
+endif
+if filereadable(expand($VIMFILES."/setup/gvimrc.vim"))&&has('gui')&&has('gui_running')
+    source $VIMFILES/setup/gvimrc.vim
+endif
+

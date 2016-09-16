@@ -1,0 +1,87 @@
+#########################################################################
+#         _                          _                                  #
+#        | |                        | |                                 #
+#        | |   ___    __ _   _ __   | |__   __      __   ___    __ _    #
+#    _   | |  / _ \  / _` | | '_ \  | '_ \  \ \ /\ / /  / _ \  / _` |   #
+#   | |__| | |  __/ | (_| | | | | | | | | |  \ V  V /  |  __/ | (_| |   #
+#    \____/   \___|  \__,_| |_| |_| |_| |_|   \_/\_/    \___|  \__,_|   #
+#                                                                       #
+#                                                                       #
+# This file create on 2016-06-24                                        #
+# It's free for you to use and share.                                   #
+#                                                                       #
+# Author : Jinghui Hu                                                   #
+# Email  : hujinghui@buaa.edu.cn                                        #
+# Github : https://github.com/Jeanhwea/                                 #
+#                                                                       #
+#########################################################################
+
+# This file controls the behavior of line input editing for
+# programs that use the GNU Readline library.  Existing
+# programs include FTP, Bash, and GDB.
+#
+# You can re-read the inputrc file with C-x C-r.
+#
+# First, include any system-wide bindings and variable
+# assignments from /etc/inputrc
+$include /etc/inputrc
+
+## options, bash
+set editing-mode emacs
+set completion-ignore-case on
+set meta-flag on
+set convert-meta off
+set output-meta on
+
+## key bindings
+
+# moving cursor
+"\C-a": beginning-of-line
+"\C-e": end-of-line
+"\C-f": forward-char
+"\C-b": backward-char
+"\M-f": forward-word
+"\M-b": backward-word
+"\C-l": clear-screen
+
+# manipulate history
+"\C-p": previous-history
+"\C-n": next-history
+"\C-r": reverse-search-history
+"\C-x\C-e": edit-and-execute-command
+
+# changing text
+"\C-t": transpose-chars
+"\M-t": transpose-words
+
+# using ctrl-o to add common suffix for command
+# ctrl-o: omitting
+"\C-oo": " >/dev/null 2>&1 "
+# ctrl-o: alert
+"\C-oa": " ; alert"
+
+# killing and yanking
+"\C-k": kill-line
+"\C-u": unix-line-discard
+"\C-w": unix-word-rubout
+"\C-y": yank
+
+# miscellaneous
+"\C-x\C-u": undo
+
+## macros
+
+$if Bash
+    # edit the PATH
+    "\C-xp": "PATH=${PATH}\e\C-e\C-a\ef\C-f"
+    # add from the OLD path
+    "\C-xo": "${OLDPWD}\e\C-e/"
+    # quote the current or previous word
+    "\C-xq": "\eb"\ef\""
+    # double-quote all excluding the arg0
+    "\C-xd": "\C-a\ef\C-f\"\C-e\""
+    # single-quote all excluding the arg0
+    "\C-xs": "\C-a\ef\C-f'\C-e'"
+    # edit variable on current line
+    "\C-xv": "\C-a\C-k$\C-y\e\C-e\C-a\C-y="
+$endif
