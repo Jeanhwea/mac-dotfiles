@@ -1,2 +1,3 @@
 # ignore vundle plugins folder
 vim/bundle
+vim/vim
