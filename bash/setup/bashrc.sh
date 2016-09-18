@@ -1,4 +1,3 @@
-#!/bin/bash
 #########################################################################
 #         _                          _                                  #
 #        | |                        | |                                 #
@@ -8,8 +7,8 @@
 #    \____/   \___|  \__,_| |_| |_| |_| |_|   \_/\_/    \___|  \__,_|   #
 #                                                                       #
 #                                                                       #
-# This is a personal dotfiles repository                                #
-# It's free for you to use and share                                    #
+# This file create on 2016-06-21                                        #
+# It's free for you to use and share.                                   #
 #                                                                       #
 # Author : Jinghui Hu                                                   #
 # Email  : hujinghui@buaa.edu.cn                                        #
@@ -17,45 +16,28 @@
 #                                                                       #
 #########################################################################
 
-DIR="$( cd "$(dirname "$0")" ; pwd -P )"
-echo "DIR=$DIR"
+# add this line to local .bashrc
+# [ -f ~/.bash/setup/bashrc.sh ] && source ~/.bash/setup/bashrc.sh
 
-__symbolic_link_file() {
-    [ $# -ne 2 ] && return ;
-    local DES=$DIR'/'$1
-    local SRC=$HOME'/'$2
-    if [ -f $DES ] && [ ! -e $SRC ]; then
-        echo "ln -s $DES $SRC" && ln -s $DES $SRC
-    fi
+# load bash autoload directory
+__bash_setup_tools() {
+    local autodir=$HOME'/.bash/autoload'
+    [[ ! -e $autodir ]] && return
+    for script in $(ls $autodir/*.sh); do
+        source $script
+    done
+    local execdir=$HOME'/.bash/tools'
+    [[ -e $execdir ]] && export PATH=$execdir:$PATH
 }
+__bash_setup_tools
 
-__symbolic_link_folder() {
-    [ $# -ne 2 ] && return ;
-    local DES=$DIR'/'$1
-    local SRC=$HOME'/'$2
-    if [ -d $DES ] && [ ! -e $SRC ]; then
-        echo "ln -s $DES $SRC" && ln -s $DES $SRC
+# entering last logout directory
+if [ -f ~/.local/last_logout_path ]; then
+    LASTPATH=`cat ~/.local/last_logout_path`
+    if [ -e $LASTPATH ]; then
+        cd $LASTPATH
     fi
-}
+    # cat /dev/null > ~/.local/last_logout_path
+fi
 
-# readline
-__symbolic_link_file 'inputrc' '.inputrc'
-
-# bash
-__symbolic_link_folder 'bash' '.bash'
-
-# git
-__symbolic_link_file 'git/gitconfig' '.gitconfig'
-__symbolic_link_file 'git/gitignore_global' '.gitignore_global'
-__symbolic_link_file 'git/gitattributes_global' '.gitattributes_global'
-
-# vim 
-__symbolic_link_file 'vim/vimrc' '.vimrc'
-__symbolic_link_folder 'vim' '.vim'
-
-# tmux
-__symbolic_link_file 'tmux.conf' '.tmux.conf'
-
-# ctags
-__symbolic_link_file 'ctags' '.ctags'
-
+# vim: filetype=sh :

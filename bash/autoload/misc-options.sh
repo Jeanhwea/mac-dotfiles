@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 #########################################################################
 #         _                          _                                  #
 #        | |                        | |                                 #
@@ -8,8 +8,8 @@
 #    \____/   \___|  \__,_| |_| |_| |_| |_|   \_/\_/    \___|  \__,_|   #
 #                                                                       #
 #                                                                       #
-# This is a personal dotfiles repository                                #
-# It's free for you to use and share                                    #
+# This file create on 2016-06-22                                        #
+# It's free for you to use and share.                                   #
 #                                                                       #
 # Author : Jinghui Hu                                                   #
 # Email  : hujinghui@buaa.edu.cn                                        #
@@ -17,45 +17,32 @@
 #                                                                       #
 #########################################################################
 
-DIR="$( cd "$(dirname "$0")" ; pwd -P )"
-echo "DIR=$DIR"
+# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
+export HISTSIZE=20000
+export HISTFILESIZE=40000
 
-__symbolic_link_file() {
-    [ $# -ne 2 ] && return ;
-    local DES=$DIR'/'$1
-    local SRC=$HOME'/'$2
-    if [ -f $DES ] && [ ! -e $SRC ]; then
-        echo "ln -s $DES $SRC" && ln -s $DES $SRC
-    fi
-}
+# don't put duplicate lines or lines starting with space in the history.
+export HISTCONTROL=ignoreboth
 
-__symbolic_link_folder() {
-    [ $# -ne 2 ] && return ;
-    local DES=$DIR'/'$1
-    local SRC=$HOME'/'$2
-    if [ -d $DES ] && [ ! -e $SRC ]; then
-        echo "ln -s $DES $SRC" && ln -s $DES $SRC
-    fi
-}
+# for setting history time stamp format
+export HISTTIMEFORMAT="%Y-%m-%d %H:%M:%S> "
 
-# readline
-__symbolic_link_file 'inputrc' '.inputrc'
+# for setting history ignored commands
+# export HISTIGNORE="cd*:cl*:ls*:ll*:la*:lt*:vim*:git*:history*:man*"
 
-# bash
-__symbolic_link_folder 'bash' '.bash'
+# append to the history file, don't overwrite it
+shopt -s histappend
 
-# git
-__symbolic_link_file 'git/gitconfig' '.gitconfig'
-__symbolic_link_file 'git/gitignore_global' '.gitignore_global'
-__symbolic_link_file 'git/gitattributes_global' '.gitattributes_global'
+# for setting 256 color terminal
+export TERM="xterm-256color"
 
-# vim 
-__symbolic_link_file 'vim/vimrc' '.vimrc'
-__symbolic_link_folder 'vim' '.vim'
+# I prefer using vim as my default editor
+export EDITOR="vim"
 
-# tmux
-__symbolic_link_file 'tmux.conf' '.tmux.conf'
+# disable the Ctrl-S (Freeze Screen) keystroke in Bash
+stty -ixon
 
-# ctags
-__symbolic_link_file 'ctags' '.ctags'
+# "fix problem" IntelliJ IDEA can't open settings through shortcut on Ubuntu 14.01 LTS
+# https://youtrack.jetbrains.com/issue/IDEA-150886
+export IBUS_ENABLE_SYNC_MODE=1
 
