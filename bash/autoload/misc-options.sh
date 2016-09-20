@@ -44,5 +44,7 @@ stty -ixon
 
 # "fix problem" IntelliJ IDEA can't open settings through shortcut on Ubuntu 14.01 LTS
 # https://youtrack.jetbrains.com/issue/IDEA-150886
-export IBUS_ENABLE_SYNC_MODE=1
+# export IBUS_ENABLE_SYNC_MODE=1
+
+# using tsinghua mirror for homebrew 
 
