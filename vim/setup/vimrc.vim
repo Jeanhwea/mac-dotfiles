@@ -92,14 +92,10 @@ endif
 if has('unix')
     if has('clipboard') | set clipboard=unnamed,unnamedplus | endif
     " all temporary directory has layout as follow
-    " $HOME/.local/vim/
-    "                ├── backup
-    "                ├── session
-    "                ├── swap
-    "                └── undo
-    set backupdir=~/.local/vim/backup,~/tmp,.
-    set undodir=~/.local/vim/undo,~/tmp,.
-    set directory=~/.local/vim/swap,~/tmp,.
+    " using .vim/tmp as temporary folder store
+    set backupdir=~/.vim/tmp/backup,~/tmp,.
+    set undodir=~/.vim/tmp/undo,~/tmp,.
+    set directory=~/.vim/tmp/swap,~/tmp,.
 elseif has('win32')||has('win64')
     if has('clipboard') | set clipboard=unnamed | endif
     set backupdir=~/vimtemp,$TMEP,.
