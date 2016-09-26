@@ -44,12 +44,15 @@ __symbolic_link_file 'inputrc' '.inputrc'
 # bash
 __symbolic_link_folder 'bash' '.bash'
 
+# zsh
+__symbolic_link_folder 'zsh' '.zsh'
+
 # git
 __symbolic_link_file 'git/gitconfig' '.gitconfig'
 __symbolic_link_file 'git/gitignore_global' '.gitignore_global'
 __symbolic_link_file 'git/gitattributes_global' '.gitattributes_global'
 
-# vim 
+# vim
 __symbolic_link_file 'vim/vimrc' '.vimrc'
 __symbolic_link_folder 'vim' '.vim'
 
