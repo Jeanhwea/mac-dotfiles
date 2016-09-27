@@ -1,3 +1,5 @@
 # ignore vundle plugins folder
 vim/bundle
-vim/vim
+
+# ignore vim temporary folder
+vim/tmp
