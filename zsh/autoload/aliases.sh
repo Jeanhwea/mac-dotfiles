@@ -67,7 +67,7 @@ alias grep.content='grep -rn'
 alias vims='[ -f Session.vim ] && vim -S Session.vim || vim'
 
 # pip
-pip_upgrade='pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs pip install -U'
+alias pip_upgrade='pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs pip install -U'
 
 
 # vim: filetype=sh
