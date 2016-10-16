@@ -11,7 +11,7 @@ let g:UltiSnipsJumpForwardTrigger  = '<C-J>'
 let g:UltiSnipsJumpBackwardTrigger = '<C-K>'
 let g:UltiSnipsEditSplit           = 'vertical'
 let g:ultisnips_java_brace_style   = "nl"
-let g:UltiSnipsSnippetDirectories  = ['bundle/vim-ultisnips-snippets']
+let g:UltiSnipsSnippetDirectories  = [$HOME.'/.vim/bundle/vim-ultisnips-snippets']
 
 " vim-markdown
 let g:markdown_fenced_languages = ['java', 'html', 'javascript', 'css', 'cpp', 'viml=vim', 'bash=sh']
