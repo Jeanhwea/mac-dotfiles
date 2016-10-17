@@ -46,5 +46,5 @@ stty -ixon
 # https://youtrack.jetbrains.com/issue/IDEA-150886
 # export IBUS_ENABLE_SYNC_MODE=1
 
-# using tsinghua mirror for homebrew 
+# using tsinghua mirror for homebrew
 

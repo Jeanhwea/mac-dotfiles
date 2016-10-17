@@ -44,3 +44,5 @@ stty -ixon
 
 # using tsinghua mirror for homebrew
 
+# setup libxml2 python library path
+export PYTHONPATH=/usr/local/Cellar/libxml2/2.9.4/lib/python2.7/site-packages:$PYTHONPATH
