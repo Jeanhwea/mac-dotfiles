@@ -46,3 +46,7 @@ stty -ixon
 
 # setup libxml2 python library path
 export PYTHONPATH=/usr/local/Cellar/libxml2/2.9.4/lib/python2.7/site-packages:$PYTHONPATH
+
+# setup Tian Gong Xin Yuan environments
+export CWPROOT=~/Tools/cwp/43R1
+export PATH=$PATH:$CWPROOT/bin
