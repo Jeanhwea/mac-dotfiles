@@ -19,10 +19,18 @@
 # add this line to local .zshrc to enable this feature
 # [ -f ~/.zsh/setup/zshrc.sh ] && source ~/.zsh/setup/zshrc.sh
 
+__source_if_exists() {
+    if [ "$#" -ne 1 ]; then
+        return -1
+    fi
+    local script_path=$1
+    [ -f $1 ] && source $1
+}
+
 # load zsh autoload directory
 __zsh_setup_tools() {
     local autodir=$HOME'/.zsh/autoload'
-    [[ ! -e $autodir ]] && return
+    [[ ! -e $autodir ]] && return -1
     for script in $(ls $autodir/*.sh); do
         source $script
     done
