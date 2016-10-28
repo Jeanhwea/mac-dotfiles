@@ -25,3 +25,6 @@ export PATH=$PATH:$CWPROOT/bin
 
 export SACHOME=~/Tools/sac/101.6
 __source_if_exists $SACHOME/bin/sacinit.sh
+
+export FFTWHOME=~/Tools/fftw/3.3.5
+export PATH=$PATH:$FFTWHOME/bin
