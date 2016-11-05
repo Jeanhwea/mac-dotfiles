@@ -26,6 +26,7 @@ alias ls-symbolic-link='ls -alF `find $(pwd) -type l`'
 
 # cd
 alias cl='cd -'
+alias ctmp='[ -d $TMPDIR ] && cd $TMPDIR || cd /tmp'
 
 # gdb
 if [ -x /usr/bin/gdb ]; then

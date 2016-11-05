@@ -32,7 +32,7 @@ Plugin 'tommcdo/vim-exchange'
 " better programming, let vim knows codes
 Plugin 'Jeanhwea/vim-ultisnips-snippets'
 Plugin 'SirVer/ultisnips'
-Plugin 'Valloric/YouCompleteMe'
+" Plugin 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/syntastic'
 
 " colorscheme

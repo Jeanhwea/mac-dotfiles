@@ -30,7 +30,7 @@ export HISTTIMEFORMAT="%Y-%m-%d %H:%M:%S> "
 # export HISTIGNORE="cd*:cl*:ls*:ll*:la*:lt*:vim*:git*:history*:man*"
 
 # for setting 256 color terminal
-# export TERM="xterm-256color"
+export TERM="xterm-256color"
 
 # I prefer using vim as my default editor
 export EDITOR="vim"
