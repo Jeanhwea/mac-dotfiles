@@ -16,6 +16,10 @@
 #                                                                       #
 #########################################################################
 
+# setup zsh language
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+
 # setup libxml2 python library path
 export PYTHONPATH=/usr/local/Cellar/libxml2/2.9.4/lib/python2.7/site-packages:$PYTHONPATH
 
@@ -28,3 +32,4 @@ __source_if_exists $SACHOME/bin/sacinit.sh
 
 export FFTWHOME=~/Tools/fftw/3.3.5
 export PATH=$PATH:$FFTWHOME/bin
+
