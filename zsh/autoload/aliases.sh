@@ -74,4 +74,7 @@ alias pip_upgrade="pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs 
 alias ta='tmux attach'
 alias td='tmux detach'
 
+# git
+alias gam='git add . && git commit -m "MOD: quickfix" && git push'
+
 # vim: filetype=sh
