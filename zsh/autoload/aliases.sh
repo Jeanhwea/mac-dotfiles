@@ -75,6 +75,6 @@ alias ta='tmux attach'
 alias td='tmux detach'
 
 # git
-alias gam='git add . && git commit -m "MOD: quickfix" && git push'
+alias gam='git add . && git commit -m "MOD: quickfix at $(date)" && git push'
 
 # vim: filetype=sh
