@@ -23,6 +23,7 @@ endfunction
 if executable("find")
     call s:TagsFilesAdd()
 endif
+
 set path+=,inc,../inc
 
 nnoremap <buffer> <LocalLeader>cp :make<CR>

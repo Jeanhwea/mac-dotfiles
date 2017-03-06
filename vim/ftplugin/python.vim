@@ -29,5 +29,7 @@ function! s:PythonCompileAndRunFile()
     execute '!' . g:python_command . ' ' . bufname('%')
 endfunction
 
+set path+=,operation/templates,templates
+
 nnoremap <buffer> <LocalLeader>r :call <SID>PythonCompileAndRunFile()<CR>
 
