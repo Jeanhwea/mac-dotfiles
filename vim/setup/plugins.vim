@@ -3,7 +3,7 @@ silent! call repeat#set('\<Plug>MyWonderfulMap', v:count)
 
 " figitive
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
-let g:fugitive_github_domains = ['https://code.csdn.net']
+let g:fugitive_github_domains = ['https://code.csdn.net', 'http://git.lejent.cn']
 
 " utilsnips. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
 let g:UltiSnipsExpandTrigger       = '<C-J>'
