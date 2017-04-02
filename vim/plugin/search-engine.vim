@@ -24,6 +24,7 @@ let s:engines = {
 \   'maven'         : 'http://mvnrepository.com/search?q=%s',
 \   'stackoverflow' : 'http://stackoverflow.com/search?q=%s',
 \   'wikipedia'     : 'http://en.wikipedia.org/wiki/Special:Search?search=%s',
+\   'dash'          : 'dash://%s',
 \}
 
 function! s:SearchWord(engine, mode)
@@ -55,5 +56,7 @@ nnoremap <LocalLeader>bs :<C-U>call <SID>SearchWord('stackoverflow','n')<CR>
 vnoremap <LocalLeader>bs :<C-U>call <SID>SearchWord('stackoverflow','v')<CR>
 nnoremap <LocalLeader>bw :<C-U>call <SID>SearchWord('wikipedia','n')<CR>
 vnoremap <LocalLeader>bw :<C-U>call <SID>SearchWord('wikipedia','v')<CR>
+nnoremap <LocalLeader>ba :<C-U>call <SID>SearchWord('dash','n')<CR>
+vnoremap <LocalLeader>ba :<C-U>call <SID>SearchWord('dash','v')<CR>
 
 
