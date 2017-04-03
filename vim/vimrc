@@ -5,9 +5,9 @@ version 6.0
 
 " if on windows platform
 if has('win32') || has('win64')
-    let $VIMFILES = '~/dotfiles/vim'
+    let $VIMFILES = expand('~').'/dotfiles/vim'
 elseif has('unix') || has('mac')
-    let $VIMFILES = '~/.vim'
+    let $VIMFILES = expand('~').'/.vim'
 end
 
 
