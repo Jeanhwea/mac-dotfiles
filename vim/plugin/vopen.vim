@@ -31,16 +31,6 @@ fun! s:runtime_findfile(file,count) abort
   endif
 endfun
 
-fun! s:fnameescape(string) abort
-  if exists('*fnameescape')
-    return fnameescape(a:string)
-  elseif a:string ==# '-'
-    return '\-'
-  else
-    return substitute(escape(a:string," \t\n*?[{`$\\%#'\"|!<"),'^[+>]','\\&','')
-  endif
-endfun
-
 fun! s:find(count,cmd,file,lcd)
   let rtp = h#pathjoin(1,h#pathsplit(&runtimepath))
   let file = s:runtime_findfile(a:file,a:count)
@@ -49,10 +39,10 @@ fun! s:find(count,cmd,file,lcd)
   endif
   if a:lcd
     let path = file[0:-strlen(a:file)-2]
-    execute 'lcd `=path`'
-    return a:cmd.' '.s:fnameescape(a:file)
+    exec 'lcd `=path`'
+    return a:cmd.' '.h#fnameescape(a:file)
   else
-    return a:cmd.' '.s:fnameescape(file)
+    return a:cmd.' '.h#fnameescape(file)
   endif
 endfun
 
