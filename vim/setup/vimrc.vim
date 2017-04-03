@@ -157,7 +157,7 @@ if has('autocmd')
         autocmd!
         " set tabstop softtabstop shiftwidth expandtab/noexpandtab {{{2
         autocmd FileType javascript,html,xml,css,mysql
-              \ setlocal ts=2 sts=2 sw=2 et
+              \ setlocal ts=4 sts=4 sw=4 et
         autocmd FileType text,markdown
               \ setlocal ts=4 sts=4 sw=4 noet
         autocmd FileType make setlocal ts=8 sts=8 sw=8 noet

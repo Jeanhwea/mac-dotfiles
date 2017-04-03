@@ -44,6 +44,7 @@ Plugin 'Jeanhwea/vim-viz'
 Plugin 'plasticboy/vim-markdown'
 
 " framework
+Plugin 'vim-ruby/vim-ruby'
 
 " plugin from http://vim-scripts.org/vim/scripts.html
 " Plugin 'L9'
