@@ -26,15 +26,19 @@ fun! h#slash() abort
   return !exists('+shellslash') || &shellslash ? '/' : '\'
 endfun
 
-
+" Date and Time {{{
 " get current datetime as string
 " like: '2017-04-03 13:46:48'
 fun! h#now()
   return strftime('%Y-%m-%d %H:%M:%S')
 endf
 
+fun! h#today()
+  return strftime('%Y-%m-%d')
+endf
+" }}}
 
-" Path and Files {{{
+" Path and File {{{
 " split a path into a list.
 " '/tmp,,/home/user/tmp' -> ['/tmp', '', '/home/user/tmp']
 fun! h#pathsplit(path) abort
@@ -97,7 +101,20 @@ fun! h#pathglob(pattern) abort
 endfun
 "}}}
 
-" Debug {{{
+" Common escape {{{
+" escape string for use as file name command argument.
+fun! h#fnameescape(string) abort
+  if exists('*fnameescape')
+    return fnameescape(a:string)
+  elseif a:string ==# '-'
+    return '\-'
+  else
+    return substitute(escape(a:string," \t\n*?[{`$\\%#'\"|!<"),'^[+>]','\\&','')
+  endif
+endfun
+" }}}
+
+" Message and Debug {{{
 " print debug message to the message list
 "
 " Usage like:
@@ -122,4 +139,4 @@ fun! h#error(msg) abort
 endfun
 " }}}
 
-" vim:set ts=2 sts=2 sw=2:
+" vim:set ts=2 sts=2 sw=2 fdm=marker:
