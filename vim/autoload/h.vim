@@ -34,6 +34,7 @@ fun! h#now()
 endf
 
 
+" Path and Files {{{
 " split a path into a list.
 " '/tmp,,/home/user/tmp' -> ['/tmp', '', '/home/user/tmp']
 fun! h#pathsplit(path) abort
@@ -46,7 +47,7 @@ endfun
 " convert a list to a path.
 " ['/tmp', '', '/home/user/tmp'] -> '/tmp,,/home/user/tmp'
 fun! h#pathjoin(...) abort
-  if type(a:1) == type(1) && a:1
+  if type(a:1) == type(1) && a:1 " if a:1 is given, then escaped space
     let i = 1
     let space = ' '
   else
@@ -94,21 +95,31 @@ fun! h#pathglob(pattern) abort
   let files = split(glob(a:pattern),"\n")
   return map(files,'substitute(v:val,"[".h#slash()."/]$","","")')
 endfun
+"}}}
 
-
+" Debug {{{
 " print debug message to the message list
 "
 " Usage like:
 "
-"   call h#debug('hello world')
+"   call h#log('hello world')
 "
 " diplay message, type following command
 "   :messages
 "
-fun! h#debug(msg) abort
-  echohl WarningMsg
+fun! h#log(msg) abort
   echomsg '[' . h#now() . '] ' . string(a:msg)
+endfun
+fun! h#warn(msg) abort
+  echohl WarningMsg
+  echomsg a:msg
   echohl NONE
 endfun
+fun! h#error(msg) abort
+  echohl ErrorMsg
+  echomsg a:msg
+  echohl NONE
+endfun
+" }}}
 
 " vim:set ts=2 sts=2 sw=2:
