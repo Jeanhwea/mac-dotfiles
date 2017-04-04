@@ -1,33 +1,33 @@
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" CSCOPE settings for vim
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"         _                          _                                  "
+"        | |                        | |                                 "
+"        | |   ___    __ _   _ __   | |__   __      __   ___    __ _    "
+"    _   | |  / _ \  / _` | | '_ \  | '_ \  \ \ /\ / /  / _ \  / _` |   "
+"   | |__| | |  __/ | (_| | | | | | | | | |  \ V  V /  |  __/ | (_| |   "
+"    \____/   \___|  \__,_| |_| |_| |_| |_|   \_/\_/    \___|  \__,_|   "
+"                                                                       "
+"                                                                       "
+" This file create on 2017-04-04                                        "
+" It's free for you to use and share.                                   "
+" Official guide from:                                                  "
+"       http://cscope.sourceforge.net/cscope_vim_tutorial.html          "
+"                                                                       "
+" Author : Jinghui Hu                                                   "
+" Email  : hujinghui@buaa.edu.cn                                        "
+" Github : https://github.com/Jeanhwea/                                 "
+"                                                                       "
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" generate cscope file and cscope.out command
 "
-" This file contains some boilerplate settings for vim's cscope interface,
-" plus some keyboard mappings that I've found useful.
+"   find `pwd`/* -name '*.py' > cscope.files && cscope -b
 "
-" USAGE:
-" -- vim 6:     Stick this file in your ~/.vim/plugin directory (or in a
-"               'plugin' directory in some other directory that is in your
-"               'runtimepath'.
-"
-" -- vim 5:     Stick this file somewhere and 'source cscope.vim' it from
-"               your ~/.vimrc file (or cut and paste it into your .vimrc).
-"
-" NOTE:
-" These key maps use multiple keystrokes (2 or 3 keys).  If you find that vim
-" keeps timing you out before you can complete them, try changing your timeout
-" settings, as explained below.
-"
-" Happy cscoping,
-"
-" Jason Duell       jduell@alumni.princeton.edu     2002/3/7
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" This tests to see if vim was configured with the '--enable-cscope' option
-" when it was compiled.  If it wasn't, time to recompile vim...
+if exists('loaded_cscoping') || &cp || v:version < 700
+    finish
+endif
+let loaded_cscoping = 1
+
 if has("cscope")
-
-    """"""""""""" Standard cscope/vim boilerplate
 
     " use both cscope and ctag for 'ctrl-]', ':ta', and 'vim -t'
     set cscopetag
@@ -46,7 +46,6 @@ if has("cscope")
 
     " show msg when any other cscope db added
     set nocscopeverbose
-
 
     """"""""""""" My cscope/vim key mappings
     "
