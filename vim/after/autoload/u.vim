@@ -53,8 +53,21 @@ fun! u#open(url)
   redraw!
 endf
 
-fun! u#safeexec()
-
+" usage:
+"  call u#safeexec('%s/hello/world/e','/')
+fun! u#safeexec(command,registers)
+  let pos = getpos(".")
+  let saved_reg = {}
+  if type(a:registers) == type('') && len(a:registers)>0
+    for r in split(a:registers, '\zs')
+      let saved_reg[r] = getreg(r)
+    endfor
+  endif
+  exec a:command
+  for [k,v] in items(saved_reg)
+    call setreg(k,v)
+  endfor
+  call setpos('.', pos)
 endf
 
 " vim:set ts=2 sts=2 sw=2:

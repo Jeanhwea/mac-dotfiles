@@ -16,7 +16,7 @@
 "                                                                       "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 if exists('loaded_vopen') || &cp || v:version < 700
-    finish
+  finish
 endif
 let loaded_vopen = 1
 
