@@ -7,7 +7,7 @@
 "    \____/   \___|  \__,_| |_| |_| |_| |_|   \_/\_/    \___|  \__,_|   "
 "                                                                       "
 "                                                                       "
-" This file create on 2016-06-14                                        "
+" This file create on 2017-04-04                                        "
 " It's free for you to use and share.                                   "
 "                                                                       "
 " Author : Jinghui Hu                                                   "
@@ -16,20 +16,22 @@
 "                                                                       "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+if exists('loaded_foxjumps') || &cp || v:version < 700
+    finish
+endif
+let loaded_foxjumps = 1
+
 " From http://got-ravings.blogspot.com/2008/07/vim-pr0n-visual-search-mappings.html
-
-" makes * and # work on visual mode too.
-function! s:VSetSearch(cmdtype)
-  let saved_register = @s
+fun! s:VisualStarSearch(searchtype)
+  let sreg = @s
   norm! gv"sy
-  let @/ = '\V' . substitute(escape(@s, a:cmdtype.'\'), '\n', '\\n', 'g')
-  let @s = saved_register
-endfunction
+  let @/ = '\V' . substitute(escape(@s, a:searchtype.'\'), '\n', '\\n', 'g')
+  let @s = sreg
+endf
 
-xnoremap * :<C-u>call <SID>VSetSearch('/')<CR>/<C-R>=@/<CR><CR>
-xnoremap # :<C-u>call <SID>VSetSearch('?')<CR>?<C-R>=@/<CR><CR>
+xnoremap * :<C-u>call <SID>VisualStarSearch('/')<CR>/<C-R>=@/<CR><CR>
+xnoremap # :<C-u>call <SID>VisualStarSearch('?')<CR>?<C-R>=@/<CR><CR>
 
-" recursively vimgrep for word under cursor or selection if you hit leader-star
-nmap <leader>* :execute 'noautocmd vimgrep /\V' . substitute(escape(expand("<cword>"), '\'), '\n', '\\n', 'g') . '/ **'<CR>
-vmap <leader>* :<C-u>call <SID>VSetSearch()<CR>:execute 'noautocmd vimgrep /' . @/ . '/ **'<CR>
+
+" vim:set ts=2 sts=2 sw=2:
 
