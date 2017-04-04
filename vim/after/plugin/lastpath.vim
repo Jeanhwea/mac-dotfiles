@@ -7,7 +7,7 @@
 "    \____/   \___|  \__,_| |_| |_| |_| |_|   \_/\_/    \___|  \__,_|   "
 "                                                                       "
 "                                                                       "
-" This file create on 2016-06-15                                        "
+" This file create on 2017-04-04                                        "
 " It's free for you to use and share.                                   "
 "                                                                       "
 " Author : Jinghui Hu                                                   "
@@ -16,20 +16,34 @@
 "                                                                       "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-if executable('pydoc')
-    setlocal keywordprg=pydoc
+if exists('loaded_lastpath') || &cp || v:version < 700
+  finish
 endif
+let loaded_lastpath = 1
 
-if !exists("g:python_command")
-    let g:python_command = 'python'
-endif
+let g:lastpath_file = $HOME.'/.lastpath'
+fun s:SaveLastPath()
+  if !filewritable(g:lastpath_file)
+    return
+  endif
+  let lastpath = [getcwd()]
+  call writefile(lastpath, g:lastpath_file)
+endf
+fun s:LoadLastPath()
+  if !filereadable(g:lastpath_file)
+    return
+  endif
+  let lastpath = readfile(g:lastpath_file)
+  if len(lastpath) >= 1
+    exec 'cd ' . lastpath[0]
+  endif
+endf
 
-function! s:PythonCompileAndRunFile()
-    silent !clear
-    execute '!' . g:python_command . ' ' . bufname('%')
-endfunction
+augroup lastpath
+  au!
+  au VimEnter * call <SID>LoadLastPath()
+  au VimLeave * call <SID>SaveLastPath()
+augroup END
 
-set path+=,operation/templates,templates,static
 
-nnoremap <buffer> Q :call <SID>PythonCompileAndRunFile()<CR>
-
+" vim:set ts=2 sts=2 sw=2:

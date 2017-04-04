@@ -32,15 +32,15 @@ let g:ctrlp_map = '<C-P>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'ra'
 if has('win32')||has('win64')
-    set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
+  set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
 elseif has('unix')
-    set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " Linux/MacOSX
+  set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " Linux/MacOSX
 endif
 let g:ctrlp_custom_ignore = {
-\   'dir':  '\v[\/]\.(git|hg|svn)$',
-\   'file': '\v\.(exe|so|dll)$',
-\   'link': '',
-\}
+      \   'dir':  '\v[\/]\.(git|hg|svn)$',
+      \   'file': '\v\.(exe|so|dll)$',
+      \   'link': '',
+      \}
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 
 
@@ -49,12 +49,18 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 let g:syntastic_mode_map = {
-\   'mode': 'passive',
-\   'active_filetypes': ['ruby', 'php', 'python'],
-\   'passive_filetypes': []
-\}
+      \   'mode': 'passive',
+      \   'active_filetypes': ['ruby', 'php', 'python'],
+      \   'passive_filetypes': []
+      \}
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
+
+" lastpath
+" only load lastpath on windows gvim
+if !((has('win32')||has('win64')) && has('gui'))
+  let g:loaded_lastpath = 1
+endif
 

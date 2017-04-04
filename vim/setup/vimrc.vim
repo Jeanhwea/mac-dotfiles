@@ -199,6 +199,30 @@ if has('autocmd')
     augroup END
 endif "has('autocmd')
 
+" GUI related settings {{{1
+
+" remove toolbar, scrolling bar, menu
+set guioptions-=T guioptions-=e guioptions-=L guioptions-=r
+
+if exists('&guifont')
+    if has('mac')
+        set guifont=Monaco:h12
+    elseif has('unix')
+        set guifont=Monospace\ Medium\ 10
+    elseif has('win32')||has('win64')
+        " set guifont=Courier\ New:h10
+        set guifont=Consolas:h11
+    endif
+    command! -bar -nargs=0 Bigger
+        \ :let &guifont = substitute(&guifont,'\d\+$','\=submatch(0)+1','')
+    command! -bar -nargs=0 Smaller
+        \ :let &guifont = substitute(&guifont,'\d\+$','\=submatch(0)-1','')
+endif
+
+" set messages to English
+if has('win32')||has('win64')
+    language messages en_US.utf-8
+endif
 "}}}
 
 
