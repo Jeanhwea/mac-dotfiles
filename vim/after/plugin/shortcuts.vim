@@ -16,6 +16,12 @@
 "                                                                       "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+if exists('loaded_shortcuts') || &cp || v:version < 700
+    finish
+endif
+let loaded_shortcuts = 1
+
+
 " "Fast Opening", editing file in current line
 nnoremap <LocalLeader>ew :e <C-R>=expand('%:p:h') . '/' <CR>
 nnoremap <LocalLeader>es :sp <C-R>=expand('%:p:h') . '/' <CR>
@@ -38,11 +44,9 @@ nnoremap <LocalLeader>di :digraphs<CR>
 nnoremap S mzi<CR><ESC>`z
 
 " tabular
-if exists('g:tabular_loaded')
-    nnoremap <LocalLeader>= :Tabularize /
-    vnoremap <LocalLeader>= :Tabularize /=<CR>
-    vnoremap <LocalLeader>: :Tabularize /:<CR>
-endif
+nnoremap <LocalLeader>= :Tabularize /
+vnoremap <LocalLeader>= :Tabularize /=<CR>
+vnoremap <LocalLeader>: :Tabularize /:<CR>
 
 " fugitive
 fun! s:GbrowseLocal()
@@ -59,14 +63,13 @@ fun! s:GbrowseLocal()
     call setpos('.', l:saved_cursor)
     let @* = saved_unamed_register
 endf
-if exists('g:loaded_fugitive')
-    nnoremap <LocalLeader>gb :Gblame<CR>
-    nnoremap <LocalLeader>gc :Gcommit<CR>
-    nnoremap <LocalLeader>gd :Gvdiff<CR>
-    nnoremap <LocalLeader>ge :call <SID>GbrowseLocal()<CR>
-    nnoremap <LocalLeader>gl :Glog<CR>
-    nnoremap <LocalLeader>gp :Gpush<CR>
-    nnoremap <LocalLeader>gr :Gread<CR>
-    nnoremap <LocalLeader>gs :Gstatus<CR>
-    nnoremap <LocalLeader>gw :Gwrite<CR>
-endif
+nnoremap <LocalLeader>gb :Gblame<CR>
+nnoremap <LocalLeader>gc :Gcommit<CR>
+nnoremap <LocalLeader>gd :Gvdiff<CR>
+nnoremap <LocalLeader>ge :call <SID>GbrowseLocal()<CR>
+nnoremap <LocalLeader>gl :Glog<CR>
+nnoremap <LocalLeader>gp :Gpush<CR>
+nnoremap <LocalLeader>gr :Gread<CR>
+nnoremap <LocalLeader>gs :Gstatus<CR>
+nnoremap <LocalLeader>gw :Gwrite<CR>
+
