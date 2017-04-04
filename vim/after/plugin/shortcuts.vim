@@ -52,11 +52,11 @@ vnoremap <LocalLeader>: :Tabularize /:<CR>
 fun! s:GbrowseLocal()
     let saved_unamed_register = @*
     silent! Gbrowse!
-    let l:url = @*
+    let url = @*
     let l:saved_cursor = getpos('.')
-    if l:url =~# '^https:\/\/code.csdn.net'
-        let l:url = substitute(l:url, 'blob', 'tree', '')
-        exec knife#open(l:url)
+    if url =~# '^https:\/\/code.csdn.net'
+        let url = substitute(url, 'blob', 'tree', '')
+        call u#open(url)
     else
         silent! Gbrowse
     endif

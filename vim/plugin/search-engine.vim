@@ -36,8 +36,8 @@ function! s:SearchWord(engine, mode)
         normal! gv"sy
         let l:word = substitute(@s, '\n', ' ', 'g')
     endif
-    let l:url = substitute(s:engines[a:engine], '%s', knife#encode_url(l:word), '')
-    call knife#open(l:url)
+    let l:url = substitute(s:engines[a:engine], '%s', u#urlencode(l:word), '')
+    call u#open(l:url)
     call setpos('.', l:saved_cursor)
 endfunction
 

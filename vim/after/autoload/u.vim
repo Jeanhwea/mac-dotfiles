@@ -7,7 +7,7 @@
 "    \____/   \___|  \__,_| |_| |_| |_| |_|   \_/\_/    \___|  \__,_|   "
 "                                                                       "
 "                                                                       "
-" This file create on 2016-06-27                                        "
+" This file create on 2017-04-04                                        "
 " It's free for you to use and share.                                   "
 "                                                                       "
 " Author : Jinghui Hu                                                   "
@@ -15,13 +15,34 @@
 " Github : https://github.com/Jeanhwea/                                 "
 "                                                                       "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-if exists("g:loaded_knife") || &cp
-  finish
+if exists('loaded_u') || &cp || v:version < 700
+    finish
 endif
-let g:loaded_knife = 1
+let loaded_u = 1
 
+let s:urlmap = {
+\   ' ' : '\\%20', '!' : '\\%21', '"' : '\\%22', '#' : '\\%23', '$' : '\\%24',
+\   '%' : '\\%25', '&' : '\\%26', "'" : '\\%27', '(' : '\\%28', ')' : '\\%29',
+\   '*' : '\\%2A', '+' : '\\%2B', ',' : '\\%2C', '-' : '\\%2D', '.' : '\\%2E',
+\   '/' : '\\%2F', ':' : '\\%3A', ';' : '\\%3B', '<' : '\\%3C', '=' : '\\%3D',
+\   '>' : '\\%3E', '?' : '\\%3F', '@' : '\\%40', '[' : '\\%5B', '\' : '\\%5C',
+\   ']' : '\\%5D', '^' : '\\%5E', '_' : '\\%5F', '`' : '\\%60', '{' : '\\%7B',
+\   '|' : '\\%7C', '}' : '\\%7D', '~' : '\\%7E',
+\}
 
-fun knife#open(url)
+fun! u#urlencode(str)
+    let url = ''
+    for ch in split(a:str, '\zs')
+        if has_key(s:urlmap, ch)
+            let url .= s:urlmap[ch]
+        else
+            let url .= ch
+        endif
+    endfor
+    return url
+endf
+
+fun! u#open(url)
     if has('mac')
         silent! exe '!open "' . a:url . '" >/dev/null 2>&1'
     elseif has('unix')
@@ -32,24 +53,3 @@ fun knife#open(url)
     redraw!
 endf
 
-let s:url_encode_map = {
-\   ' ' : '\\%20', '!' : '\\%21', '"' : '\\%22', '#' : '\\%23', '$' : '\\%24',
-\   '%' : '\\%25', '&' : '\\%26', "'" : '\\%27', '(' : '\\%28', ')' : '\\%29',
-\   '*' : '\\%2A', '+' : '\\%2B', ',' : '\\%2C', '-' : '\\%2D', '.' : '\\%2E',
-\   '/' : '\\%2F', ':' : '\\%3A', ';' : '\\%3B', '<' : '\\%3C', '=' : '\\%3D',
-\   '>' : '\\%3E', '?' : '\\%3F', '@' : '\\%40', '[' : '\\%5B', '\' : '\\%5C',
-\   ']' : '\\%5D', '^' : '\\%5E', '_' : '\\%5F', '`' : '\\%60', '{' : '\\%7B',
-\   '|' : '\\%7C', '}' : '\\%7D', '~' : '\\%7E',
-\}
-
-fun knife#encode_url(str)
-    let encoded_str = ''
-    for i in range(strlen(a:str))
-        if has_key(s:url_encode_map, a:str[i])
-            let encoded_str .= s:url_encode_map[a:str[i]]
-        else
-            let encoded_str .= a:str[i]
-        endif
-    endfor
-    return encoded_str
-endf
