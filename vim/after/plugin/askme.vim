@@ -16,29 +16,34 @@
 "                                                                       "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+if exists('loaded_askme') || &cp || v:version < 700
+  finish
+endif
+let loaded_askme = 1
+
 let s:engines = {
-\   'baidu'         : 'http://www.baidu.com/s?wd=%s',
-\   'bing'          : 'http://global.bing.com/search?q=%s',
-\   'github'        : 'http://github.com/search?q=%s',
-\   'google'        : 'http://www.google.com/search?q=%s',
-\   'maven'         : 'http://mvnrepository.com/search?q=%s',
-\   'stackoverflow' : 'http://stackoverflow.com/search?q=%s',
-\   'wikipedia'     : 'http://en.wikipedia.org/wiki/Special:Search?search=%s',
-\   'dash'          : 'dash://%s',
+\ 'baidu'         : 'http://www.baidu.com/s?wd=%s',
+\ 'bing'          : 'http://global.bing.com/search?q=%s',
+\ 'github'        : 'http://github.com/search?q=%s',
+\ 'google'        : 'http://www.google.com/search?q=%s',
+\ 'maven'         : 'http://mvnrepository.com/search?q=%s',
+\ 'stackoverflow' : 'http://stackoverflow.com/search?q=%s',
+\ 'wikipedia'     : 'http://en.wikipedia.org/wiki/Special:Search?search=%s',
+\ 'dash'          : 'dash://%s',
 \}
 
 function! s:SearchWord(engine, mode)
-    let l:saved_cursor = getpos('.')
-    if a:mode ==# 'n'
-        let l:word = expand('<cword>')
-        let @s = l:word
-    elseif a:mode ==# 'v'
-        normal! gv"sy
-        let l:word = substitute(@s, '\n', ' ', 'g')
-    endif
-    let l:url = substitute(s:engines[a:engine], '%s', u#urlencode(l:word), '')
-    call u#open(l:url)
-    call setpos('.', l:saved_cursor)
+  let saved_cursor = getpos('.')
+  if a:mode ==# 'n'
+    let keyword = expand('<cword>')
+    let @s = keyword
+  elseif a:mode ==# 'v'
+    normal! gv"sy
+    let keyword = substitute(@s, '\n', ' ', 'g')
+  endif
+  let l:url = substitute(s:engines[a:engine], '%s', u#urlencode(keyword), '')
+  call u#open(l:url)
+  call setpos('.', saved_cursor)
 endfunction
 
 " open url under cursor in browser
@@ -59,4 +64,4 @@ vnoremap <LocalLeader>bw :<C-U>call <SID>SearchWord('wikipedia','v')<CR>
 nnoremap <LocalLeader>ba :<C-U>call <SID>SearchWord('dash','n')<CR>
 vnoremap <LocalLeader>ba :<C-U>call <SID>SearchWord('dash','v')<CR>
 
-
+" vim:set ts=2 sts=2 sw=2:
