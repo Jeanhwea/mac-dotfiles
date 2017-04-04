@@ -83,8 +83,7 @@ let &spellfile = expand($PSPELL . '/personal.utf-8.add,') .
                \ expand($PSPELL . '/nonwords.utf-8.add')
 
 if (&termencoding==#'utf-8'||&encoding==#'utf-8') && version >= 700
-    " tab:▸ ,trail:␣,eol:¬
-    " let &listchars = "tab:\u25b8\u0020,trail:\u2423,eol:\u00ac"
+    " tab:▸ ,trail:␣
     let &listchars = "tab:\u25b8\u0020,trail:\u2423"
 else
     set listchars=tab:>\ ,trail:-,extends:>,precedes:<
