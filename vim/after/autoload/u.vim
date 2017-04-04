@@ -16,7 +16,7 @@
 "                                                                       "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 if exists('loaded_u') || &cp || v:version < 700
-    finish
+  finish
 endif
 let loaded_u = 1
 
@@ -31,25 +31,30 @@ let s:urlmap = {
 \}
 
 fun! u#urlencode(str)
-    let url = ''
-    for ch in split(a:str, '\zs')
-        if has_key(s:urlmap, ch)
-            let url .= s:urlmap[ch]
-        else
-            let url .= ch
-        endif
-    endfor
-    return url
+  let url = ''
+  for ch in split(a:str, '\zs')
+    if has_key(s:urlmap, ch)
+      let url .= s:urlmap[ch]
+    else
+      let url .= ch
+    endif
+  endfor
+  return url
 endf
 
 fun! u#open(url)
-    if has('mac')
-        silent! exe '!open "' . a:url . '" >/dev/null 2>&1'
-    elseif has('unix')
-        silent! exe '!xdg-open "' . a:url . '" >/dev/null 2>&1 &'
-    elseif has('win32')||has('win64')
-        silent! exe '!start cmd /cstart /b '.a:url
-    endif
-    redraw!
+  if has('mac')
+    silent! exe '!open "' . a:url . '" >/dev/null 2>&1'
+  elseif has('unix')
+    silent! exe '!xdg-open "' . a:url . '" >/dev/null 2>&1 &'
+  elseif has('win32')||has('win64')
+    silent! exe '!start cmd /cstart /b '.a:url
+  endif
+  redraw!
 endf
 
+fun! u#safeexec()
+
+endf
+
+" vim:set ts=2 sts=2 sw=2:

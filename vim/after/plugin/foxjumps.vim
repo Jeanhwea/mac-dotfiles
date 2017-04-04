@@ -17,7 +17,7 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 if exists('loaded_foxjumps') || &cp || v:version < 700
-    finish
+  finish
 endif
 let loaded_foxjumps = 1
 

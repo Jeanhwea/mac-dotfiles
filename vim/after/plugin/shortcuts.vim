@@ -17,7 +17,7 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 if exists('loaded_shortcuts') || &cp || v:version < 700
-    finish
+  finish
 endif
 let loaded_shortcuts = 1
 
@@ -50,18 +50,18 @@ vnoremap <LocalLeader>: :Tabularize /:<CR>
 
 " fugitive
 fun! s:GbrowseLocal()
-    let saved_unamed_register = @*
-    silent! Gbrowse!
-    let url = @*
-    let l:saved_cursor = getpos('.')
-    if url =~# '^https:\/\/code.csdn.net'
-        let url = substitute(url, 'blob', 'tree', '')
-        call u#open(url)
-    else
-        silent! Gbrowse
-    endif
-    call setpos('.', l:saved_cursor)
-    let @* = saved_unamed_register
+  let saved_unamed_register = @*
+  silent! Gbrowse!
+  let url = @*
+  let l:saved_cursor = getpos('.')
+  if url =~# '^https:\/\/code.csdn.net'
+    let url = substitute(url, 'blob', 'tree', '')
+    call u#open(url)
+  else
+    silent! Gbrowse
+  endif
+  call setpos('.', l:saved_cursor)
+  let @* = saved_unamed_register
 endf
 nnoremap <LocalLeader>gb :Gblame<CR>
 nnoremap <LocalLeader>gc :Gcommit<CR>
@@ -73,3 +73,4 @@ nnoremap <LocalLeader>gr :Gread<CR>
 nnoremap <LocalLeader>gs :Gstatus<CR>
 nnoremap <LocalLeader>gw :Gwrite<CR>
 
+" vim:set ts=2 sts=2 sw=2:
