@@ -53,6 +53,7 @@ fun! u#open(url)
   redraw!
 endf
 
+" like execute(), but save register and cursor position
 " usage:
 "  call u#safeexec('%s/hello/world/e','/')
 fun! u#safeexec(command,registers)
@@ -63,7 +64,8 @@ fun! u#safeexec(command,registers)
       let saved_reg[r] = getreg(r)
     endfor
   endif
-  exec a:command
+  let result = execute(a:command)
+  " call h#log(a:command.' -> '.result)
   for [k,v] in items(saved_reg)
     call setreg(k,v)
   endfor
