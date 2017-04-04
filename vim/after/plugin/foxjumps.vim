@@ -21,6 +21,7 @@ if exists('loaded_foxjumps') || &cp || v:version < 700
 endif
 let loaded_foxjumps = 1
 
+" Add * to visual search
 " From http://got-ravings.blogspot.com/2008/07/vim-pr0n-visual-search-mappings.html
 fun! s:VisualStarSearch(searchtype)
   let sreg = @s
@@ -28,10 +29,8 @@ fun! s:VisualStarSearch(searchtype)
   let @/ = '\V' . substitute(escape(@s, a:searchtype.'\'), '\n', '\\n', 'g')
   let @s = sreg
 endf
-
 xnoremap * :<C-u>call <SID>VisualStarSearch('/')<CR>/<C-R>=@/<CR><CR>
 xnoremap # :<C-u>call <SID>VisualStarSearch('?')<CR>?<C-R>=@/<CR><CR>
 
 
 " vim:set ts=2 sts=2 sw=2:
-

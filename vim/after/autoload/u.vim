@@ -72,4 +72,13 @@ fun! u#safeexec(command,registers)
   call setpos('.', pos)
 endf
 
+" return text last selected
+fun! u#lastselect()
+  let saved_reg = getreg('t')
+  normal! gv"ty
+  let reg = getreg('t')
+  call setreg('t',saved_reg)
+  return reg
+endf
+
 " vim:set ts=2 sts=2 sw=2:

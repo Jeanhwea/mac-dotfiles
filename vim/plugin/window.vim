@@ -15,10 +15,11 @@
 " Github : https://github.com/Jeanhwea/                                 "
 "                                                                       "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let s:disable_window = 1
-if s:disable_window
+finish " disable this plugins
+if exists('loaded_window') || &cp || v:version < 700
     finish
-end
+endif
+let loaded_window = 1
 
 function! WinMove(key) "move to the window in the direction shown, or create a new window {{{2
     let t:curwin = winnr()

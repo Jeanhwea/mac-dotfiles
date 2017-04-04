@@ -24,13 +24,13 @@ let did_django_vim = 1
 " make file jumps between relative django files easier
 " https://code.djangoproject.com/wiki/UsingVimWithDjango#Mappings
 let g:last_relative_dir = ''
-nnoremap \m :call RelatedFile ("models.py")<cr>
-nnoremap \v :call RelatedFile ("views.py")<cr>
-nnoremap \a :call RelatedFile ("admin.py")<cr>
-nnoremap \b :call RelatedFile ("tests.py")<cr>
-nnoremap \u :call RelatedFile ("urls.py")<cr>
-nnoremap \t :call RelatedFile ("templates/")<cr>
-nnoremap \f :call RelatedFile ("static/")<cr>
+nnoremap \m :call RelatedFile("models.py")<cr>
+nnoremap \v :call RelatedFile("views.py")<cr>
+nnoremap \a :call RelatedFile("admin.py")<cr>
+nnoremap \b :call RelatedFile("tests.py")<cr>
+nnoremap \u :call RelatedFile("urls.py")<cr>
+nnoremap \t :call RelatedFile("templates/")<cr>
+nnoremap \f :call RelatedFile("static/")<cr>
 nnoremap \s :e `find -iname settings.py`<cr>
 
 fun! RelatedFile(file)
