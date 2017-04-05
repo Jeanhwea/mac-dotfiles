@@ -7,7 +7,7 @@
 "    \____/   \___|  \__,_| |_| |_| |_| |_|   \_/\_/    \___|  \__,_|   "
 "                                                                       "
 "                                                                       "
-" This file create on 2016-06-15                                        "
+" This file create on 2017-04-05                                        "
 " It's free for you to use and share.                                   "
 "                                                                       "
 " Author : Jinghui Hu                                                   "
@@ -16,25 +16,11 @@
 "                                                                       "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-if exists('b:loaded_python_ftplugin') || &cp || v:version < 700
+if exists('b:loaded_javascript_ftplugin') || &cp || v:version < 700
   finish
 endif
-let b:loaded_python_ftplugin = 1
+let b:loaded_javascript_ftplugin = 1
 
-" if executable('pydoc')
-"   setlocal keywordprg=pydoc
-" endif
+set foldmethod=syntax
 
-if !exists("g:python_command")
-  let g:python_command = 'python'
-endif
-
-function! s:PythonCompileAndRunFile()
-  silent !clear
-  execute '!' . g:python_command . ' ' . bufname('%')
-endfunction
-
-set path+=,operation/templates,templates,static
-
-nnoremap <buffer> Q :call <SID>PythonCompileAndRunFile()<CR>
-
+nmap <leader>t :exec &conceallevel ? "set conceallevel=0" : "set conceallevel=1"<CR>
