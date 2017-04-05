@@ -31,11 +31,11 @@ endfun
 " like: '2017-04-03 13:46:48'
 fun! h#now()
   return strftime('%Y-%m-%d %H:%M:%S')
-endf
+endfun
 
 fun! h#today()
   return strftime('%Y-%m-%d')
-endf
+endfun
 " }}}
 
 " Path and File {{{

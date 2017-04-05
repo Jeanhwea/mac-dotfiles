@@ -36,7 +36,7 @@ fun! s:GrepOperator(type)
   silent execute 'grep! -R ' . shellescape(@g) . ' .'
   copen
   redraw!
-endf
+endfun
 nnoremap <LocalLeader>f :setlocal operatorfunc=<SID>GrepOperator<CR>g@
 vnoremap <LocalLeader>f :<C-U>call <SID>GrepOperator(visualmode())<CR>
 
@@ -48,7 +48,7 @@ fun! s:QuickfixFileNames()
     let files[bufname(qf['bufnr'])] = 1
   endfor
   return join(keys(files))
-endf
+endfun
 " :Ggrep findme
 " :Qargs
 " :argdo %s/findme/replacement/gc

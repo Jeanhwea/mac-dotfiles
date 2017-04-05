@@ -40,7 +40,7 @@ fun! u#urlencode(str)
     endif
   endfor
   return url
-endf
+endfun
 
 fun! u#open(url)
   if has('mac')
@@ -51,7 +51,7 @@ fun! u#open(url)
     silent! exe '!start cmd /cstart /b '.a:url
   endif
   redraw!
-endf
+endfun
 
 " like execute(), but save register and cursor position
 " usage:
@@ -70,7 +70,7 @@ fun! u#safeexec(command,registers)
     call setreg(k,v)
   endfor
   call setpos('.', pos)
-endf
+endfun
 
 " return text last selected
 fun! u#lastselect()
@@ -79,6 +79,6 @@ fun! u#lastselect()
   let reg = getreg('t')
   call setreg('t',saved_reg)
   return reg
-endf
+endfun
 
 " vim:set ts=2 sts=2 sw=2:

@@ -62,7 +62,7 @@ fun! s:GbrowseLocal()
   endif
   call setpos('.', l:saved_cursor)
   let @* = saved_unamed_register
-endf
+endfun
 nnoremap <LocalLeader>gb :Gblame<CR>
 nnoremap <LocalLeader>gc :Gcommit<CR>
 nnoremap <LocalLeader>gd :Gvdiff<CR>

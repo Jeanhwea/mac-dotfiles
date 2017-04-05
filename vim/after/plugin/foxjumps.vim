@@ -28,7 +28,7 @@ fun! s:VisualStarSearch(searchtype)
   norm! gv"sy
   let @/ = '\V' . substitute(escape(@s, a:searchtype.'\'), '\n', '\\n', 'g')
   let @s = sreg
-endf
+endfun
 xnoremap * :<C-u>call <SID>VisualStarSearch('/')<CR>/<C-R>=@/<CR><CR>
 xnoremap # :<C-u>call <SID>VisualStarSearch('?')<CR>?<C-R>=@/<CR><CR>
 

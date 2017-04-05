@@ -28,7 +28,7 @@ fun s:SaveLastPath()
   endif
   let lastpath = [getcwd()]
   call writefile(lastpath, g:lastpath_file)
-endf
+endfun
 fun s:LoadLastPath()
   if !filereadable(g:lastpath_file)
     return
@@ -37,7 +37,7 @@ fun s:LoadLastPath()
   if len(lastpath) >= 1
     exec 'cd ' . lastpath[0]
   endif
-endf
+endfun
 
 augroup lastpath
   au!

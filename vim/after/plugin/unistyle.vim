@@ -24,7 +24,7 @@ let loaded_unistyle = 1
 
 fun! s:UniStyle()
   call s:UniStyleRemoveTrail()
-endf
+endfun
 
 fun! s:UniStyleReplaceTab()
   let width = 1 * input('replace tab to width = ')
@@ -38,15 +38,15 @@ fun! s:UniStyleReplaceTab()
     let &l:tabstop = saved_tabstop
     let &l:shiftwidth = saved_tabstop
   endif
-endf
+endfun
 
 fun! s:UniStyleRemoveEmptyLines()
   call u#safeexec('g/^\s*$/d','/')
-endf
+endfun
 
 fun! s:UniStyleRemoveTrail()
   call u#safeexec('%s/\s\+$//e','/')
-endf
+endfun
 
 fun! s:UniStyleCompressEmptyLine()
   let width = 1 * input('compress line threshold width = ')
@@ -54,7 +54,7 @@ fun! s:UniStyleCompressEmptyLine()
     let pattern = '%s/^\n\{'.width.',}/\r\r/e'
     call u#safeexec(pattern, '/')
   endif
-endf
+endfun
 
 fun! s:UniStyleTabSet()
   let width = 1 * input('set tabstop = softtabstop = shiftwidth = ')
@@ -63,7 +63,7 @@ fun! s:UniStyleTabSet()
     let &l:tabstop = width
     let &l:shiftwidth = width
   endif
-endf
+endfun
 
 
 command! -nargs=* UniStyleCompressEmptyLine :call <SID>UniStyleCompressEmptyLine()
