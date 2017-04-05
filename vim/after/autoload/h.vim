@@ -21,10 +21,23 @@ if exists('loaded_h') || &cp || v:version < 700
 endif
 let loaded_h = 1
 
+" Basic {{{
 " \ on Windows unless shellslash is set, / everywhere else.
 fun! h#slash() abort
   return !exists('+shellslash') || &shellslash ? '/' : '\'
 endfun
+
+" return newline ending on different OS
+fun! h#newline()
+  if has('win32') || has('win64')
+    return "\r\n"
+  elseif has('unix')
+    return "\n"
+  elseif has('mac')
+    return "\r"
+  endif
+endfun
+" }}}
 
 " Date and Time {{{
 " get current datetime as string
@@ -99,7 +112,7 @@ fun! h#pathglob(pattern) abort
   let files = split(glob(a:pattern),"\n")
   return map(files,'substitute(v:val,"[".h#slash()."/]$","","")')
 endfun
-"}}}
+" }}}
 
 " Common escape {{{
 " escape string for use as file name command argument.
@@ -125,7 +138,11 @@ endfun
 "   :messages
 "
 fun! h#log(msg) abort
-  echomsg '[' . h#now() . '] ' . string(a:msg)
+  let text = '[' . h#now() . '] ' . string(a:msg)
+  echomsg text
+  if exists('g:h_log_file') && filewritable(g:h_log_file)
+    call writefile([text], g:h_log_file, 'a')
+  endif
 endfun
 fun! h#warn(msg) abort
   echohl WarningMsg

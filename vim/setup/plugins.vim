@@ -64,3 +64,7 @@ if !((has('win32')||has('win64')) && has('gui'))
   let g:loaded_lastpath = 1
 endif
 
+" log file path
+" for h.vim => h#log()
+let g:h_log_file = $VIMFILES.'/tmp/vimplugin.log'
+

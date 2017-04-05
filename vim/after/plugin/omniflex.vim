@@ -25,44 +25,46 @@ fun! s:find(count,cmd,file,lcd)
   let filename = len(a:file) > 0 ? split(a:file)[-1] : ''
   let file = findfile(filename,a:count)
   if file ==# ''
-    return "echoerr 'E345: Can''t find file \"".a:file."\" in runtimepath'"
+    return "echoerr 'E345: Can''t find file \"".a:file."\" in current path'"
   endif
   return a:cmd.' '.h#fnameescape(file)
 endfun
 
 fun! s:Findcomplete(ArgLead,CmdLine,CursorPos)
   let sep = h#slash()
-  let cmd = split(a:CmdLine)
-  if len(cmd) > 2
-    let suffix = '*.'.cmd[1]
+  let request = a:ArgLead
+  " if request start with /
+  "   /a/b/c -> **/a**/b**/c*
+  " else
+  "   a/b/c -> a*/b*/c*
+  if request =~# '^[\\/]'
+    let pattern = substitute(request,'/\|\'.sep,'**'.sep,'g').'*'
   else
-    let suffix = '*'
-  endif
-  if a:ArgLead =~# '^\w[\\/]'
-    let pattern = substitute(a:ArgLead,'/\|\'.sep,'*'.sep.'*','g').suffix
-  else
-    let pattern = '**'.sep.'*'.a:ArgLead.suffix
+    let pattern = substitute(request,'/\|\'.sep,'*'.sep,'g').'*'
   endif
   call h#log(pattern)
-  let matches = split(glob(pattern),"\n")
+  let path = expand('.')
+  let matches = split(glob(path.sep.pattern),"\n")
+  call map(matches,'isdirectory(v:val) ? v:val.sep : v:val')
+  call map(matches,'expand(v:val, ":p")[strlen(path)+1:-1]')
   return matches
 endfun
 
-command! -bar -bang -range=1 -nargs=* -complete=customlist,s:Findcomplete
+command! -bar -bang -range=1 -nargs=1 -complete=customlist,s:Findcomplete
       \ Oe :execute s:find(<count>,'edit<bang>',<q-args>,0)
-command! -bar -bang -range=1 -nargs=* -complete=customlist,s:Findcomplete
+command! -bar -bang -range=1 -nargs=1 -complete=customlist,s:Findcomplete
       \ Oedit :execute s:find(<count>,'edit<bang>',<q-args>,0)
-command! -bar -bang -range=1 -nargs=* -complete=customlist,s:Findcomplete
+command! -bar -bang -range=1 -nargs=1 -complete=customlist,s:Findcomplete
       \ Oopen :execute s:find(<count>,'edit<bang>',<q-args>,1)
-command! -bar -bang -range=1 -nargs=* -complete=customlist,s:Findcomplete
+command! -bar -bang -range=1 -nargs=1 -complete=customlist,s:Findcomplete
       \ Osplit :execute s:find(<count>,'split',<q-args>,<bang>1)
-command! -bar -bang -range=1 -nargs=* -complete=customlist,s:Findcomplete
+command! -bar -bang -range=1 -nargs=1 -complete=customlist,s:Findcomplete
       \ Ovsplit :execute s:find(<count>,'vsplit',<q-args>,<bang>1)
-command! -bar -bang -range=1 -nargs=* -complete=customlist,s:Findcomplete
+command! -bar -bang -range=1 -nargs=1 -complete=customlist,s:Findcomplete
       \ Otabedit :execute s:find(<count>,'tabedit',<q-args>,<bang>1)
-command! -bar -bang -range=1 -nargs=* -complete=customlist,s:Findcomplete
+command! -bar -bang -range=1 -nargs=1 -complete=customlist,s:Findcomplete
       \ Opedit :execute s:find(<count>,'pedit',<q-args>,<bang>1)
-command! -bar -bang -range=1 -nargs=* -complete=customlist,s:Findcomplete
+command! -bar -bang -range=1 -nargs=1 -complete=customlist,s:Findcomplete
       \ Oread :execute s:find(<count>,'read',<q-args>,<bang>1)
 
 

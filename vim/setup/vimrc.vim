@@ -206,7 +206,7 @@ set guioptions-=T guioptions-=e guioptions-=L guioptions-=r
 
 if exists('&guifont')
     if has('mac')
-        set guifont=Monaco:h12
+        set guifont=Monaco:h16
     elseif has('unix')
         set guifont=Monospace\ Medium\ 10
     elseif has('win32')||has('win64')

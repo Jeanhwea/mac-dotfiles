@@ -21,7 +21,7 @@ if exists('loaded_lastpath') || &cp || v:version < 700
 endif
 let loaded_lastpath = 1
 
-let g:lastpath_file = $HOME.'/.lastpath'
+let g:lastpath_file = $VIMFILES.'/tmp/lastpath.stub'
 fun s:SaveLastPath()
   if !filewritable(g:lastpath_file)
     return
