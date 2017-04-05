@@ -50,10 +50,10 @@ fun! s:QuickfixFileNames()
   return join(keys(files))
 endfun
 " :Ggrep findme
-" :Qargs
+" :ArgsQuickfix
 " :argdo %s/findme/replacement/gc
 " :argdo update
-command! -nargs=0 -bar Qargs execute 'args ' . <SID>QuickfixFileNames()
+command! -nargs=0 -bar ArgsQuickfix execute 'args ' . <SID>QuickfixFileNames()
 
 
 function! s:ChangeWord(mode)

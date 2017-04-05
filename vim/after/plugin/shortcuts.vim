@@ -43,34 +43,4 @@ nnoremap <LocalLeader>di :digraphs<CR>
 " "Split line", normally S is equal to cc, so map S to split line
 nnoremap S mzi<CR><ESC>`z
 
-" tabular
-nnoremap <LocalLeader>= :Tabularize /
-vnoremap <LocalLeader>= :Tabularize /=<CR>
-vnoremap <LocalLeader>: :Tabularize /:<CR>
-
-" fugitive
-fun! s:GbrowseLocal()
-  let saved_unamed_register = @*
-  silent! Gbrowse!
-  let url = @*
-  let l:saved_cursor = getpos('.')
-  if url =~# '^https:\/\/code.csdn.net'
-    let url = substitute(url, 'blob', 'tree', '')
-    call u#open(url)
-  else
-    silent! Gbrowse
-  endif
-  call setpos('.', l:saved_cursor)
-  let @* = saved_unamed_register
-endfun
-nnoremap <LocalLeader>gb :Gblame<CR>
-nnoremap <LocalLeader>gc :Gcommit<CR>
-nnoremap <LocalLeader>gd :Gvdiff<CR>
-nnoremap <LocalLeader>ge :call <SID>GbrowseLocal()<CR>
-nnoremap <LocalLeader>gl :Glog<CR>
-nnoremap <LocalLeader>gp :Gpush<CR>
-nnoremap <LocalLeader>gr :Gread<CR>
-nnoremap <LocalLeader>gs :Gstatus<CR>
-nnoremap <LocalLeader>gw :Gwrite<CR>
-
 " vim:set ts=2 sts=2 sw=2:
