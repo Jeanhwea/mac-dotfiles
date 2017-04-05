@@ -16,11 +16,12 @@
 "                                                                       "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-if has('unix')
-    setlocal keywordprg=:help
+if exists('b:loaded_vim_ftplugin') || &cp || v:version < 700
+  finish
 endif
+let b:loaded_vim_ftplugin = 1
 
-" experimental key mapping
+" experimental key mapping for debugging
 nnoremap <buffer> Q :source %<CR>
-nnoremap <buffer> <LocalLeader>j ^vg_"ty:<C-R>t
+nnoremap <buffer> <LocalLeader>Q ^vg_"ty:<C-R>t
 

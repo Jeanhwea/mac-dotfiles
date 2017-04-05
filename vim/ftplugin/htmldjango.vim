@@ -16,6 +16,11 @@
 "                                                                       "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+if exists('b:loaded_htmldjango_ftplugin') || &cp || v:version < 700
+  finish
+endif
+let b:loaded_htmldjango_ftplugin = 1
+
 " https://code.djangoproject.com/wiki/UsingVimWithDjango#SurroundMappings
 let b:surround_{char2nr("v")} = "{{ \r }}"
 let b:surround_{char2nr("{")} = "{{ \r }}"

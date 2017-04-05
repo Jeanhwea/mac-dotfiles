@@ -16,6 +16,11 @@
 "                                                                       "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+if exists('b:loaded_java_ftplugin') || &cp || v:version < 700
+  finish
+endif
+let b:loaded_java_ftplugin = 1
+
 " using vim help system for javadoc
 setlocal keywordprg=:help
 
@@ -26,7 +31,7 @@ compiler! mvn
 setlocal path=.
 " jdk source path
 if $JAVA_HOME != ""
-    setlocal path+=$JAVA_HOME/src
+  setlocal path+=$JAVA_HOME/src
 endif
 " maven source path
 setlocal path+=src/main/java
@@ -34,13 +39,13 @@ setlocal path+=src/test/java
 
 " cscope jdk source
 if $CSCOPE_DB_JDK != "" && filereadable($CSCOPE_DB_JDK)
-    silent! cs add $CSCOPE_DB_JDK
+  silent! cs add $CSCOPE_DB_JDK
 endif
 
-function! s:JavaRun()
-    silent !clear
-    execute "!./run.sh"
-endfunction
+fun! s:JavaRun()
+  silent !clear
+  execute "!./run.sh"
+endfun
 
 nnoremap <buffer> <LocalLeader>mc :make compile<CR>
 nnoremap <buffer> <LocalLeader>mi :make install<CR>

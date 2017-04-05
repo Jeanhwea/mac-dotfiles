@@ -16,14 +16,18 @@
 "                                                                       "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-function! s:TagsFilesAdd()
-    let tagfiles = glob("`find $(pwd) -type f -name tags ! -path '*/.git/*' -print`")
-    exe ":set tags+=" . substitute(tagfiles, "\n", ",", "g")
-endfunction
+if exists('b:loaded_cpp_ftplugin') || &cp || v:version < 700
+  finish
+endif
+let b:loaded_cpp_ftplugin = 1
+
+fun! s:TagsFilesAdd()
+  let tagfiles = glob("`find $(pwd) -type f -name tags ! -path '*/.git/*' -print`")
+  exe ":set tags+=" . substitute(tagfiles, "\n", ",", "g")
+endfun
 if executable("find")
-    call s:TagsFilesAdd()
+  call s:TagsFilesAdd()
 endif
 
 set path+=,inc,../inc
 
-nnoremap <buffer> <LocalLeader>cp :make<CR>
