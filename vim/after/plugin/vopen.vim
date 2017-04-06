@@ -72,6 +72,7 @@ fun! s:Findcomplete(ArgLead,CmdLine,CursorPos)
       let found[match] = 1
     endfor
   endfor
+  call h#log(pattern)
   return sort(keys(found))
 endfun
 

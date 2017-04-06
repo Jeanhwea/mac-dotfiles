@@ -42,11 +42,11 @@ fun! s:Findcomplete(ArgLead,CmdLine,CursorPos)
   else
     let pattern = substitute(request,'/\|\'.sep,'*'.sep,'g').'*'
   endif
-  call h#log(pattern)
   let path = expand('.')
   let matches = split(glob(path.sep.pattern),"\n")
   call map(matches,'isdirectory(v:val) ? v:val.sep : v:val')
   call map(matches,'expand(v:val, ":p")[strlen(path)+1:-1]')
+  call h#log(pattern.' -> '.string(matches))
   return matches
 endfun
 

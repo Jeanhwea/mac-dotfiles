@@ -13,8 +13,19 @@ let g:UltiSnipsEditSplit           = 'vertical'
 let g:ultisnips_java_brace_style   = "nl"
 let g:UltiSnipsSnippetDirectories  = [$HOME.'/.vim/bundle/vim-ultisnips-snippets']
 
-" vim-markdown
-let g:markdown_fenced_languages = ['java', 'html', 'javascript', 'css', 'cpp', 'viml=vim', 'bash=sh']
+" plasticboy/vim-markdown
+let g:vim_markdown_conceal = 0
+let g:vim_markdown_folding_level = 6
+let g:vim_markdown_fenced_languages = [
+\ 'java',
+\ 'html',
+\ 'javascript',
+\ 'css',
+\ 'cpp',
+\ 'csharp=cs',
+\ 'viml=vim',
+\ 'bash=sh'
+\]
 
 " signify
 let g:signify_disable_by_default = 1

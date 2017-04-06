@@ -16,6 +16,7 @@ Plugin 'tpope/vim-abolish'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-scriptease'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-unimpaired'
 
@@ -43,6 +44,7 @@ Plugin 'tomasr/molokai'
 " syntax highlight and so on
 Plugin 'Jeanhwea/vim-viz'
 Plugin 'plasticboy/vim-markdown'
+" Plugin 'tpope/vim-markdown'
 
 " framework
 Plugin 'tpope/vim-rails'
