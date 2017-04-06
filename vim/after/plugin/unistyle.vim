@@ -22,6 +22,30 @@ endif
 let loaded_unistyle = 1
 
 
+augroup unistyle
+  autocmd!
+  " set tabstop softtabstop shiftwidth expandtab/noexpandtab
+  autocmd FileType vim setlocal ts=2 sts=2 sw=2 et
+  autocmd FileType text,markdown setlocal ts=4 sts=4 sw=4 noet
+  autocmd FileType make setlocal ts=8 sts=8 sw=8 noet
+  " set cindent autoindent
+  autocmd FileType c,cpp,java setlocal cin ai
+  autocmd FileType python,vim,javascript,html,xml,css setlocal nocin ai
+  autocmd FileType text,markdown setlocal nocin noai
+  " set list
+  autocmd FileType text,markdown setlocal nolist
+  " set commentstring
+  autocmd FileType sql,mysql setlocal cms=--\ %s
+  autocmd FileType viz setlocal cms=\'\ %s
+  autocmd FileType gdb,python setlocal cms=#\ %s
+  " set wrap
+  autocmd FileType text setlocal wrap
+  " set cursorline cursorcolumn colorcolumn {{{2
+  autocmd FileType help,fugitiveblame setlocal nocul nocuc cc&
+  " tidy codes
+  autocmd BufWritePre .bat,.c,.cc,.cpp,.h,.java,.py,.rb,.vim,.viz :call <SID>UniStyle()
+augroup END
+
 fun! s:UniStyle()
   call s:UniStyleRemoveTrail()
 endfun
@@ -71,13 +95,6 @@ command! -nargs=* UniStyleRemoveEmptyLines :call <SID>UniStyleRemoveEmptyLines()
 command! -nargs=* UniStyleRemoveTrail :call <SID>UniStyleRemoveTrail()
 command! -nargs=* UniStyleReplaceTab :call <SID>UniStyleReplaceTab()
 command! -nargs=* UniStyleTabSet :call <SID>UniStyleTabSet()
-
-
-augroup unistyle
-  autocmd!
-  autocmd BufWritePre *.c,*.h,*.cc,*.cpp,*.java,*.viz,*.vim,*.bat,*.py,*.rb
-        \ :call <SID>UniStyle()
-augroup END
 
 
 " vim:set ts=2 sts=2 sw=2:
