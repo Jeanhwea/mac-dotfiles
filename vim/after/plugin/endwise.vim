@@ -20,7 +20,7 @@ augroup endwise " {{{1
         \ let b:endwise_addition = '\=submatch(0)=="{" ? "}" : "end"' |
         \ let b:endwise_words = 'module,class,def,if,unless,case,while,until,begin,do' |
         \ let b:endwise_pattern = '^\s*\zs\%(module\|class\|def\|if\|unless\|case\|while\|until\|for\|\|begin\)\>\%(.*[^.:@$]\<end\>\)\@!\|\<do\ze\%(\s*|.*|\)\=\s*$' |
-          \ let b:endwise_syngroups = 'rubyModule,rubyClass,rubyDefine,rubyControl,rubyConditional,rubyRepeat'
+        \ let b:endwise_syngroups = 'rubyModule,rubyClass,rubyDefine,rubyControl,rubyConditional,rubyRepeat'
   autocmd FileType sh,zsh
         \ let b:endwise_addition = '\=submatch(0)=="if" ? "fi" : submatch(0)=="case" ? "esac" : "done"' |
         \ let b:endwise_words = 'if,until,case,do' |
