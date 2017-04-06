@@ -43,7 +43,7 @@ augroup unistyle
   " set cursorline cursorcolumn colorcolumn {{{2
   autocmd FileType help,fugitiveblame setlocal nocul nocuc cc&
   " tidy codes
-  autocmd BufWritePre .bat,.c,.cc,.cpp,.h,.java,.py,.rb,.vim,.viz :call <SID>UniStyle()
+  autocmd BufWritePre *.bat,*.c,*.cc,*.cpp,*.h,*.java,*.py,*.rb,*.vim,*.viz :call <SID>UniStyle()
 augroup END
 
 fun! s:UniStyle()
