@@ -30,8 +30,8 @@ let $PTAGS  = $VIMFILES . '/tags'
 " must set first
 if &compatible | set nocompatible | endif
 set runtimepath=$VIMFILES,$VIM,$VIMRUNTIME,$VIMFILES/after
-" let mapleader="\\"
-" let g:mapleader="\\"
+let mapleader="\\"
+let g:mapleader="\\"
 let maplocalleader=","
 let g:maplocalleader=","
 
@@ -88,16 +88,11 @@ if (&termencoding==#'utf-8'||&encoding==#'utf-8') && version >= 700
 else
   set listchars=tab:>\ ,trail:-,extends:>,precedes:<
 endif
+if has('clipboard') | set clipboard=unnamed | endif
 if has('unix')
-  if has('clipboard') | set clipboard=unnamed,unnamedplus | endif
-  " all temporary directory has layout as follow
-  " using .vim/tmp as temporary folder store
-  set backupdir=~/.vim/tmp/backup,~/tmp,.
-  set undodir=~/.vim/tmp/undo,~/tmp,.
-  set directory=~/.vim/tmp/swap,~/tmp,.
-elseif has('win32')||has('win64')
-  if has('clipboard') | set clipboard=unnamed | endif
-  set backupdir=~/vimtemp,$TMEP,.
+  let &backupdir = $HOME.'/.vim/tmp/backup,/tmp,.'
+  let &undodir = $HOME.'/.vim/tmp/undo,/tmp,.'
+  let &directory = $HOME.'/.vim/tmp/swap,/tmp,.'
 endif
 
 if executable('ctags') " generate ctags files
@@ -135,7 +130,7 @@ endif
 if has('autocmd')
   filetype plugin indent on
 
-  augroup Msic
+  augroup MsicOption
     autocmd!
     autocmd FileType help,qf nnoremap <silent><buffer> q :q<CR>
     " Return to last edit position
@@ -201,3 +196,4 @@ endif
 
 
 " vim:set foldmethod=marker spell:
+
