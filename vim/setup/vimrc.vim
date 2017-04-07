@@ -129,10 +129,9 @@ if has('gui')&&has('gui_running')
   colorscheme solarized
 endif
 
-"}}}
+" }}}
 
 " autocmd related settings {{{1
-
 if has('autocmd')
   filetype plugin indent on
 
@@ -172,15 +171,15 @@ if has('autocmd')
 
 endif "has('autocmd')
 
+" }}}
 
 " GUI related settings {{{1
-
 " remove toolbar, scrolling bar, menu
 set guioptions-=T guioptions-=e guioptions-=L guioptions-=r
 
 if exists('&guifont')
   if has('mac')
-    set guifont=Monaco:h16
+    set guifont=Monaco:h15
   elseif has('unix')
     set guifont=Monospace\ Medium\ 10
   elseif has('win32')||has('win64')
@@ -197,7 +196,8 @@ endif
 if has('win32')||has('win64')
   language messages en_US.utf-8
 endif
-"}}}
+
+" }}}
 
 
 " vim:set foldmethod=marker spell:
