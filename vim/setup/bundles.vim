@@ -27,7 +27,8 @@ Plugin 'sjl/gundo.vim'
 Plugin 'Jeanhwea/vim-matchit'
 
 " productivity
-Plugin 'mileszs/ack.vim'
+" Plugin 'mileszs/ack.vim'
+Plugin 'rking/ag.vim'
 Plugin 'godlygeek/tabular'
 Plugin 'tommcdo/vim-exchange'
 
@@ -49,7 +50,6 @@ Plugin 'plasticboy/vim-markdown'
 " framework
 Plugin 'tpope/vim-rails'
 Plugin 'fs111/pydoc.vim'
-Plugin 'pangloss/vim-javascript'
 
 " plugin from http://vim-scripts.org/vim/scripts.html
 " Plugin 'L9'

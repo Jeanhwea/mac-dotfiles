@@ -23,4 +23,3 @@ let b:loaded_javascript_ftplugin = 1
 
 set foldmethod=syntax
 
-nmap <leader>t :exec &conceallevel ? "set conceallevel=0" : "set conceallevel=1"<CR>
