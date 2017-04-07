@@ -42,12 +42,16 @@ if filereadable(expand($VIMFILES."/setup/bundles.vim"))
 endif
 
 " boolean options
+set autoindent
+set autoread
+set autowrite "Automatically save before commands like :next and :make
 set hidden
 set list ruler
 set modeline
 set backup undofile
 set cursorline cursorcolumn
 set nowrap nospell
+set incsearch " Incremental search
 
 " numerical options
 set laststatus=2 " show the status line all the time
