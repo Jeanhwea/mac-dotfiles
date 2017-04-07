@@ -30,8 +30,8 @@ let $PTAGS  = $VIMFILES . '/tags'
 " must set first
 if &compatible | set nocompatible | endif
 set runtimepath=$VIMFILES,$VIM,$VIMRUNTIME,$VIMFILES/after
-let mapleader="\\"
-let g:mapleader="\\"
+" let mapleader="\\"
+" let g:mapleader="\\"
 let maplocalleader=","
 let g:maplocalleader=","
 
