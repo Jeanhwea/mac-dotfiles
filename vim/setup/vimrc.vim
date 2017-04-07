@@ -42,16 +42,12 @@ if filereadable(expand($VIMFILES."/setup/bundles.vim"))
 endif
 
 " boolean options
-set list
-set ruler
-set modeline
-set cursorline
-set cursorcolumn
 set hidden
-set backup
-set nowrap
-set nospell
-set undofile
+set list ruler
+set modeline
+set backup undofile
+set cursorline cursorcolumn
+set nowrap nospell
 
 " numerical options
 set laststatus=2 " show the status line all the time
