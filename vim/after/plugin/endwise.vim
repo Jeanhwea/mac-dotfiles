@@ -74,15 +74,15 @@ endif
 
 " Code {{{1
 
-function! s:mysearchpair(beginpat,endpat,synpat)
+fun! s:mysearchpair(beginpat,endpat,synpat)
   let g:endwise_syntaxes = ""
   let s:lastline = line('.')
   call s:synname()
   let line = searchpair(a:beginpat,'',a:endpat,'Wn','<SID>synname() !~# "^'.substitute(a:synpat,'\\','\\\\','g').'$"',line('.')+50)
   return line
-endfunction
+endfun
 
-function! s:crend(always)
+fun! s:crend(always)
   let n = ""
   if !exists("b:endwise_addition") || !exists("b:endwise_words") || !exists("b:endwise_syngroups")
     return n
@@ -122,9 +122,9 @@ function! s:crend(always)
     return n
   endif
   return y
-endfunction
+endfun
 
-function! s:synname()
+fun! s:synname()
   " Checking this helps to force things to stay in sync
   while s:lastline < line('.')
     let s = synIDattr(synID(s:lastline,indent(s:lastline)+1,1),'name')
@@ -135,7 +135,7 @@ function! s:synname()
   let g:endwise_syntaxes = g:endwise_syntaxes . line('.').','.col('.')."=".s."\n"
   let s:lastline = line('.')
   return s
-endfunction
+endfun
 
 " }}}1
 
