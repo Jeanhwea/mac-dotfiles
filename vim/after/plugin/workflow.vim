@@ -37,7 +37,7 @@ fun! s:GrepOperator(type)
   copen
   redraw!
 endfun
-nnoremap <LocalLeader>f :setlocal operatorfunc=<SID>GrepOperator<CR>g@
+nnoremap <LocalLeader>f :setlocal opfunc=<SID>GrepOperator<CR>g@
 vnoremap <LocalLeader>f :<C-U>call <SID>GrepOperator(visualmode())<CR>
 
 
