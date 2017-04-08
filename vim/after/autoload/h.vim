@@ -112,7 +112,7 @@ fun! h#pathglob(pattern) abort
   let files = split(glob(a:pattern),"\n")
   return map(files,'substitute(v:val,"[".h#slash()."/]$","","")')
 endfun
-"}}}
+" }}}
 
 " Common escape {{{
 " escape string for use as file name command argument.
