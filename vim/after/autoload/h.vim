@@ -112,7 +112,7 @@ fun! h#pathglob(pattern) abort
   let files = split(glob(a:pattern),"\n")
   return map(files,'substitute(v:val,"[".h#slash()."/]$","","")')
 endfun
-" }}}
+"}}}
 
 " Common escape {{{
 " escape string for use as file name command argument.
@@ -138,7 +138,14 @@ endfun
 "   :messages
 "
 fun! h#log(msg) abort
-  let text = '[' . h#now() . '] ' . string(a:msg)
+  let text = '['.h#now().'] '.string(a:msg)
+  echomsg text
+  if exists('g:h_log_file') && filewritable(g:h_log_file)
+    call writefile([text], g:h_log_file, 'a')
+  endif
+endfun
+fun! h#logvar(desp,var) abort
+  let text = '['.h#now().'] '.a:desp.' = '.string(a:var)
   echomsg text
   if exists('g:h_log_file') && filewritable(g:h_log_file)
     call writefile([text], g:h_log_file, 'a')
