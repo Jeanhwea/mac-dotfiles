@@ -2,7 +2,7 @@
 silent! call repeat#set('\<Plug>MyWonderfulMap', v:count)
 
 " figitive
-set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
+set statusline=[%n%R%W]\ %<%M%f\ %h%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 let g:fugitive_github_domains = ['https://code.csdn.net', 'http://git.lejent.cn']
 
 " utilsnips. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
@@ -56,7 +56,7 @@ let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standar
 
 
 " syntastic
-set statusline+=%#warningmsg#
+set statusline+=%#ErrorMsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 let g:syntastic_mode_map = {
