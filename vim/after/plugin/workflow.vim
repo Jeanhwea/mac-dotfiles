@@ -73,5 +73,4 @@ nnoremap <silent> <LocalLeader>cw :call <SID>ChangeWord('n')<CR>
 vnoremap <silent> <LocalLeader>cw :<C-U>call <SID>ChangeWord('v')<CR>
 
 
-
 " vim:set ts=2 sts=2 sw=2:
