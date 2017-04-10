@@ -31,7 +31,6 @@ _connect_mysql() {
     esac
 }
 
-
 _help_messages() {
     echo "usage: db number or db filename"
     echo "------------------------------------------------------------"
