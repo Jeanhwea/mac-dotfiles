@@ -1,0 +1,66 @@
+#!/bin/sh
+
+MYSQL_CONFIG_PATH=$HOME/.config/mysql
+if [[ ! -d $MYSQL_CONFIG_PATH ]]; then
+    echo "No such file or directory: $MYSQL_CONFIG_PATH"
+    exit 2
+fi
+
+# _customs_connect_mysql username password database host port
+_customs_connect_mysql() {
+    mysql --user=$1 --password=$2 --host=$4 --port=$5 $3
+}
+
+_connect_mysql() {
+    case "$#" in
+        "3")
+            _customs_connect_mysql $1 $2 $3 'localhost' 3306
+            ;;
+
+        "4")
+            _customs_connect_mysql $1 $2 $3 $4 3306
+            ;;
+
+        "5")
+            _customs_connect_mysql $1 $2 $3 $4 $5
+            ;;
+
+        *)
+            echo _connect_mysql username password database [host [port]]
+            ;;
+    esac
+}
+
+
+_help_messages() {
+    echo "usage: db number or db filename"
+    echo "------------------------------------------------------------"
+    local i=1
+    for filename in `ls $MYSQL_CONFIG_PATH`; do
+        echo "$i) -> $filename"
+        (( i++ ))
+    done
+    echo "------------------------------------------------------------"
+}
+
+_enter_mysql() {
+    local args=$1
+    if [[ $args =~ ^[0-9]+ ]]; then
+        local i=1
+        for filename in `ls $MYSQL_CONFIG_PATH`; do
+            if [[ "$args" == "$i" ]]; then
+                _connect_mysql `cat $MYSQL_CONFIG_PATH/$filename`
+            fi
+            (( i++ ))
+        done
+    else
+        for filename in `ls $MYSQL_CONFIG_PATH`; do
+            if [[ "$args" == "$filename" ]]; then
+                _connect_mysql `cat $MYSQL_CONFIG_PATH/$filename`
+            fi
+        done
+    fi
+}
+
+[[ $# -ne 1 ]] && _help_messages || _enter_mysql $1
+
