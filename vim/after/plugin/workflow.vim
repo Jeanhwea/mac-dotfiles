@@ -57,17 +57,17 @@ command! -nargs=0 -bar ArgsQuickfix execute 'args ' . <SID>QuickfixFileNames()
 
 
 function! s:ChangeWord(mode)
-    if a:mode ==# 'n'
-        let src = expand('<cword>')
-    elseif a:mode ==# 'v'
-        let src = u#lastselect()
-    endif
-    let src = substitute(escape(src, '/\'), '\n', '\\n', 'g')
-    let des = input('[' . src . '] -> ')
-    if src !=# '' && des !=# ''
-        execute ':'.line('.').',$substitute/\V'.src.'/'.des.'/gc'
-        let @c = src
-    endif
+  if a:mode ==# 'n'
+    let src = expand('<cword>')
+  elseif a:mode ==# 'v'
+    let src = u#lastselect()
+  endif
+  let src = substitute(escape(src, '/\'), '\n', '\\n', 'g')
+  let des = input('[' . src . '] -> ')
+  if src !=# '' && des !=# ''
+    execute ':'.line('.').',$substitute/\V'.src.'/'.des.'/gc'
+    let @c = src
+  endif
 endfunction
 nnoremap <silent> <LocalLeader>cw :call <SID>ChangeWord('n')<CR>
 vnoremap <silent> <LocalLeader>cw :<C-U>call <SID>ChangeWord('v')<CR>
