@@ -56,7 +56,7 @@ endfun
 command! -nargs=0 -bar ArgsQuickfix execute 'args ' . <SID>QuickfixFileNames()
 
 
-function! s:ChangeWord(mode)
+fun! s:ChangeWord(mode)
   if a:mode ==# 'n'
     let src = expand('<cword>')
   elseif a:mode ==# 'v'
@@ -68,9 +68,18 @@ function! s:ChangeWord(mode)
     execute ':'.line('.').',$substitute/\V'.src.'/'.des.'/gc'
     let @c = src
   endif
-endfunction
+endfun
 nnoremap <silent> <LocalLeader>cw :call <SID>ChangeWord('n')<CR>
 vnoremap <silent> <LocalLeader>cw :<C-U>call <SID>ChangeWord('v')<CR>
 
+fun! s:GenerateTags()
+  if !executable('ctags')
+    call h#warn("E570: Exuberant ctags not found in PATH")
+  endif
+  silent !ctags .
+  redraw!
+endfun
+command! -bar -nargs=0 GenerateTags call <SID>GenerateTags()
+nnoremap <silent> <LocalLeader>gt :GenerateTags<CR>
 
 " vim:set ts=2 sts=2 sw=2:

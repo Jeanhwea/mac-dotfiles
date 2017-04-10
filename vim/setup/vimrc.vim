@@ -51,7 +51,7 @@ set modeline
 set backup undofile
 set cursorline cursorcolumn
 set nowrap nospell
-set incsearch " Incremental search
+set incsearch" Incremental search
 
 " numerical options
 set laststatus=2 " show the status line all the time
@@ -95,9 +95,6 @@ if has('unix')
   let &directory = $HOME.'/.vim/tmp/swap,/tmp,.'
 endif
 
-if executable('ctags') " generate ctags files
-  nnoremap <LocalLeader>gt :silent !ctags .<CR>:redraw!<CR>
-endif
 if executable('grep')
   set grepprg=grep\ -rnH\
         \ --exclude='*.swp'\
