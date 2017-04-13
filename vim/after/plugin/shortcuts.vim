@@ -21,6 +21,9 @@ if exists('loaded_shortcuts') || &cp || v:version < 700
 endif
 let loaded_shortcuts = 1
 
+" "Fast navigation"
+nnoremap <Space> <C-d>
+
 " "Fast Opening", editing file in current line
 nnoremap <LocalLeader>ew :e <C-r>=expand('%:p:h') . '/' <CR>
 nnoremap <LocalLeader>es :sp <C-r>=expand('%:p:h') . '/' <CR>
