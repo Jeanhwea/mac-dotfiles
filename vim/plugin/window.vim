@@ -34,7 +34,7 @@ function! WinMove(key) "move to the window in the direction shown, or create a n
     endif
 endfunction
 " Window movement shortcuts
-nnoremap <C-H> :call WinMove('h')<cr>
-nnoremap <C-L> :call WinMove('l')<cr>
-nnoremap <C-J> :call WinMove('j')<cr>
-nnoremap <C-K> :call WinMove('k')<cr>
+nnoremap <C-h> :call WinMove('h')<cr>
+nnoremap <C-l> :call WinMove('l')<cr>
+nnoremap <C-j> :call WinMove('j')<cr>
+nnoremap <C-k> :call WinMove('k')<cr>

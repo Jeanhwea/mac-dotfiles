@@ -47,21 +47,21 @@ function! s:SearchWord(engine, mode)
 endfunction
 
 " open url under cursor in browser
-nnoremap <LocalLeader>bd :<C-U>call <SID>SearchWord('baidu','n')<CR>
-vnoremap <LocalLeader>bd :<C-U>call <SID>SearchWord('baidu','v')<CR>
-nnoremap <LocalLeader>bb :<C-U>call <SID>SearchWord('bing','n')<CR>
-vnoremap <LocalLeader>bb :<C-U>call <SID>SearchWord('bing','v')<CR>
-nnoremap <LocalLeader>bh :<C-U>call <SID>SearchWord('github','n')<CR>
-vnoremap <LocalLeader>bh :<C-U>call <SID>SearchWord('github','v')<CR>
-nnoremap <LocalLeader>bg :<C-U>call <SID>SearchWord('google','n')<CR>
-vnoremap <LocalLeader>bg :<C-U>call <SID>SearchWord('google','v')<CR>
-nnoremap <LocalLeader>bm :<C-U>call <SID>SearchWord('maven','n')<CR>
-vnoremap <LocalLeader>bm :<C-U>call <SID>SearchWord('maven','v')<CR>
-nnoremap <LocalLeader>bs :<C-U>call <SID>SearchWord('stackoverflow','n')<CR>
-vnoremap <LocalLeader>bs :<C-U>call <SID>SearchWord('stackoverflow','v')<CR>
-nnoremap <LocalLeader>bw :<C-U>call <SID>SearchWord('wikipedia','n')<CR>
-vnoremap <LocalLeader>bw :<C-U>call <SID>SearchWord('wikipedia','v')<CR>
-nnoremap <LocalLeader>ba :<C-U>call <SID>SearchWord('dash','n')<CR>
-vnoremap <LocalLeader>ba :<C-U>call <SID>SearchWord('dash','v')<CR>
+nnoremap <LocalLeader>bd :<C-u>call <SID>SearchWord('baidu','n')<CR>
+vnoremap <LocalLeader>bd :<C-u>call <SID>SearchWord('baidu','v')<CR>
+nnoremap <LocalLeader>bb :<C-u>call <SID>SearchWord('bing','n')<CR>
+vnoremap <LocalLeader>bb :<C-u>call <SID>SearchWord('bing','v')<CR>
+nnoremap <LocalLeader>bh :<C-u>call <SID>SearchWord('github','n')<CR>
+vnoremap <LocalLeader>bh :<C-u>call <SID>SearchWord('github','v')<CR>
+nnoremap <LocalLeader>bg :<C-u>call <SID>SearchWord('google','n')<CR>
+vnoremap <LocalLeader>bg :<C-u>call <SID>SearchWord('google','v')<CR>
+nnoremap <LocalLeader>bm :<C-u>call <SID>SearchWord('maven','n')<CR>
+vnoremap <LocalLeader>bm :<C-u>call <SID>SearchWord('maven','v')<CR>
+nnoremap <LocalLeader>bs :<C-u>call <SID>SearchWord('stackoverflow','n')<CR>
+vnoremap <LocalLeader>bs :<C-u>call <SID>SearchWord('stackoverflow','v')<CR>
+nnoremap <LocalLeader>bw :<C-u>call <SID>SearchWord('wikipedia','n')<CR>
+vnoremap <LocalLeader>bw :<C-u>call <SID>SearchWord('wikipedia','v')<CR>
+nnoremap <LocalLeader>ba :<C-u>call <SID>SearchWord('dash','n')<CR>
+vnoremap <LocalLeader>ba :<C-u>call <SID>SearchWord('dash','v')<CR>
 
 " vim:set ts=2 sts=2 sw=2:

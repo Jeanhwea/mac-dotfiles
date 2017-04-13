@@ -49,28 +49,28 @@ augroup END " }}}1
 " Maps {{{1
 
 if maparg("<Plug>DiscretionaryEnd") == ""
-  inoremap <silent> <SID>DiscretionaryEnd <C-R>=<SID>crend(0)<CR>
-  inoremap <silent> <SID>AlwaysEnd        <C-R>=<SID>crend(1)<CR>
+  inoremap <silent> <SID>DiscretionaryEnd <C-r>=<SID>crend(0)<CR>
+  inoremap <silent> <SID>AlwaysEnd        <C-r>=<SID>crend(1)<CR>
   imap    <script> <Plug>DiscretionaryEnd <SID>DiscretionaryEnd
   imap    <script> <Plug>AlwaysEnd        <SID>AlwaysEnd
 endif
 
 if !exists('g:endwise_no_mappings')
-  if maparg('<CR>','i') =~# '<C-R>=.*crend(.)<CR>\|<\%(Plug\|SNR\|SID\)>.*End'
+  if maparg('<CR>','i') =~# '<C-r>=.*crend(.)<CR>\|<\%(Plug\|SNR\|SID\)>.*End'
     " Already mapped
   elseif maparg('<CR>','i') =~ '<CR>'
-    exe "imap <script> <C-X><CR> ".maparg('<CR>','i')."<SID>AlwaysEnd"
+    exe "imap <script> <C-x><CR> ".maparg('<CR>','i')."<SID>AlwaysEnd"
     exe "imap <script> <CR>      ".maparg('<CR>','i')."<SID>DiscretionaryEnd"
   elseif maparg('<CR>','i') =~ '<Plug>delimitMateCR'
-    exe "imap <C-X><CR> ".maparg('<CR>', 'i')."<Plug>AlwaysEnd"
+    exe "imap <C-x><CR> ".maparg('<CR>', 'i')."<Plug>AlwaysEnd"
     exe "imap <CR> ".maparg('<CR>', 'i')."<Plug>DiscretionaryEnd"
   else
-    imap <C-X><CR> <CR><Plug>AlwaysEnd
+    imap <C-x><CR> <CR><Plug>AlwaysEnd
     imap <CR>      <CR><Plug>DiscretionaryEnd
   endif
 
   if maparg('<M-o>','i') == ''
-    inoremap <M-o> <C-O>o
+    inoremap <M-o> <C-o>o
   endif
 endif
 
@@ -103,7 +103,7 @@ fun! s:crend(always)
   let col  = match(getline(lnum),beginpat) + 1
   let word  = matchstr(getline(lnum),beginpat)
   let endword = substitute(word,'.*',b:endwise_addition,'')
-  let y = n.endword."\<C-O>O"
+  let y = n.endword."\<C-o>O"
   let endpat = '\w\@<!'.endword.'\w\@!'
   if a:always
     return y

@@ -8,7 +8,7 @@ let g:fugitive_github_domains = ['https://code.csdn.net', 'http://git.lejent.cn'
 " utilsnips. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
 let g:UltiSnipsExpandTrigger       = '<Tab>'
 let g:UltiSnipsJumpForwardTrigger  = '<Tab>'
-let g:UltiSnipsJumpBackwardTrigger = '<C-K>'
+let g:UltiSnipsJumpBackwardTrigger = '<C-k>'
 let g:UltiSnipsEditSplit           = 'vertical'
 let g:ultisnips_java_brace_style   = "nl"
 let g:UltiSnipsSnippetDirectories  = [$HOME.'/.vim/bundle/vim-ultisnips-snippets']
@@ -39,7 +39,7 @@ let g:AutoPairsFlyMode = 0
 let g:AutoPairsShortcutBackInsert = '<M-b>'
 
 " ctrlp
-let g:ctrlp_map = '<C-P>'
+let g:ctrlp_map = '<C-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'ra'
 if has('win32')||has('win64')

@@ -21,15 +21,14 @@ if exists('loaded_shortcuts') || &cp || v:version < 700
 endif
 let loaded_shortcuts = 1
 
-
 " "Fast Opening", editing file in current line
-nnoremap <LocalLeader>ew :e <C-R>=expand('%:p:h') . '/' <CR>
-nnoremap <LocalLeader>es :sp <C-R>=expand('%:p:h') . '/' <CR>
-nnoremap <LocalLeader>ev :vsp <C-R>=expand('%:p:h') . '/' <CR>
-nnoremap <LocalLeader>et :tabe <C-R>=expand('%:p:h') . '/' <CR>
+nnoremap <LocalLeader>ew :e <C-r>=expand('%:p:h') . '/' <CR>
+nnoremap <LocalLeader>es :sp <C-r>=expand('%:p:h') . '/' <CR>
+nnoremap <LocalLeader>ev :vsp <C-r>=expand('%:p:h') . '/' <CR>
+nnoremap <LocalLeader>et :tabe <C-r>=expand('%:p:h') . '/' <CR>
 
 " "UpperCase word", using in insert mode
-inoremap <C-D> <ESC>mzgUiw`za
+inoremap <C-d> <Esc>mzgUiw`za
 
 " "Fast Quit"
 noremap <LocalLeader>q :qa<CR>

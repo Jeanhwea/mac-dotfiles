@@ -38,7 +38,7 @@ fun! s:GrepOperator(type)
   redraw!
 endfun
 nnoremap <LocalLeader>f :setlocal opfunc=<SID>GrepOperator<CR>g@
-vnoremap <LocalLeader>f :<C-U>call <SID>GrepOperator(visualmode())<CR>
+vnoremap <LocalLeader>f :<C-u>call <SID>GrepOperator(visualmode())<CR>
 
 
 " return all filenames in quickfix list
@@ -70,7 +70,7 @@ fun! s:ChangeWord(mode)
   endif
 endfun
 nnoremap <silent> <LocalLeader>cw :call <SID>ChangeWord('n')<CR>
-vnoremap <silent> <LocalLeader>cw :<C-U>call <SID>ChangeWord('v')<CR>
+vnoremap <silent> <LocalLeader>cw :<C-u>call <SID>ChangeWord('v')<CR>
 
 fun! s:GenerateTags()
   if !executable('ctags')

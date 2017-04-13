@@ -29,8 +29,8 @@ fun! s:VisualStarSearch(searchtype)
   let @/ = '\V' . substitute(escape(@s, a:searchtype.'\'), '\n', '\\n', 'g')
   let @s = sreg
 endfun
-xnoremap * :<C-u>call <SID>VisualStarSearch('/')<CR>/<C-R>=@/<CR><CR>
-xnoremap # :<C-u>call <SID>VisualStarSearch('?')<CR>?<C-R>=@/<CR><CR>
+xnoremap * :<C-u>call <SID>VisualStarSearch('/')<CR>/<C-r>=@/<CR><CR>
+xnoremap # :<C-u>call <SID>VisualStarSearch('?')<CR>?<C-r>=@/<CR><CR>
 
 
 " vim:set ts=2 sts=2 sw=2:

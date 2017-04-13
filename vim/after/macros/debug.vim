@@ -8,7 +8,7 @@ endfun
 command! -nargs=0 SynName call <SID>syntaxname(line('.'),col('.'),1)
 
 " experimental key mapping for debugging
-nnoremap R ^vg_"ty:<C-R>t
+nnoremap R ^vg_"ty:<C-r>t
 nnoremap S :SynName<CR>
 command! -nargs=* -complete=var L :call h#logvar(<q-args>,<args>)
 
