@@ -44,7 +44,8 @@ if has("cscope")
     cs add $CSCOPE_DB
   endif
 
-  " show msg when any other cscope db added
+  " Avoiding duplicate cscope database error within VIM
+  " https://blogs.oracle.com/natarajan/entry/avoiding_duplicate_cscope_database_error
   set nocscopeverbose
 
   """"""""""""" My cscope/vim key mappings
