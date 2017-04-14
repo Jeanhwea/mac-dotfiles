@@ -85,3 +85,4 @@ $if Bash
     # edit variable on current line
     "\C-xv": "\C-a\C-k$\C-y\e\C-e\C-a\C-y="
 $endif
+
