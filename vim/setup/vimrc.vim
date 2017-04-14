@@ -49,7 +49,7 @@ set hidden
 set list ruler
 set modeline
 set backup undofile
-set cursorline cursorcolumn
+set nocursorline nocursorcolumn
 set nowrap nospell
 set incsearch" Incremental search
 
