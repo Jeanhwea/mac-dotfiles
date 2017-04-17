@@ -64,8 +64,12 @@ fun! u#safeexec(command,registers)
       let saved_reg[r] = getreg(r)
     endfor
   endif
-  let result = execute(a:command)
-  " call h#log(a:command.' -> '.result)
+  if v:version < 800
+    exe a:command
+  else
+    let result = execute(a:command)
+    call h#logvar(a:command, result)
+  endif
   for [k,v] in items(saved_reg)
     call setreg(k,v)
   endfor
