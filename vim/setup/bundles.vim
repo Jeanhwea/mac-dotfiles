@@ -28,7 +28,7 @@ Plugin 'sjl/gundo.vim'
 Plugin 'Jeanhwea/vim-matchit'
 
 " productivity
-" Plugin 'mileszs/ack.vim'
+Plugin 'mileszs/ack.vim'
 Plugin 'rking/ag.vim'
 Plugin 'godlygeek/tabular'
 Plugin 'tommcdo/vim-exchange'
