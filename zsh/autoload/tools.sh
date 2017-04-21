@@ -23,13 +23,4 @@ export LANG=en_US.UTF-8
 # setup libxml2 python library path
 export PYTHONPATH=/usr/local/Cellar/libxml2/2.9.4/lib/python2.7/site-packages:$PYTHONPATH
 
-# setup Tian Gong Xin Yuan environments
-export CWPROOT=~/Tools/cwp/43R1
-export PATH=$PATH:$CWPROOT/bin
-
-export SACHOME=~/Tools/sac/101.6
-__source_if_exists $SACHOME/bin/sacinit.sh
-
-export FFTWHOME=~/Tools/fftw/3.3.5
-export PATH=$PATH:$FFTWHOME/bin
 
