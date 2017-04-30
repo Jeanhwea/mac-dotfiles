@@ -4,9 +4,9 @@ silent! call repeat#set('\<Plug>MyWonderfulMap', v:count)
 " figitive
 set statusline=[%n%R%W]\ %<%M%f\ %h%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 let g:fugitive_github_domains = [
-\   'https://code.csdn.net',
-\   'http://git.yanbozhongxin.com',
-\   'http://git.lejent.cn',
+\ 'https://code.csdn.net',
+\ 'http://git.yanbozhongxin.com',
+\ 'http://git.lejent.cn',
 \]
 
 " utilsnips. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
@@ -52,10 +52,10 @@ elseif has('unix')
   set wildignore+=*/.git/*,*.so,*.swp,*.zip     " Linux/MacOSX
 endif
 let g:ctrlp_custom_ignore = {
-      \   'dir':  '\v[\/]\.(git|hg|svn)$',
-      \   'file': '\v\.(exe|so|dll)$',
-      \   'link': '',
-      \}
+\ 'dir':  '\v[\/]\.(git|hg|svn)$',
+\ 'file': '\v\.(exe|so|dll)$',
+\ 'link': '',
+\}
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 
 
@@ -64,10 +64,10 @@ set statusline+=%#ErrorMsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 let g:syntastic_mode_map = {
-      \   'mode': 'passive',
-      \   'active_filetypes': ['ruby', 'php', 'python'],
-      \   'passive_filetypes': []
-      \}
+\ 'mode': 'passive',
+\ 'active_filetypes': ['ruby', 'php', 'python'],
+\ 'passive_filetypes': []
+\}
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 0
