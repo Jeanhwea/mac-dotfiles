@@ -42,6 +42,7 @@ Plugin 'scrooloose/syntastic'
 " colorscheme
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'tomasr/molokai'
+Plugin 'dracula/vim'
 
 " syntax highlight and so on
 Plugin 'Jeanhwea/vim-viz'

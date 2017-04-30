@@ -47,9 +47,9 @@ let g:ctrlp_map = '<C-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'ra'
 if has('win32')||has('win64')
-  set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
+  set wildignore+=*\\.git\\*,*.swp,*.zip,*.exe  " Windows
 elseif has('unix')
-  set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " Linux/MacOSX
+  set wildignore+=*/.git/*,*.so,*.swp,*.zip     " Linux/MacOSX
 endif
 let g:ctrlp_custom_ignore = {
       \   'dir':  '\v[\/]\.(git|hg|svn)$',
