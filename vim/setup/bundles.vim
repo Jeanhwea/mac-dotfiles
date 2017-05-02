@@ -23,6 +23,7 @@ Plugin 'tpope/vim-unimpaired'
 
 " utils
 Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'tacahiroy/ctrlp-funky'
 Plugin 'majutsushi/tagbar'
 Plugin 'sjl/gundo.vim'
 Plugin 'Jeanhwea/vim-matchit'

@@ -44,7 +44,7 @@ let g:AutoPairsShortcutBackInsert = '<M-b>'
 
 " ctrlp
 let g:ctrlp_map = '<C-p>'
-let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_cmd = 'CtrlPFunky'
 let g:ctrlp_working_path_mode = 'ra'
 if has('win32')||has('win64')
   set wildignore+=*\\.git\\*,*.swp,*.zip,*.exe  " Windows
