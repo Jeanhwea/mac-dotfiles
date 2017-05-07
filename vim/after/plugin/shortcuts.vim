@@ -43,6 +43,12 @@ nnoremap <LocalLeader>lp `[v`]
 nnoremap <LocalLeader>di :digraphs<CR>
 
 " "Split line", normally S is equal to cc, so map S to split line
-nnoremap S mzi<CR><ESC>`z
+nnoremap S mzi<CR><Esc>`z
+
+" "Arrow Key", binding arrows to change colorscheme
+map <Up> <Esc>:colorscheme solarized<CR>
+map <Down> <Esc>:colorscheme molokai<CR>
+map <Left> <Esc>:colorscheme default<CR>
+map <Right> <Esc>:colorscheme dracula<CR>
 
 " vim:set ts=2 sts=2 sw=2:
