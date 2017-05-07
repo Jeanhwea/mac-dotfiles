@@ -46,9 +46,9 @@ nnoremap <LocalLeader>di :digraphs<CR>
 nnoremap S mzi<CR><Esc>`z
 
 " "Arrow Key", binding arrows to change colorscheme
-map <Up> <Esc>:colorscheme solarized<CR>
-map <Down> <Esc>:colorscheme molokai<CR>
-map <Left> <Esc>:colorscheme default<CR>
-map <Right> <Esc>:colorscheme dracula<CR>
+noremap <Up> <Esc>:colorscheme solarized<CR>
+noremap <Down> <Esc>:colorscheme molokai<CR>
+noremap <Left> <Esc>:colorscheme default<CR>
+noremap <Right> <Esc>:colorscheme dracula<CR>
 
 " vim:set ts=2 sts=2 sw=2:
