@@ -46,13 +46,13 @@ nnoremap <LocalLeader>di :digraphs<CR>
 nnoremap S mzi<CR><Esc>`z
 
 fun! s:GetColorSchemes()
-  let rtps = split(&runtimepath, ",")
+  let rtps = split(&runtimepath, ',')
   let colorschemes = []
   for rtp in rtps
-    let colors_dir = rtp."/colors"
+    let colors_dir = rtp.'/colors'
     if (isdirectory(colors_dir))
-      for colorname in split(glob(colors_dir."/*.vim"),"\n")
-        call add(colorschemes, fnamemodify(colorname, ":t:r"))
+      for colorname in split(glob(colors_dir.'/*.vim'),'\n')
+        call add(colorschemes, fnamemodify(colorname, ':t:r'))
       endfor
     endif
   endfor
