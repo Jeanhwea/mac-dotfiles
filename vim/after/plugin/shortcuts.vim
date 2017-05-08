@@ -45,10 +45,45 @@ nnoremap <LocalLeader>di :digraphs<CR>
 " "Split line", normally S is equal to cc, so map S to split line
 nnoremap S mzi<CR><Esc>`z
 
+fun! s:GetColorSchemes()
+  let rtps = split(&runtimepath, ",")
+  let colorschemes = []
+  for rtp in rtps
+    let colors_dir = rtp."/colors"
+    if (isdirectory(colors_dir))
+      for colorname in split(glob(colors_dir."/*.vim"),"\n")
+        call add(colorschemes, fnamemodify(colorname, ":t:r"))
+      endfor
+    endif
+  endfor
+  return uniq(sort(colorschemes))
+endfun
+
+fun! s:ShiftColorScheme(direction)
+  let colorschemes = s:GetColorSchemes()
+  let total_colors = len(colorschemes)
+  if total_colors > 0
+    let icolor = 0
+    while icolor < total_colors
+      if g:colors_name ==? (colorschemes[icolor])
+        if a:direction ==# 'n'
+          let shift_colors = colorschemes[(icolor+1)%total_colors]
+        elseif a:direction ==# 'p'
+          let shift_colors = colorschemes[(icolor-1)%total_colors]
+        endif
+        break
+      endif
+      let icolor += 1
+    endwhile
+    execute 'colorscheme '.shift_colors
+  endif
+endfun
+
+
 " "Arrow Key", binding arrows to change colorscheme
 noremap <Up> <Esc>:colorscheme solarized<CR>
 noremap <Down> <Esc>:colorscheme molokai<CR>
-noremap <Left> <Esc>:colorscheme default<CR>
-noremap <Right> <Esc>:colorscheme dracula<CR>
+noremap <Left> :call <SID>ShiftColorScheme('p')<CR>
+noremap <Right> :call <SID>ShiftColorScheme('n')<CR>
 
 " vim:set ts=2 sts=2 sw=2:
