@@ -65,7 +65,7 @@ fun! s:ShiftColorScheme(direction)
   if total_colors > 0
     let icolor = 0
     while icolor < total_colors
-      if g:colors_name ==? (colorschemes[icolor])
+      if g:colors_name ==? colorschemes[icolor]
         if a:direction ==# 'n'
           let shift_colors = colorschemes[(icolor+1)%total_colors]
         elseif a:direction ==# 'p'
@@ -85,5 +85,10 @@ noremap <Up> <Esc>:colorscheme solarized<CR>
 noremap <Down> <Esc>:colorscheme molokai<CR>
 noremap <Left> :call <SID>ShiftColorScheme('p')<CR>
 noremap <Right> :call <SID>ShiftColorScheme('n')<CR>
+
+" "unimpaired style toggle", for Tagbar
+nnoremap cot :TagbarToggle<CR>
+nnoremap [ot :TagbarOpen<CR>
+nnoremap ]ot :TagbarClose<CR>
 
 " vim:set ts=2 sts=2 sw=2:

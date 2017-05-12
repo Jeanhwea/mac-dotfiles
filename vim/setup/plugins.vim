@@ -61,9 +61,10 @@ let g:ctrlp_funky_syntax_highlight = 1
 
 
 " syntastic
-set statusline+=%#ErrorMsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+let g:loaded_syntastic_plugin = 1
+" set statusline+=%#ErrorMsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
 let g:syntastic_mode_map = {
 \ 'mode': 'passive',
 \ 'active_filetypes': ['ruby', 'php', 'python'],
