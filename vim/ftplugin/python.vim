@@ -35,6 +35,8 @@ function! s:PythonCompileAndRunFile()
 endfunction
 
 set path+=,operation/templates,templates,static
+setlocal foldmethod=indent
+setlocal foldlevel=99
 
 nnoremap <buffer> Q :call <SID>PythonCompileAndRunFile()<CR>
 

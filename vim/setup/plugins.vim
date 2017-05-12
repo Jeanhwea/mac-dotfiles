@@ -76,6 +76,9 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 
+" 'hdima/python-syntax'
+let python_highlight_all = 1
+
 " lastpath
 " only load lastpath on windows gvim
 if !((has('win32')||has('win64')) && has('gui'))
@@ -85,5 +88,6 @@ endif
 " log file path
 " for h.vim => h#log()
 let g:h_log_file = $VIMFILES.'/tmp/vimplugin.log'
+
 
 
