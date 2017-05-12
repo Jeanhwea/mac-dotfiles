@@ -91,5 +91,8 @@ noremap <Right> :call <SID>ShiftColorScheme('next')<CR>
 nnoremap cot :TagbarToggle<CR>
 nnoremap [ot :TagbarOpen<CR>
 nnoremap ]ot :TagbarClose<CR>
+nnoremap cog :GundoToggle<CR>
+nnoremap [og :GundoShow<CR>
+nnoremap ]og :GundoHide<CR>
 
 " vim:set ts=2 sts=2 sw=2:
