@@ -46,17 +46,18 @@ nnoremap <LocalLeader>di :digraphs<CR>
 nnoremap S mzi<CR><Esc>`z
 
 fun! s:GetColorSchemes()
-  let rtps = split(&runtimepath, ',')
-  let colorschemes = []
-  for rtp in rtps
-    let colors_dir = rtp.'/colors'
-    if (isdirectory(colors_dir))
-      for colorname in split(glob(colors_dir.'/*.vim'),'\n')
-        call add(colorschemes, fnamemodify(colorname, ':t:r'))
+  let sep = h#slash()
+  let colorschemes = {}
+  for rtp in h#pathsplit(&runtimepath)
+    let colorpath = rtp.sep.'colors'
+    if (isdirectory(colorpath))
+      for colorname in split(glob(colorpath.sep.'*.vim'),'\n')
+        let name = fnamemodify(colorname, ':t:r')
+        let colorschemes[name] = 1
       endfor
     endif
   endfor
-  return uniq(sort(colorschemes))
+  return sort(keys(colorschemes))
 endfun
 
 fun! s:ShiftColorScheme(direction)
@@ -66,9 +67,9 @@ fun! s:ShiftColorScheme(direction)
     let icolor = 0
     while icolor < total_colors
       if g:colors_name ==? colorschemes[icolor]
-        if a:direction ==# 'n'
+        if a:direction ==# 'next'
           let shift_colors = colorschemes[(icolor+1)%total_colors]
-        elseif a:direction ==# 'p'
+        elseif a:direction ==# 'prev'
           let shift_colors = colorschemes[(icolor-1)%total_colors]
         endif
         break
@@ -83,8 +84,8 @@ endfun
 " "Arrow Key", binding arrows to change colorscheme
 noremap <Up> <Esc>:colorscheme solarized<CR>
 noremap <Down> <Esc>:colorscheme molokai<CR>
-noremap <Left> :call <SID>ShiftColorScheme('p')<CR>
-noremap <Right> :call <SID>ShiftColorScheme('n')<CR>
+noremap <Left> :call <SID>ShiftColorScheme('prev')<CR>
+noremap <Right> :call <SID>ShiftColorScheme('next')<CR>
 
 " "unimpaired style toggle", for Tagbar
 nnoremap cot :TagbarToggle<CR>
