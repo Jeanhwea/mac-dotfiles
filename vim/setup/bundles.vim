@@ -63,10 +63,12 @@ Plugin 'vim-scripts/BusyBee'
 Plugin 'vim-scripts/darkspectrum'
 Plugin 'w0ng/vim-hybrid'
 Plugin 'zanglg/nova.vim'
+Plugin 'jnurmine/Zenburn'
 
 " syntax highlight and so on
 Plugin 'Jeanhwea/vim-viz'
 Plugin 'plasticboy/vim-markdown'
+Plugin 'hdima/python-syntax'
 " Plugin 'tpope/vim-markdown'
 
 " framework
