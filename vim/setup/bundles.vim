@@ -33,6 +33,12 @@ Plugin 'mileszs/ack.vim'
 Plugin 'rking/ag.vim'
 Plugin 'godlygeek/tabular'
 Plugin 'tommcdo/vim-exchange'
+" https://github.com/kana/vim-textobj-user/wiki
+Plugin 'kana/vim-textobj-user'
+Plugin 'bps/vim-textobj-python'
+Plugin 'jceb/vim-textobj-uri'
+Plugin 'kana/vim-textobj-function'
+Plugin 'sgur/vim-textobj-parameter'
 
 " better programming, let vim knows codes
 Plugin 'Jeanhwea/vim-ultisnips-snippets'
