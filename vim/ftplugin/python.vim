@@ -36,6 +36,7 @@ endfunction
 
 set path+=,operation/templates,templates,static
 setlocal foldmethod=indent
+setlocal foldignore=
 setlocal foldlevel=99
 if executable('yapf')
   let &l:formatprg='yapf --style="{based_on_style:google,indent_width:4}"'
