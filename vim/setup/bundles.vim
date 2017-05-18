@@ -20,6 +20,7 @@ Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-scriptease'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-unimpaired'
+Plugin 'tpope/vim-dispatch'
 
 " utils
 Plugin 'ctrlpvim/ctrlp.vim'
