@@ -40,6 +40,7 @@ __symbolic_link_folder() {
 
 # readline
 __symbolic_link_file 'inputrc' '.inputrc'
+__symbolic_link_file 'curlrc' '.curlrc'
 
 # bash
 __symbolic_link_folder 'bash' '.bash'
