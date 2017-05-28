@@ -16,7 +16,9 @@
 "                                                                       "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-syntax keyword pythonSelf self
+syn keyword pythonSelf self
+syn match pythonDatetimeFormatting "%\%(([^)]\+)\)\=[-#0 +]*\d*\%(\.\d\+\)\=[hlL]\=[aAwdbBmyYHIpMSfzZjUWcxX%]" contained containedin=pythonString,pythonRawString
 
 highlight default link pythonSelf helpNote
+highlight default link pythonDatetimeFormatting pythonStrFormatting
 
