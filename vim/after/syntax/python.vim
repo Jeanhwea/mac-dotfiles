@@ -18,5 +18,5 @@
 
 syntax keyword pythonSelf self
 
-highlight link pythonSelf helpNote
+highlight default link pythonSelf helpNote
 
