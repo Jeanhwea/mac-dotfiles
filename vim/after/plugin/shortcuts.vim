@@ -94,5 +94,8 @@ nnoremap ]ot :TagbarClose<CR>
 nnoremap cog :GundoToggle<CR>
 nnoremap [og :GundoShow<CR>
 nnoremap ]og :GundoHide<CR>
+nnoremap coo :GitGutterToggle<CR>
+nnoremap [oo :GitGutterEnable<CR>
+nnoremap ]oo :GitGutterDisable<CR>
 
 " vim:set ts=2 sts=2 sw=2:

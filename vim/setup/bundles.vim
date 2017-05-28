@@ -28,6 +28,7 @@ Plugin 'tacahiroy/ctrlp-funky'
 Plugin 'majutsushi/tagbar'
 Plugin 'sjl/gundo.vim'
 Plugin 'Jeanhwea/vim-matchit'
+Plugin 'airblade/vim-gitgutter'
 
 " productivity
 Plugin 'mileszs/ack.vim'
