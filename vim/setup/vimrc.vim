@@ -119,12 +119,14 @@ if &t_Co==256
   " render properly when inside 256-color tmux and GNU screen.
   " see also http://snk.tuxfamily.org/log/vim-256color-bce.html
   set t_ut=
+endif
+
+if has('gui')&&has('gui_running')
+  set background=light
+  colorscheme solarized
+else
   " let g:solarized_termcolors=256
   " let g:solarized_termtrans=1
-  set background=dark
-  colorscheme solarized
-endif
-if has('gui')&&has('gui_running')
   set background=dark
   colorscheme solarized
 endif
