@@ -109,9 +109,9 @@ if has('syntax') | syntax on | endif
 
 " Change cursor shape between insert and normal mode in iTerm2.app
 if $TERM_PROGRAM =~ "iTerm"
-    let &t_EI = "\<Esc>]50;CursorShape=0\x7" " Block in normal mode
-    let &t_SI = "\<Esc>]50;CursorShape=1\x7" " Vertical bar in insert mode
-    let &t_SR = "\<Esc>]50;CursorShape=2\x7" " Underline in replace mode
+  let &t_EI = "\<Esc>]50;CursorShape=0\x7" " Block in normal mode
+  let &t_SI = "\<Esc>]50;CursorShape=1\x7" " Vertical bar in insert mode
+  let &t_SR = "\<Esc>]50;CursorShape=2\x7" " Underline in replace mode
 endif
 
 if &t_Co==256
