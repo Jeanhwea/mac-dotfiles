@@ -21,5 +21,5 @@ if exists('b:loaded_vim_ftplugin') || &cp || v:version < 700
 endif
 let b:loaded_vim_ftplugin = 1
 
-nnoremap <buffer> Q :source %<CR>
+nnoremap <buffer> <D-r> :source %<CR>
 

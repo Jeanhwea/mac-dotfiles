@@ -51,4 +51,4 @@ nnoremap <buffer> <LocalLeader>mc :make compile<CR>
 nnoremap <buffer> <LocalLeader>mi :make install<CR>
 nnoremap <buffer> <LocalLeader>mp :make package<CR>
 nnoremap <buffer> <LocalLeader>mt :make test<CR>
-nnoremap <buffer> Q :call <SID>JavaRun()<CR>
+nnoremap <buffer> <D-r> :call <SID>JavaRun()<CR>

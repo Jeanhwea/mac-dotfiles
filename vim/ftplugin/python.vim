@@ -42,6 +42,5 @@ if executable('yapf')
   let &l:formatprg='yapf'
 endif
 
-
-nnoremap <buffer> Q :call <SID>PythonCompileAndRunFile()<CR>
+nnoremap <buffer> <D-r> :call <SID>PythonCompileAndRunFile()<CR>
 
