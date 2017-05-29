@@ -30,4 +30,4 @@ function! s:RubyCompileAndRunFile()
   execute '!' . g:ruby_command . ' ' . bufname('%')
 endfunction
 
-nnoremap <buffer> Q :call <SID>RubyCompileAndRunFile()<CR>
+nnoremap <buffer> <D-r> :call <SID>RubyCompileAndRunFile()<CR>

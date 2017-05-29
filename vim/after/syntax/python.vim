@@ -20,19 +20,19 @@ syn keyword pythonSelf self
 syn match pythonDatetimeFormatting "%\%(([^)]\+)\)\=[-#0 +]*\d*\%(\.\d\+\)\=[hlL]\=[aAwdbBmyYHIpMSfzZjUWcxX%]" contained containedin=pythonString,pythonRawString
 syn match pythonConstant "\<[A-Z][A-Z0-9_]*\>" display
 
-highlight default link pythonSelf helpNote
-highlight default link pythonDatetimeFormatting pythonStrFormatting
-highlight default link pythonConstant Underlined
-highlight link pythonNumber Underlined
-highlight link pythonBinNumber Underlined
-highlight link pythonBoolean Underlined
-highlight link pythonBytes Underlined
-highlight link pythonBytesContent Underlined
-highlight link pythonFloat Underlined
-highlight link pythonHexNumber Underlined
-highlight link pythonOctNumber Underlined
-highlight link pythonQuotes Underlined
-highlight link pythonRawBytes Underlined
-" highlight link pythonRawString Underlined
-" highlight link pythonString Underlined
-highlight link pythonTripleQuotes Underlined
+hi def link pythonSelf helpNote
+hi def link pythonDatetimeFormatting pythonStrFormatting
+hi def link pythonConstant Underlined
+hi link pythonNumber Underlined
+hi link pythonBinNumber Underlined
+hi link pythonBoolean Underlined
+hi link pythonBytes Underlined
+hi link pythonBytesContent Underlined
+hi link pythonFloat Underlined
+hi link pythonHexNumber Underlined
+hi link pythonOctNumber Underlined
+hi link pythonQuotes Underlined
+hi link pythonRawBytes Underlined
+hi link pythonTripleQuotes Underlined
+" hi link pythonRawString Underlined
+" hi link pythonString Underlined
