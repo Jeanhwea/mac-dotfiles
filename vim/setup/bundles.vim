@@ -43,7 +43,7 @@ Plugin 'kana/vim-textobj-function', {'name': 'textobj-function'}
 Plugin 'sgur/vim-textobj-parameter', {'name': 'textobj-parameter'}
 
 " better programming, let vim knows codes
-Plugin 'Jeanhwea/vim-ultisnips-snippets', {'name': 'snippets'}
+Plugin 'Jeanhwea/vim-ultisnips-snippets', {'name': 'ultisnips-snippets'}
 Plugin 'SirVer/ultisnips', {'name': 'ultisnips'}
 " Plugin 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/syntastic', {'name': 'syntastic'}
@@ -67,7 +67,7 @@ Plugin 'nanotech/jellybeans.vim', {'name': 'colorscheme-jellybeans'}
 Plugin 'raphamorim/lucario', {'name': 'colorscheme-lucario'}
 Plugin 'sickill/vim-monokai', {'name': 'colorscheme-monokai'}
 Plugin 'sjl/badwolf', {'name': 'colorscheme-badwolf'}
-Plugin 'tomasr/molokai', {'name': 'mcolorscheme-olokai'}
+Plugin 'tomasr/molokai', {'name': 'colorscheme-molokai'}
 Plugin 'tpope/vim-vividchalk', {'name': 'colorscheme-vividchalk'}
 Plugin 'tyrannicaltoucan/vim-deep-space', {'name': 'colorscheme-deep-space'}
 Plugin 'vim-scripts/BusyBee', {'name': 'colorscheme-BusyBee'}
