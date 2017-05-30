@@ -37,16 +37,16 @@ Plugin 'godlygeek/tabular', {'name': 'tabular'}
 Plugin 'tommcdo/vim-exchange', {'name': 'exchange'}
 " https://github.com/kana/vim-textobj-user/wiki
 Plugin 'kana/vim-textobj-user', {'name': 'textobj-user'}
-Plugin 'bps/vim-textobj-python', {'name': 'textobj-python'}
 Plugin 'jceb/vim-textobj-uri', {'name': 'textobj-uri'}
 Plugin 'kana/vim-textobj-function', {'name': 'textobj-function'}
 Plugin 'sgur/vim-textobj-parameter', {'name': 'textobj-parameter'}
+" Plugin 'bps/vim-textobj-python', {'name': 'textobj-python'}
 
 " better programming, let vim knows codes
 Plugin 'Jeanhwea/vim-ultisnips-snippets', {'name': 'ultisnips-snippets'}
 Plugin 'SirVer/ultisnips', {'name': 'ultisnips'}
-" Plugin 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/syntastic', {'name': 'syntastic'}
+" Plugin 'Valloric/YouCompleteMe'
 
 " colorscheme
 Plugin 'AlessandroYorba/Despacio', {'name': 'colorscheme-despacio'}
