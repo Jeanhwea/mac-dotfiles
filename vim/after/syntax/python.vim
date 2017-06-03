@@ -16,11 +16,11 @@
 "                                                                       "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-syn keyword pythonSelf self
+syn keyword pythonCustomWord self cls
 syn match pythonDatetimeFormatting "%\%(([^)]\+)\)\=[-#0 +]*\d*\%(\.\d\+\)\=[hlL]\=[aAwdbBmyYHIpMSfzZjUWcxX%]" contained containedin=pythonString,pythonRawString
 syn match pythonConstant "\<[A-Z][A-Z0-9_]*\>" display
 
-hi def link pythonSelf helpNote
+hi def link pythonCustomWord helpNote
 hi def link pythonDatetimeFormatting pythonStrFormatting
 hi def link pythonConstant Underlined
 hi link pythonNumber Underlined
