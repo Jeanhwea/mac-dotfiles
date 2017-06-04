@@ -25,9 +25,9 @@ if !exists("g:ruby_command")
   let g:ruby_command = 'ruby'
 endif
 
-function! s:RubyCompileAndRunFile()
+fun! s:RubyCompileAndRunFile()
   silent !clear
   execute '!' . g:ruby_command . ' ' . bufname('%')
-endfunction
+endfun
 
 nnoremap <buffer> <D-r> :call <SID>RubyCompileAndRunFile()<CR>

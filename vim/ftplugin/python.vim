@@ -30,10 +30,10 @@ if !exists("g:python_command")
 endif
 
 " use command-r to run a python file
-function! s:PythonCompileAndRunFile()
+fun! s:PythonCompileAndRunFile()
   silent !clear
   execute '!' . g:python_command . ' ' . bufname('%')
-endfunction
+endfun
 nnoremap <buffer> <D-r> :call <SID>PythonCompileAndRunFile()<CR>
 
 set path+=,operation/templates,templates,static
