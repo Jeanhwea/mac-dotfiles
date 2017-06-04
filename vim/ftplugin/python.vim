@@ -56,7 +56,3 @@ if executable('yapf')
   " let &l:formatprg='yapf'
   setlocal formatexpr=YapfFormatExpr(v:lnum,v:lnum+v:count-1,v:char)
 endif
-
-
-
-
