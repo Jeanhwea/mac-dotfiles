@@ -6,23 +6,30 @@ if [[ ! -d $MYSQL_CONFIG_PATH ]]; then
     exit 2
 fi
 
-# _customs_connect_mysql username password database host port
-_customs_connect_mysql() {
-    mycli --user=$1 --password=$2 --host=$4 --port=$5 $3
+# _customs_connect_client username password database host port
+_customs_connect_client() {
+    if [ -x "$(command -v mycli)" ]; then
+        mycli --user=$1 --password=$2 --host=$4 --port=$5 $3
+    elif [ -x "$(command -v mysql)" ]; then
+        mysql --user=$1 --password=$2 --host=$4 --port=$5 $3
+    else
+        echo install mysql client first!
+    fi
 }
+
 
 _connect_mysql() {
     case "$#" in
         "3")
-            _customs_connect_mysql $1 $2 $3 'localhost' 3306
+            _customs_connect_client $1 $2 $3 'localhost' 3306
             ;;
 
         "4")
-            _customs_connect_mysql $1 $2 $3 $4 3306
+            _customs_connect_client $1 $2 $3 $4 3306
             ;;
 
         "5")
-            _customs_connect_mysql $1 $2 $3 $4 $5
+            _customs_connect_client $1 $2 $3 $4 $5
             ;;
 
         *)
