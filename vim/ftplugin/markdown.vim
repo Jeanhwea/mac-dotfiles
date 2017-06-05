@@ -22,6 +22,7 @@ endif
 let b:loaded_markdown_ftplugin = 1
 
 fun! s:FormatMarkdownTable()
+  call h#log('formatting markdown table')
   execute 'TableFormat'
 endfun
 nnoremap <buffer> <D-r> :call <SID>FormatMarkdownTable()<CR>
