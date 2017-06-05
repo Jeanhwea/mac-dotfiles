@@ -52,19 +52,10 @@
 [alias]
     # abbreviations
     cm = commit
-    st = status
+    st = status -s
     co = checkout
     br = branch
-
-    # diff util, between HEAD, index, working-directory
-    di = diff
-    dc = diff --cached
-    dh = diff HEAD
-
-    # diff using difftool
-    dt = difftool
-    dtc = difftool --cached
-    dth = difftool HEAD
+    df = diff
 
     # ammend last commit messages
     ammend = commit --ammend
@@ -73,17 +64,15 @@
     ls-ignored = ls-files --exclude-standard --ignored --others
 
     # pretty useful logger
+    ls = log --stat
     lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
     ll = log --graph --decorate --pretty=oneline --abbrev-commit
-    lstat = log --stat --no-merges
-
-    # reset HEAD
-    hard-reset-to-head = reset --hard HEAD
+    lol = log --graph --oneline --decorate
 
     # rebase recent files
     rebase-recent = !git rebase -i $(git remote-ref)
 
-    # diff changes
-    last-changes = difftool HEAD^1 HEAD
+    # ready to merge
+    ready-to-merge = diff origin/master ^master
 
 # vim:filetype=gitconfig
