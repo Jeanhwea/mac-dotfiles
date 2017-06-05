@@ -44,7 +44,8 @@ setlocal foldlevel=99
 " formatting python code with yapf. https://github.com/google/yapf
 fun! YapfFormatExpr(start,end,char)
   if a:start > a:end | return | endif
-  let l:cmd = 'yapf --lines='.a:start.'-'.a:end
+  let l:cmd = 'yapf --lines='.a:start.'-'.a:end.' '
+  call h#logvar('YapfFormatExpr [start,end,char] = ', [a:start,a:end,a:char])
   " call h#logvar('l:cmd', l:cmd)
   let l:formatted_text = system(l:cmd,join(getline(1, '$'), "\n")."\n")
   silent execute '1,'.string(line('$')).'delete'
