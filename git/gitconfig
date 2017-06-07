@@ -51,6 +51,7 @@
 
 [alias]
     # abbreviations
+    cl = clone
     cm = commit
     st = status -s
     co = checkout
@@ -61,18 +62,27 @@
     ammend = commit --ammend
 
     # list ignored files
-    ls-ignored = ls-files --exclude-standard --ignored --others
+    li = ls-files --exclude-standard --ignored --others
 
     # pretty useful logger
-    ls = log --stat
-    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
-    ll = log --graph --decorate --pretty=oneline --abbrev-commit
+    ls = log --oneline --decorate --abbrev-commit
+    ll = log --pretty=format:'%C(yellow)%h %C(blue)%an:%C(reset)%C(green)%d%C(reset) %s %C(red)(%ad)%C(reset)' --decorate --date=relative --abbrev-commit
+    lg = log --graph --pretty=format:'%C(yellow)%h%C(reset) -%C(green)%d%C(reset) %s %C(red)(%ad)%C(reset)' --date=relative --abbrev-commit
     lol = log --graph --oneline --decorate
 
-    # rebase recent files
-    rebase-recent = !git rebase -i $(git remote-ref)
+    # remote diff
+    dfr = "!f() { git diff origin/$1 ^$1; }; f"
+    dfl = "!f() { git diff $1 ^origin/$1; }; f"
 
-    # ready to merge
-    ready-to-merge = diff origin/master ^master
+    # list remotes
+    rem = "!git config -l | grep remote.*url | tail -n +2"
+
+    # low-level command
+    print = cat-file -p
+    create-hash = hash-object -w
+    assume = update-index --assume-unchanged
+    noassume = update-index --no-assume-unchanged
+    # list hidden for git
+    lh = "!git ls-files -v | grep '^h'"
 
 # vim:filetype=gitconfig
