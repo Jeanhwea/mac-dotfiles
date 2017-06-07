@@ -58,8 +58,9 @@
     br = branch
     df = diff
 
-    # ammend last commit messages
+    # undo
     ammend = commit --ammend
+    unstage = reset HEAD --
 
     # list ignored files
     li = ls-files --exclude-standard --ignored --others
