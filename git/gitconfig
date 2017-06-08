@@ -59,7 +59,7 @@
     df = diff
 
     # undo
-    ammend = commit --ammend
+    amend = commit --amend
     unstage = reset HEAD --
 
     # list ignored files
