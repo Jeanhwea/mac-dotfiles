@@ -86,7 +86,7 @@
 
     # plumbing command abbreviations {{{
     print = cat-file -p
-    sha = "!f() { find .git/objects -type f | sed 's#/##g' | cut -b 12- | grep -v 'pack'; }; f"
+    sha = "!f() { find .git/objects -type f | grep -v pack | cut -b 14-15,17-; }; f"
     create-hash = hash-object -w
     assume = update-index --assume-unchanged
     noassume = update-index --no-assume-unchanged
