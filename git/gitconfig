@@ -75,6 +75,9 @@
     dfr = "!f() { git diff origin/$1 ^$1; }; f"
     dfl = "!f() { git diff $1 ^origin/$1; }; f"
 
+    # common git repository host
+    github-clone = "!f() { [ $# == '2' ] && git clone https://github.com/$1.git $2 || git clone https://github.com/$@.git; }; f"
+
     # list remotes
     rem = "!git config -l | grep remote.*url | tail -n +2"
 
