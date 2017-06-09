@@ -50,7 +50,7 @@
     prompt = false
 
 [alias]
-    # abbreviations
+    # porcelain commands abbreviations {{{
     c = commit
     d = diff
     s = status -s
@@ -61,11 +61,6 @@
     # undo
     amend = commit --amend
     unstage = reset HEAD --
-
-    # list-hidden for git
-    lh = "!git ls-files -v | grep '^h'"
-    # list-ignored files
-    li = ls-files --exclude-standard --ignored --others
 
     # useful logger
     lg = log --date=relative
@@ -83,11 +78,20 @@
     # list remotes
     rem = "!git config -l | grep remote.*url | tail -n +2"
 
-    # low-level command
+    # }}}
+
+    # plumbing command abbreviations {{{
     print = cat-file -p
     sha = "!f() { find .git/objects -type f | sed 's#/##g' | cut -b 12- | grep -v 'pack'; }; f"
     create-hash = hash-object -w
     assume = update-index --assume-unchanged
     noassume = update-index --no-assume-unchanged
 
-# vim:filetype=gitconfig
+    # list-hidden for git
+    lh = "!git ls-files -v | grep '^h'"
+    # list-ignored files
+    li = ls-files --exclude-standard --ignored --others
+
+    # }}}
+
+# vim:ft=gitconfig fdm=marker:
