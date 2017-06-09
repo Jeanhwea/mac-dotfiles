@@ -51,9 +51,9 @@
 
 [alias]
     # abbreviations
+    s = status -s
     cl = clone
     cm = commit
-    st = status -s
     co = checkout
     br = branch
     df = diff
@@ -66,8 +66,8 @@
     li = ls-files --exclude-standard --ignored --others
 
     # pretty useful logger
+    l = log --pretty=format:'%C(yellow)%h %C(blue)%an:%C(reset)%C(green)%d%C(reset) %s %C(red)(%ad)%C(reset)' --decorate --date=relative --abbrev-commit
     ls = log --oneline --decorate --abbrev-commit
-    ll = log --pretty=format:'%C(yellow)%h %C(blue)%an:%C(reset)%C(green)%d%C(reset) %s %C(red)(%ad)%C(reset)' --decorate --date=relative --abbrev-commit
     lg = log --graph --pretty=format:'%C(yellow)%h%C(reset) -%C(green)%d%C(reset) %s %C(red)(%ad)%C(reset)' --date=relative --abbrev-commit
     lol = log --graph --oneline --decorate
 
@@ -80,6 +80,7 @@
 
     # low-level command
     print = cat-file -p
+    sha = "!f() { find .git/objects -type f | sed 's#/##g' | cut -b 12- | grep -v 'pack'; }; f"
     create-hash = hash-object -w
     assume = update-index --assume-unchanged
     noassume = update-index --no-assume-unchanged
