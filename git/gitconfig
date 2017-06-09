@@ -51,25 +51,30 @@
 
 [alias]
     # abbreviations
+    c = commit
+    d = diff
     s = status -s
     cl = clone
-    cm = commit
     co = checkout
     br = branch
-    df = diff
 
     # undo
     amend = commit --amend
     unstage = reset HEAD --
 
-    # list ignored files
+    # list-hidden for git
+    lh = "!git ls-files -v | grep '^h'"
+    # list-ignored files
     li = ls-files --exclude-standard --ignored --others
 
-    # pretty useful logger
-    l = log --pretty=format:'%C(yellow)%h %C(blue)%an:%C(reset)%C(green)%d%C(reset) %s %C(red)(%ad)%C(reset)' --decorate --date=relative --abbrev-commit
+    # useful logger
+    lg = log --date=relative
+    lc = log --pretty=format:'%C(yellow)%h %C(blue)%an:%C(reset)%C(green)%d%C(reset) %s %C(red)(%ad)%C(reset)' --date=relative --abbrev-commit
     ls = log --oneline --decorate --abbrev-commit
-    lg = log --graph --pretty=format:'%C(yellow)%h%C(reset) -%C(green)%d%C(reset) %s %C(red)(%ad)%C(reset)' --date=relative --abbrev-commit
-    lol = log --graph --oneline --decorate
+    # powerful graphical logger
+    lt = log --graph --pretty=format:'%C(yellow)%h%C(reset) -%C(green)%d%C(reset) %s %C(red)(%ad)%C(reset)' --date=relative --abbrev-commit
+    l = log --graph --oneline --decorate
+    la = log --graph --oneline --decorate --all
 
     # remote diff
     dfr = "!f() { git diff origin/$1 ^$1; }; f"
@@ -84,7 +89,5 @@
     create-hash = hash-object -w
     assume = update-index --assume-unchanged
     noassume = update-index --no-assume-unchanged
-    # list hidden for git
-    lh = "!git ls-files -v | grep '^h'"
 
 # vim:filetype=gitconfig
