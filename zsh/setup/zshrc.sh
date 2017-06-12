@@ -34,7 +34,7 @@ __zsh_setup_tools() {
     for script in $(ls $autodir/*.sh); do
         source $script
     done
-    local execdir=$HOME'/.zsh/tools'
+    local execdir=$HOME'/.zsh/tool'
     [[ -e $execdir ]] && export PATH=$execdir:$PATH
 }
 __zsh_setup_tools
