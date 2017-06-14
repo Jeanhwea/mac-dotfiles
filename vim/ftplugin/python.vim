@@ -42,18 +42,16 @@ setlocal foldignore=
 setlocal foldlevel=99
 
 " formatting python code with yapf. https://github.com/google/yapf
-fun! YapfFormatExpr(start,end,char)
-  if a:start > a:end | return | endif
-  let l:cmd = 'yapf --lines='.a:start.'-'.a:end.' '
-  call h#logvar('YapfFormatExpr [start,end,char] = ', [a:start,a:end,a:char])
-  " call h#logvar('l:cmd', l:cmd)
+fun! s:YapfFormatter() range
+  if a:firstline > a:lastline | return | endif
+  let l:cmd = 'yapf --lines='.a:firstline.'-'.a:lastline.' '
+  call h#logvar('YapfFormatter [firstline,lastline]', [a:firstline,a:lastline])
   let l:formatted_text = system(l:cmd,join(getline(1, '$'), "\n")."\n")
   silent execute '1,'.string(line('$')).'delete'
   call setline(1, split(l:formatted_text, "\n"))
-  call cursor(a:start, 1)
+  call cursor(a:firstline, 1)
 endfun
 
 if executable('yapf')
-  " let &l:formatprg='yapf'
-  setlocal formatexpr=YapfFormatExpr(v:lnum,v:lnum+v:count-1,v:char)
+  vnoremap <buffer> gq :call <SID>YapfFormatter()<CR>
 endif
