@@ -77,10 +77,16 @@ alias em='emacs -nw'
 alias pip_upgrade="pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs pip install -U"
 
 # tmux
+alias t='tmux'
 alias ta='tmux attach'
 alias td='tmux detach'
 
 # git
-alias gam='git add . && git commit -m "MOD: quickfix at $(date)" && git push'
+alias g='git'
+alias gam='git add . && git commit -m "Auto(`git rev-parse HEAD`)" && git push'
+
+# mplayer
+alias p='mpalyer'
+alias sp='mplayer -shuffle'
 
 # vim: filetype=sh
