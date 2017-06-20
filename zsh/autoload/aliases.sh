@@ -65,10 +65,13 @@ alias grep.exclude='grep --exclude="~*" --exclude="*.swp" --exclude="tags" --exc
 alias grep.content='grep -rn'
 
 # vim
+alias v='vim'
+alias vi='vim -v'
 alias vims='[ -f Session.vim ] && vim -S Session.vim || vim'
 
 # emacs
-alias em='emacs'
+alias e='emacs'
+alias em='emacs -nw'
 
 # pip
 alias pip_upgrade="pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs pip install -U"
