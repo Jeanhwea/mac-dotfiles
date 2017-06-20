@@ -30,6 +30,10 @@ nnoremap <LocalLeader>es :sp <C-r>=expand('%:p:h') . '/' <CR>
 nnoremap <LocalLeader>ev :vsp <C-r>=expand('%:p:h') . '/' <CR>
 nnoremap <LocalLeader>et :tabe <C-r>=expand('%:p:h') . '/' <CR>
 
+" "Movement", emacs key binding
+inoremap <C-a> <C-o>0
+inoremap <C-e> <C-o>$
+
 " "UpperCase word", using in insert mode
 inoremap <C-d> <Esc>mzgUiw`za
 
