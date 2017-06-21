@@ -63,3 +63,5 @@ __symbolic_link_file 'tmux.conf' '.tmux.conf'
 # ctags
 __symbolic_link_file 'ctags' '.ctags'
 
+# mplayer
+__symbolic_link_folder 'mplayer' '.mplayer'
