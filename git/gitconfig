@@ -58,6 +58,10 @@
     co = checkout
     br = branch
 
+    m = merge
+    mf = merge --ff
+    mn = merge --no-ff
+
     # undo
     amend = commit --amend
     unstage = reset HEAD --
