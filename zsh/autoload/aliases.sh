@@ -77,10 +77,9 @@ alias em='emacs -nw'
 alias pip_upgrade="pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs pip install -U"
 
 # tmux
-alias t='tmux'
-alias tn='tmux new-session -s Harike'
-alias tl='tmux list-sessions'
-alias ta='tmux attach'
+alias t='tmux list-sessions'
+alias tme='tmux new-session -s Harike'
+alias ta='tmux attach || tmux new-session -s default'
 alias td='tmux detach'
 
 # git
