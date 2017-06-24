@@ -78,8 +78,11 @@ alias pip_upgrade="pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs 
 
 # tmux
 alias t='tmux list-sessions'
-alias tme='tmux new-session -s Harike'
+# tmux new session for me
+alias tn='tmux new-session -s Harike'
+# tmux attach if exist
 alias ta='tmux attach || tmux new-session -s default'
+# tmux deattach
 alias td='tmux detach'
 
 # git
