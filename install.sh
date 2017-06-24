@@ -17,26 +17,40 @@
 #                                                                       #
 #########################################################################
 
-DIR="$( cd "$(dirname "$0")" ; pwd -P )"
-echo "DIR=$DIR"
+# basic function #
+
+__current_dir() {
+    cd $(dirname "$0")
+    pwd -P
+}
+
+__home_dir() {
+    echo $HOME
+}
 
 __symbolic_link_file() {
     [ $# -ne 2 ] && return ;
-    local DES=$DIR'/'$1
-    local SRC=$HOME'/'$2
-    if [ -f $DES ] && [ ! -e $SRC ]; then
-        echo "ln -s $DES $SRC" && ln -s $DES $SRC
+    local target_file=$1
+    local source_file=$2
+    local target=$(__current_dir)'/'$target_file
+    local source=$(__home_dir)'/'$source_file
+    if [ -f $target ] && [ ! -e $source ]; then
+        echo "ln -s $target $source" && ln -s $target $source
     fi
 }
 
 __symbolic_link_folder() {
     [ $# -ne 2 ] && return ;
-    local DES=$DIR'/'$1
-    local SRC=$HOME'/'$2
-    if [ -d $DES ] && [ ! -e $SRC ]; then
-        echo "ln -s $DES $SRC" && ln -s $DES $SRC
+    local target_file=$1
+    local source_file=$2
+    local target=$(__current_dir)'/'$target_file
+    local source=$(__home_dir)'/'$source_file
+    if [ -d $target ] && [ ! -e $source ]; then
+        echo "ln -s $target $source" && ln -s $target $source
     fi
 }
+
+########## do link work
 
 # readline
 __symbolic_link_file 'inputrc' '.inputrc'

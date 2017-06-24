@@ -90,7 +90,7 @@ alias g='git'
 alias gam='git add . && git commit -m "Auto(`git rev-parse HEAD`)" && git push'
 
 # mplayer
-alias p='mplayer'
-alias sp='mplayer -shuffle'
+alias play='mplayer'
+alias splay='mplayer -shuffle'
 
 # vim: filetype=sh
