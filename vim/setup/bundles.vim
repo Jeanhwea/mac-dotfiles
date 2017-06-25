@@ -21,6 +21,7 @@ Plugin 'tpope/vim-scriptease', {'name': 'scriptease'}
 Plugin 'tpope/vim-surround', {'name': 'surround'}
 Plugin 'tpope/vim-unimpaired', {'name': 'unimpaired'}
 Plugin 'tpope/vim-dispatch', {'name': 'dispatch'}
+Plugin 'tpope/vim-eunuch', {'name': 'eunuch'}
 
 " utils
 Plugin 'ctrlpvim/ctrlp.vim', {'name': 'ctrlp'}
