@@ -6,8 +6,8 @@ if [[ ! -d $MYSQL_CONFIG_PATH ]]; then
     exit 2
 fi
 
-# _customs_connect_client username password database host port
-_customs_connect_client() {
+# __customs_connect_client username password database host port
+__customs_connect_client() {
     if [ -x "$(command -v mycli)" ]; then
         mycli --user=$1 --password=$2 --host=$4 --port=$5 $3
     elif [ -x "$(command -v mysql)" ]; then
@@ -17,28 +17,16 @@ _customs_connect_client() {
     fi
 }
 
-
-_connect_mysql() {
+__connect_mysql() {
     case "$#" in
-        "3")
-            _customs_connect_client $1 $2 $3 'localhost' 3306
-            ;;
-
-        "4")
-            _customs_connect_client $1 $2 $3 $4 3306
-            ;;
-
-        "5")
-            _customs_connect_client $1 $2 $3 $4 $5
-            ;;
-
-        *)
-            echo _connect_mysql username password database [host [port]]
-            ;;
+        "3") __customs_connect_client $1 $2 $3 'localhost' 3306 ;;
+        "4") __customs_connect_client $1 $2 $3 $4 3306 ;;
+        "5") __customs_connect_client $1 $2 $3 $4 $5 ;;
+        *) echo __connect_mysql username password database [host [port]] ;;
     esac
 }
 
-_help_messages() {
+__help_messages() {
     echo "usage: db number or db filename"
     echo "------------------------------------------------------------"
     local i=1
@@ -49,24 +37,24 @@ _help_messages() {
     echo "------------------------------------------------------------"
 }
 
-_enter_mysql() {
+__enter_mysql() {
     local args=$1
     if [[ $args =~ ^[0-9]+ ]]; then
         local i=1
         for filename in `ls $MYSQL_CONFIG_PATH`; do
             if [[ "$args" == "$i" ]]; then
-                _connect_mysql `cat $MYSQL_CONFIG_PATH/$filename`
+                __connect_mysql `cat $MYSQL_CONFIG_PATH/$filename`
             fi
             (( i++ ))
         done
     else
         for filename in `ls $MYSQL_CONFIG_PATH`; do
             if [[ "$args" == "$filename" ]]; then
-                _connect_mysql `cat $MYSQL_CONFIG_PATH/$filename`
+                __connect_mysql `cat $MYSQL_CONFIG_PATH/$filename`
             fi
         done
     fi
 }
 
-[[ $# -ne 1 ]] && _help_messages || _enter_mysql $1
+[[ $# -ne 1 ]] && __help_messages || __enter_mysql $1
 
