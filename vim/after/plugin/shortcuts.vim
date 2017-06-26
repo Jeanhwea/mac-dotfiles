@@ -102,4 +102,7 @@ nnoremap coo :GitGutterToggle<CR>
 nnoremap [oo :GitGutterEnable<CR>
 nnoremap ]oo :GitGutterDisable<CR>
 
+" "command alias",
+cnoremap cwd lcd %:h
+
 " vim:set ts=2 sts=2 sw=2:
