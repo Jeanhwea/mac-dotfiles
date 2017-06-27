@@ -104,5 +104,6 @@ nnoremap ]oo :GitGutterDisable<CR>
 
 " "command alias",
 cnoremap cwd lcd %:h
+cnoremap run enew \| .!
 
 " vim:set ts=2 sts=2 sw=2:
