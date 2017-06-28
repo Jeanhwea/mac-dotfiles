@@ -54,9 +54,10 @@
     c = commit
     d = diff
     s = status -s
+    b = branch
+    bl = blame
     cl = clone
     co = checkout
-    br = branch
 
     m = merge
     mf = merge --ff
