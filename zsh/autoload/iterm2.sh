@@ -35,7 +35,7 @@ _colorssh() {
         trap "_reset" INT EXIT
         if [[ "$*" =~ ".*lejent\.cn$" ]]; then
             _setrgb 144 238 144
-        elif [ "$*" =~ "hp*" ]; then
+        elif [[ "$*" =~ "hp*" ]]; then
             _setrgb 0 104 139
         else
             _setrgb 255 110 180
