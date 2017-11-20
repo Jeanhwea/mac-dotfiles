@@ -22,54 +22,24 @@ alias lh='ls -ahlF'
 alias lx='ll -BX' # sort by extension
 alias lz='ll -rS' # sort by size
 alias lt='ll -rt' # sort by date
-alias ls-symbolic-link='ls -alF `find $(pwd) -type l`'
+alias lsl='ls -alF `find $(pwd) -type l`'
 
-# cd
+# folder
 alias cl='cd -'
+alias desk='[ -d ~/Desktop ] && cd ~/Desktop'
 alias ctmp='[ -d $TMPDIR ] && cd $TMPDIR || cd /tmp'
 
-# gdb
-if [ -x /usr/bin/gdb ]; then
-    alias gdb='gdb -tui'
-fi
-
-# ack-grep
-if [ -x /usr/bin/ack-grep ]; then
-    alias ack='ack-grep'
-fi
-
-# disable Caps-Lock key
-alias nocaps='setxkbmap -layout us -option ctrl:nocaps'
-
-# cscope
-if [ -x /usr/bin/cscope ]; then
-    alias cscope.cc='find `pwd` -name "*.h" -o -name "*.cc" -o -name "*.cpp" > cscope.files && cscope -b'
-    alias cscope.java='find `pwd` -name "*.java" > cscope.files && cscope -b'
-fi
-
-# ctags
-if [ -x /usr/bin/ctags ]; then
-    alias ctags.cc='ctags --sort=yes --c++-kinds=+p --fields=+iaS --extra=+q --language-force=c++'
-    alias ctags.java='ctags --sort=yes --language-force=java'
-fi
+# misc
+[ -x /usr/bin/gdb ] && alias gdb='gdb -tui'
+[ -x /usr/bin/ack-grep ] && alias ack='ack-grep'
 
 # format json using python
-alias pmj='python -m json.tool'
-alias pms='python -m SimpleHTTPServer 7777'
+alias json='python -m json.tool'
+alias server='python -m SimpleHTTPServer 7777'
 
-# exclude directories
-alias find.exclude='find ! -path "*/.git/*"'
-alias find.name='find -name'
-alias find.path='find -path'
-alias grep.exclude='grep --exclude="~*" --exclude="*.swp" --exclude="tags" --exclude="cscope.out" --exclude-dir=".git" --color=auto'
-alias grep.content='grep -rn'
-
-# vim
+# editors: vim and emacs
 alias v='vim'
 alias vi='vim -v'
-alias vims='[ -f Session.vim ] && vim -S Session.vim || vim'
-
-# emacs
 alias e='emacs'
 alias em='emacs -nw'
 
@@ -78,11 +48,7 @@ alias pip_upgrade="pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs 
 
 # tmux
 alias t='tmux list-sessions'
-# tmux new session for me
-alias tn='tmux new-session -s Harike'
-# tmux attach if exist
-alias ta='tmux attach || tmux new-session -s default'
-# tmux deattach
+alias ta='tmux attach || tmux new-session -s Jinghui'
 alias td='tmux detach'
 
 # git
@@ -92,5 +58,9 @@ alias gam='git add . && git commit -m "Auto(`git rev-parse HEAD`)" && git push'
 # mplayer
 alias play='mplayer'
 alias splay='mplayer -shuffle'
+
+# disable Caps-Lock key
+alias nocaps='setxkbmap -layout us -option ctrl:nocaps'
+
 
 # vim: filetype=sh
