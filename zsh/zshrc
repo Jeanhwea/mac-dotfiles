@@ -22,7 +22,7 @@
 HERE=`dirname $(realpath $0)`
 
 # load zsh autoload directory
-__zsh_setup() {
+__autoload() {
     local autodir="$HERE/autoload"
     [ ! -e $autodir ] && return ;
     for script in $(ls $autodir/*.sh); do
@@ -30,6 +30,11 @@ __zsh_setup() {
     done
 }
 
-__zsh_setup
+__autoload
+
+# setup zsh language
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+
 
 # vim: filetype=sh :
