@@ -1,6 +1,6 @@
 #!/bin/bash
 
-MYSQL_CONFIG_PATH=$HOME/.config/mysql
+MYSQL_CONFIG_PATH=$HOME/.local/config/mysql
 if [[ ! -d $MYSQL_CONFIG_PATH ]]; then
     echo "No such file or directory: $MYSQL_CONFIG_PATH"
     exit 2
