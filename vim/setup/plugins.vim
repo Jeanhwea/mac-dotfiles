@@ -14,7 +14,7 @@ let g:UltiSnipsExpandTrigger       = '<Tab>'
 let g:UltiSnipsJumpForwardTrigger  = '<Tab>'
 let g:UltiSnipsJumpBackwardTrigger = '<C-k>'
 let g:UltiSnipsEditSplit           = 'vertical'
-let g:ultisnips_java_brace_style   = "nl"
+" let g:ultisnips_java_brace_style   = "nl"
 let g:UltiSnipsSnippetDirectories  = [$HOME.'/.vim/bundle/ultisnips-snippets']
 
 " "plasticboy/vim-markdown"
