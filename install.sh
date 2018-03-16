@@ -57,7 +57,7 @@ __symbolic_link_file '.gitignore_global' 'git/gitignore_global'
 __symbolic_link_file '.gitattributes_global' 'git/gitattributes_global'
 
 # emacs
-__symbolic_link_folder 'emacs' '.emacs.d'
+# __symbolic_link_folder 'emacs' '.emacs.d'
 
 # tmux
 __symbolic_link_file '.tmux.conf' 'tmux.conf'
