@@ -76,6 +76,7 @@
     lt = log --graph --pretty=format:'%C(yellow)%h%C(reset) -%C(green)%d%C(reset) %s %C(red)(%ad)%C(reset)' --date=relative --abbrev-commit
     l = log --graph --oneline --decorate
     la = log --graph --oneline --decorate --all
+    lol = log --graph --oneline --decorate --all -n 9999
 
     # remote diff
     dfr = "!f() { git diff origin/$1 ^$1; }; f"
