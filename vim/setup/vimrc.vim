@@ -151,6 +151,7 @@ if has('autocmd')
     autocmd!
     autocmd Bufnew,BufRead *.md setlocal filetype=markdown
     autocmd Bufnew,BufRead *.sql setlocal filetype=mysql
+    autocmd Bufnew,BufRead *.ts setlocal filetype=javascript
   augroup END
 
   augroup FTDictionary
