@@ -55,6 +55,7 @@ __symbolic_link_folder '.vim' 'vim'
 __symbolic_link_file '.gitconfig' 'git/gitconfig'
 __symbolic_link_file '.gitignore_global' 'git/gitignore_global'
 __symbolic_link_file '.gitattributes_global' 'git/gitattributes_global'
+__symbolic_link_file '.gitcommitmsg' 'git/gitcommitmsg'
 
 # emacs
 # __symbolic_link_folder 'emacs' '.emacs.d'

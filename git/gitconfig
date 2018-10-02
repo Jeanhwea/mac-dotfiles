@@ -28,6 +28,9 @@
     excludesfile = ~/.gitignore_global
     attributesfile = ~/.gitattributes_global
 
+[commit]
+    template=~/.gitcommitmsg
+
 [diff]
     tool = vimdiff
     algorithm = patience
