@@ -1,8 +1,7 @@
 
-
 # expand "gmsg" snippet, it will look like as following
 #
-#   **add/change/update/...** message
+#   **fix/hotfix/add/update/change/clean/disable/remove/upgrade/revert/...** message
 #
 #   detail
 #
