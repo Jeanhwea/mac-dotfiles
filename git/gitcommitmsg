@@ -1,7 +1,8 @@
+[] 
 
 # expand "gm" snippet, it will look like as following
 #
-#   **fix/hotfix/add/update/change/clean/disable/remove/upgrade/revert/...** message
+#   [fix/hotfix/add/update/change/clean/disable/remove/upgrade/revert/...] message
 #
 #   detail
 #
