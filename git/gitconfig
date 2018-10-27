@@ -31,7 +31,6 @@
     template=~/.gitcommitmsg
 
 [diff]
-    tool = vimdiff
     algorithm = patience
 
 [difftool]
@@ -44,9 +43,6 @@
 [diff "word"]
   binary = true
   textconv = strings
-
-[merge]
-    tool = vimdiff
 
 [mergetool]
     prompt = false
