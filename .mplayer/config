@@ -1,0 +1,10 @@
+# enable color output in console
+msgcolor = 1
+# enable module info color
+# msgmodule = 1
+
+# Doublebuffering can help remove flicker from subtitles/OSD.
+double = yes
+# stay on top
+# ontop = yes
+

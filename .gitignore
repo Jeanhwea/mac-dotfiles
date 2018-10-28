@@ -1,8 +1,8 @@
 # ignore vundle plugins folder
-vim/bundle
+.vim/bundle
 
 # ignore vim temporary folder
-vim/tmp
+.vim/tmp
 
 # Created by https://www.gitignore.io/api/vim
 

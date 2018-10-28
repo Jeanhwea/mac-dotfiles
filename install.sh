@@ -1,74 +1,54 @@
-#!/usr/bin/env bash
-#########################################################################
-#         _                          _                                  #
-#        | |                        | |                                 #
-#        | |   ___    __ _   _ __   | |__   __      __   ___    __ _    #
-#    _   | |  / _ \  / _` | | '_ \  | '_ \  \ \ /\ / /  / _ \  / _` |   #
-#   | |__| | |  __/ | (_| | | | | | | | | |  \ V  V /  |  __/ | (_| |   #
-#    \____/   \___|  \__,_| |_| |_| |_| |_|   \_/\_/    \___|  \__,_|   #
-#                                                                       #
-#                                                                       #
-# This is a personal dotfiles repository                                #
-# It's free for you to use and share                                    #
-#                                                                       #
-# Author : Jinghui Hu                                                   #
-# Email  : hujinghui@buaa.edu.cn                                        #
-# Github : https://github.com/Jeanhwea/                                 #
-#                                                                       #
-#########################################################################
+#!/usr/bin/env sh
+HERE=`cd $(dirname $0); pwd`
 
-HERE=`dirname $(realpath $0)`
+export DOTFILES="$HOME/.dotfiles"
 
+if [ ! -d $DOTFILES ]; then
+  git clone https://github.com/Jeanhwea/dotfiles.git $DOTFILES
+fi
 
-__symbolic_link_file() {
-    [ $# -ne 2 ] && return ;
-    local src="$HOME/$1"
-    local des="$HERE/$2"
-    if [ -f $des ] && [ ! -e $src ]; then
-        echo "ln -s $des $src"
-        ln -s $des $src
-    fi
+__linkfile() {
+  local src="$HOME/$1"
+  local des="$HERE/$1"
+  if [ -f $des ] && [ ! -e $src ]; then
+    echo "ln -s $des $src"
+    ln -s $des $src
+  fi
 }
 
-__symbolic_link_folder() {
-    [ $# -ne 2 ] && return ;
-    local src="$HOME/$1"
-    local des="$HERE/$2"
-    if [ -d $des ] && [ ! -e $src ]; then
-        echo "ln -s $des $src"
-        ln -s $des $src
-    fi
+__linkdir() {
+  local src="$HOME/$1"
+  local des="$HERE/$1"
+  if [ -d $des ] && [ ! -e $src ]; then
+    echo "ln -s $des $src"
+    ln -s $des $src
+  fi
 }
-
-
-# bash
-__symbolic_link_folder '.bash' 'bash'
 
 # zsh
-__symbolic_link_folder '.zsh' 'zsh'
+__linkfile '.bashrc'
+__linkfile '.zshrc'
 
 # vim
-__symbolic_link_file '.vimrc' 'vim/vimrc'
-__symbolic_link_folder '.vim' 'vim'
+__linkfile '.vimrc'
+__linkdir '.vim'
 
 # git
-__symbolic_link_file '.gitconfig' 'git/gitconfig'
-__symbolic_link_file '.gitignore_global' 'git/gitignore_global'
-__symbolic_link_file '.gitattributes_global' 'git/gitattributes_global'
-__symbolic_link_file '.gitcommitmsg' 'git/gitcommitmsg'
+__linkfile '.gitconfig'
+__linkfile '.gitignore_global'
+__linkfile '.gitattributes_global'
+__linkfile '.gitcommitmsg'
 
-# emacs
-# __symbolic_link_folder 'emacs' '.emacs.d'
 
 # tmux
-__symbolic_link_file '.tmux.conf' 'tmux.conf'
+__linkfile '.tmux.conf'
 
 # readline
-__symbolic_link_file '.inputrc' 'inputrc'
-__symbolic_link_file '.curlrc' 'curlrc'
+__linkfile '.inputrc'
+__linkfile '.curlrc'
 
 # ctags
-__symbolic_link_file '.ctags' 'ctags'
+__linkfile '.ctags'
 
 # mplayer
-__symbolic_link_folder '.mplayer' 'mplayer'
+__linkdir '.mplayer'
