@@ -1,0 +1,12 @@
+#+TITLE: A collection of dotfiles
+#+AUTHOR: Jinghui Hu
+#+EMAIL: hujinghui@buaa.edu.cn
+#+DATE: 2018-10-28
+#+TAGS: dotfiles
+
+
+* Installation 
+
+#+BEGIN_SRC sh
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/Jeanhwea/dotfiles/master/install.sh)"
+#+END_SRC
