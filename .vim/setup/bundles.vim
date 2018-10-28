@@ -74,7 +74,6 @@ Plugin 'tyrannicaltoucan/vim-deep-space', {'name': 'colorscheme-deep-space'}
 Plugin 'vim-scripts/BusyBee', {'name': 'colorscheme-BusyBee'}
 Plugin 'vim-scripts/darkspectrum', {'name': 'colorscheme-darkspectrum'}
 Plugin 'w0ng/vim-hybrid', {'name': 'colorscheme-hybrid'}
-Plugin 'zanglg/nova.vim', {'name': 'colorscheme-nova'}
 
 " syntax highlight and so on
 Plugin 'Jeanhwea/vim-viz', {'name': 'syntax-viz'}
