@@ -26,11 +26,21 @@ __linkdir() {
   fi
 }
 
+__open_url() {
+  local exe=$1
+  local msg=$2
+  local url=$3
+  if [ ! -x `which $exe` ]; then
+    echo "Install $BRED$msg$DEFAULT first, $BRED$url$DEFAULT"
+    exit -1
+  fi
+}
+
 __git_clone() {
   local url=$1
   local des=$2
   if [ ! -d $des ]; then
-    echo "==> Clone $BBLUE$url$DEFAULT"
+    echo "==> git clone $BBLUE$url$DEFAULT $des"
     git clone $url $des
   fi
 }
@@ -40,7 +50,7 @@ __brew_install() {
   if brew ls --versions $pkg > /dev/null 2>&1; then
     echo "==> $BBLUE$pkg$DEFAULT is already installed."
   else
-    echo "==> Install $BGREEN$pkg$DEFAULT"
+    echo "==> brew install $BGREEN$pkg$DEFAULT"
     brew install $pkg
   fi
 }
@@ -50,7 +60,7 @@ __brew_cask_install() {
   if brew cask ls --versions $pkg > /dev/null 2>&1; then
     echo "==> $BBLUE$pkg$DEFAULT is already installed."
   else
-    echo "==> Install $BGREEN$pkg$DEFAULT"
+    echo "==> brew cask install $BGREEN$pkg$DEFAULT"
     brew cask install $pkg
   fi
 }
@@ -60,7 +70,17 @@ __brew_tap() {
   if brew tap | grep -q "^$tap\$"; then
     echo "==> $BBLUE$tap$DEFAULT is already added."
   else
-    echo "==> Tap $BGREEN$tap$DEFAULT"
+    echo "==> brew tap $BGREEN$tap$DEFAULT"
+  fi
+}
+
+__pip_install() {
+  local pkg=$1
+  if pip show -q $pkg > /dev/null 2>&1; then
+    echo "==> $BBLUE$pkg$DEFAULT is already installed."
+  else
+    echo "==> pip install $BGREEN$pkg$DEFAULT"
+    pip install $pkg
   fi
 }
 
@@ -109,6 +129,9 @@ if [ ! -d "$HOME/.oh-my-zsh" ]; then
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 fi
 
+# jdk
+__open_url "javac" "JDK1.8" "https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html"
+
 # install cli
 __brew_install coreutils
 __brew_install moreutils
@@ -140,9 +163,10 @@ __brew_install tree
 __brew_install p7zip
 __brew_install unrar
 __brew_install you-get
+__brew_install grip
 
 
-# intall application
+# install application
 __brew_cask_install emacs
 __brew_cask_install google-chrome
 __brew_cask_install iterm2
@@ -151,3 +175,12 @@ __brew_cask_install mactex
 __brew_cask_install macvim
 __brew_cask_install visual-studio-code
 __brew_cask_install vlc
+
+
+# install python package
+__pip_install virtualenv
+__pip_install ipdb
+
+__pip_install rope
+__pip_install pylint
+__pip_install pep8
