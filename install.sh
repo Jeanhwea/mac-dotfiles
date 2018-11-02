@@ -45,8 +45,8 @@ __linkfile '.zshrc'
 # vim
 __linkfile '.vimrc'
 __linkdir '.vim'
-if [ ! -d "$HOME/.vim/bundle/vundle/" ]; then
-  git clone https://github.com/VundleVim/Vundle.vim.git "$HOME/.vim/bundle/vundle/"
+if [ ! -d "$HOME/.vim/bundle/vundle" ]; then
+  git clone https://github.com/VundleVim/Vundle.vim.git "$HOME/.vim/bundle/vundle"
 fi
 
 # git
@@ -68,6 +68,9 @@ __linkfile '.ctags'
 # mplayer
 __linkdir '.mplayer'
 
+# npm & yarn
+__linkfile '.npmrc'
+__linkfile '.yarnrc'
 
 # install software
 
@@ -83,8 +86,13 @@ _mkdirp() {
 
 
 brew install coreutils moreutils
-brew install git tmux pandoc graphviz python3 ffmpeg mplayer htop node maven p7zip reattach-to-user-namespace springboot
+brew install python python3 ruby
+brew install git tmux pandoc graphviz ffmpeg mplayer htop node maven p7zip reattach-to-user-namespace springboot
 brew install tree unrar yarn you-get
 
+brew install emacs --with-modules --with-cocoa --with-librsvg --with-mailutils --with-imagemagick@6
+
 brew cask install iterm2
-brew cask install firefox
+brew cask install macvim
+brew cask install emacs
+brew cask install macpass
