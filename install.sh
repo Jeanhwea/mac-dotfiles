@@ -132,38 +132,37 @@ fi
 # jdk
 __open_url "javac" "JDK1.8" "https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html"
 
+# tap for springboot
+__brew_tap pivotal/tap
+
 # install cli
 __brew_install coreutils
 __brew_install moreutils
 
+__brew_install ffmpeg
+__brew_install ghc
 __brew_install git
-__brew_install tmux
-__brew_install reattach-to-user-namespace
-
-__brew_install ruby
+__brew_install git-open
+__brew_install graphviz
+__brew_install grip
+__brew_install htop
+__brew_install maven
+__brew_install mplayer
+__brew_install node
+__brew_install p7zip
+__brew_install pandoc
 __brew_install python
 __brew_install python3
-
-__brew_install pandoc
-__brew_install graphviz
-__brew_install ffmpeg
-__brew_install mplayer
-__brew_install htop
-
-__brew_install node
-__brew_install yarn
-__brew_install maven
-
-__brew_tap pivotal/tap
+__brew_install reattach-to-user-namespace
+__brew_install ruby
 __brew_install springboot
-
-__brew_install ag
-__brew_install ghc
+__brew_install the_silver_searcher
+__brew_install tmux
 __brew_install tree
-__brew_install p7zip
 __brew_install unrar
+__brew_install wget
+__brew_install yarn
 __brew_install you-get
-__brew_install grip
 
 
 # install application
@@ -178,9 +177,9 @@ __brew_cask_install vlc
 
 
 # install python package
-__pip_install virtualenv
 __pip_install ipdb
-
-__pip_install rope
-__pip_install pylint
 __pip_install pep8
+__pip_install pylint
+__pip_install rope
+__pip_install requests
+__pip_install virtualenv
