@@ -139,6 +139,7 @@ __brew_tap pivotal/tap
 __brew_install coreutils
 __brew_install moreutils
 
+__brew_install ack
 __brew_install ffmpeg
 __brew_install ghc
 __brew_install git
@@ -156,6 +157,7 @@ __brew_install python3
 __brew_install reattach-to-user-namespace
 __brew_install ruby
 __brew_install springboot
+__brew_install the_platinum_searcher
 __brew_install the_silver_searcher
 __brew_install tmux
 __brew_install tree
