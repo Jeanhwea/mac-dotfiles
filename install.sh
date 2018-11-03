@@ -139,6 +139,7 @@ __brew_tap pivotal/tap
 __brew_install coreutils
 __brew_install moreutils
 
+__brew_install cloc
 __brew_install ffmpeg
 __brew_install ghc
 __brew_install git
@@ -148,6 +149,7 @@ __brew_install grip
 __brew_install htop
 __brew_install maven
 __brew_install mplayer
+__brew_install ncdu
 __brew_install node
 __brew_install p7zip
 __brew_install pandoc
