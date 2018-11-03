@@ -165,6 +165,7 @@ __brew_install unrar
 __brew_install wget
 __brew_install yarn
 __brew_install you-get
+__brew_install zsh-autosuggestions
 
 
 # install application
