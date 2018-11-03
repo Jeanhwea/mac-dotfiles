@@ -126,6 +126,13 @@ export PYTHONDONTWRITEBYTECODE=1
 # change homebrew bottle domain
 export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles
 
+# setup zsh-autosuggestions.zsh
+export ZSH_AUTOSUGGESTIONS='/usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh'
+if [ -f $ZSH_AUTOSUGGESTIONS ]; then
+  source $ZSH_AUTOSUGGESTIONS
+  export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=yellow'
+fi
+
 # disable the Ctrl-S (Freeze Screen) keystroke in Bash
 #stty -ixon
 
