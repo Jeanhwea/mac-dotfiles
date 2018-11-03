@@ -5,8 +5,15 @@
 #+TAGS: dotfiles
 
 
-* Installation 
+* Installation
+
+DO read all the scripts in *install.sh* file. This dotfiles ONLY work properly
+on macOS.
 
 #+BEGIN_SRC sh
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/Jeanhwea/dotfiles/master/install.sh)"
 #+END_SRC
+
+* Link
+
+1. [[https://github.com/Jeanhwea/emacs.d][Emacs Configuration files]]
