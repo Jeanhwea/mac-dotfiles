@@ -49,31 +49,31 @@ Plugin 'SirVer/ultisnips', {'name': 'ultisnips'}
 Plugin 'scrooloose/syntastic', {'name': 'syntastic'}
 " Plugin 'Valloric/YouCompleteMe'
 
-" colorscheme
-Plugin 'AlessandroYorba/Despacio', {'name': 'colorscheme-despacio'}
-Plugin 'AlessandroYorba/Sierra', {'name': 'colorscheme-sierra'}
-Plugin 'KeitaNakamura/neodark.vim', {'name': 'colorscheme-neodark'}
-Plugin 'Valloric/vim-valloric-colorscheme', {'name': 'colorscheme-valloric'}
+" " colorscheme
+" Plugin 'AlessandroYorba/Despacio', {'name': 'colorscheme-despacio'}
+" Plugin 'AlessandroYorba/Sierra', {'name': 'colorscheme-sierra'}
+" Plugin 'KeitaNakamura/neodark.vim', {'name': 'colorscheme-neodark'}
+" Plugin 'Valloric/vim-valloric-colorscheme', {'name': 'colorscheme-valloric'}
 Plugin 'altercation/vim-colors-solarized', {'name': 'colorscheme-solarized'}
-Plugin 'cocopon/iceberg.vim', {'name': 'colorscheme-iceberg'}
-Plugin 'dracula/vim', {'name': 'colorscheme-dracula'}
-Plugin 'endel/vim-github-colorscheme', {'name': 'colorscheme-github'}
-Plugin 'fneu/breezy', {'name': 'colorscheme-breezy'}
-Plugin 'jnurmine/Zenburn', {'name': 'colorscheme-zenburn'}
-Plugin 'joshdick/onedark.vim', {'name': 'colorscheme-onedark'}
-Plugin 'jpo/vim-railscasts-theme', {'name': 'colorscheme-railscasts'}
-Plugin 'lu-ren/SerialExperimentsLain', {'name': 'colorscheme-SerialExperimentsLain'}
-Plugin 'morhetz/gruvbox', {'name': 'colorscheme-gruvbox'}
-Plugin 'nanotech/jellybeans.vim', {'name': 'colorscheme-jellybeans'}
-Plugin 'raphamorim/lucario', {'name': 'colorscheme-lucario'}
-Plugin 'sickill/vim-monokai', {'name': 'colorscheme-monokai'}
-Plugin 'sjl/badwolf', {'name': 'colorscheme-badwolf'}
-Plugin 'tomasr/molokai', {'name': 'colorscheme-molokai'}
-Plugin 'tpope/vim-vividchalk', {'name': 'colorscheme-vividchalk'}
-Plugin 'tyrannicaltoucan/vim-deep-space', {'name': 'colorscheme-deep-space'}
-Plugin 'vim-scripts/BusyBee', {'name': 'colorscheme-BusyBee'}
-Plugin 'vim-scripts/darkspectrum', {'name': 'colorscheme-darkspectrum'}
-Plugin 'w0ng/vim-hybrid', {'name': 'colorscheme-hybrid'}
+" Plugin 'cocopon/iceberg.vim', {'name': 'colorscheme-iceberg'}
+" Plugin 'dracula/vim', {'name': 'colorscheme-dracula'}
+" Plugin 'endel/vim-github-colorscheme', {'name': 'colorscheme-github'}
+" Plugin 'fneu/breezy', {'name': 'colorscheme-breezy'}
+" Plugin 'jnurmine/Zenburn', {'name': 'colorscheme-zenburn'}
+" Plugin 'joshdick/onedark.vim', {'name': 'colorscheme-onedark'}
+" Plugin 'jpo/vim-railscasts-theme', {'name': 'colorscheme-railscasts'}
+" Plugin 'lu-ren/SerialExperimentsLain', {'name': 'colorscheme-SerialExperimentsLain'}
+" Plugin 'morhetz/gruvbox', {'name': 'colorscheme-gruvbox'}
+" Plugin 'nanotech/jellybeans.vim', {'name': 'colorscheme-jellybeans'}
+" Plugin 'raphamorim/lucario', {'name': 'colorscheme-lucario'}
+" Plugin 'sickill/vim-monokai', {'name': 'colorscheme-monokai'}
+" Plugin 'sjl/badwolf', {'name': 'colorscheme-badwolf'}
+" Plugin 'tomasr/molokai', {'name': 'colorscheme-molokai'}
+" Plugin 'tpope/vim-vividchalk', {'name': 'colorscheme-vividchalk'}
+" Plugin 'tyrannicaltoucan/vim-deep-space', {'name': 'colorscheme-deep-space'}
+" Plugin 'vim-scripts/BusyBee', {'name': 'colorscheme-BusyBee'}
+" Plugin 'vim-scripts/darkspectrum', {'name': 'colorscheme-darkspectrum'}
+" Plugin 'w0ng/vim-hybrid', {'name': 'colorscheme-hybrid'}
 
 " syntax highlight and so on
 Plugin 'Jeanhwea/vim-viz', {'name': 'syntax-viz'}
