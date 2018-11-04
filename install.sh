@@ -180,8 +180,10 @@ __brew_cask_install lantern
 __brew_cask_install macpass
 __brew_cask_install mactex
 __brew_cask_install macvim
+__brew_cask_install qq
 __brew_cask_install visual-studio-code
 __brew_cask_install vlc
+__brew_cask_install wechat
 
 
 # install python package
