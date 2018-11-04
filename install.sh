@@ -176,6 +176,7 @@ __brew_cask_install emacs
 __brew_cask_install foxmail
 __brew_cask_install google-chrome
 __brew_cask_install iterm2
+__brew_cask_install lantern
 __brew_cask_install macpass
 __brew_cask_install mactex
 __brew_cask_install macvim
