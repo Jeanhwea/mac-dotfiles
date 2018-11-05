@@ -144,6 +144,7 @@ __brew_install ffmpeg
 __brew_install ghc
 __brew_install git
 __brew_install git-open
+__brew_install global
 __brew_install graphviz
 __brew_install grip
 __brew_install htop
@@ -189,7 +190,8 @@ __brew_cask_install wechat
 # install python package
 __pip_install ipdb
 __pip_install pep8
+__pip_install pygments
 __pip_install pylint
-__pip_install rope
 __pip_install requests
+__pip_install rope
 __pip_install virtualenv
