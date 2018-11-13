@@ -153,22 +153,22 @@ _reset() {
 }
 
 # Change the color of the tab when using SSH, reset the color after the connection closes
-_colorssh() {
-  if [ -n "$ITERM_SESSION_ID" ]; then
-    trap "_reset" INT EXIT
-    if [[ "$*" =~ ".*lejent\.cn$" ]]; then
-      _setrgb 144 238 144
-    elif [[ "$*" =~ "hp*" ]]; then
-      _setrgb 0 104 139
-    else
-      _setrgb 255 110 180
-    fi
-  fi
-  ssh $*
-}
-compdef _ssh _colorssh=ssh
+# _colorssh() {
+#   if [ -n "$ITERM_SESSION_ID" ]; then
+#     trap "_reset" INT EXIT
+#     if [[ "$*" =~ ".*lejent\.cn$" ]]; then
+#       _setrgb 144 238 144
+#     elif [[ "$*" =~ "hp*" ]]; then
+#       _setrgb 0 104 139
+#     else
+#       _setrgb 255 110 180
+#     fi
+#   fi
+#   ssh $*
+# }
+# compdef _ssh _colorssh=ssh
 
-alias ssh=_colorssh
+# alias ssh=_colorssh
 
 # local settings
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
