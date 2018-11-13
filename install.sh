@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 BRED="\033[01;31m"
 BBLUE="\033[01;34m"
 BGREEN="\033[01;32m"
