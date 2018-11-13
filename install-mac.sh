@@ -1,8 +1,18 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 BRED="\033[01;31m"
 BBLUE="\033[01;34m"
 BGREEN="\033[01;32m"
 DEFAULT="\033[00m"
+
+__open_url() {
+  local exe=$1
+  local msg=$2
+  local url=$3
+  if [ ! -x `which $exe` ]; then
+    echo "Install $BRED$msg$DEFAULT first, $BRED$url$DEFAULT"
+    exit -1
+  fi
+}
 
 __brew_install() {
   local pkg=$1
@@ -105,6 +115,10 @@ __brew_cask_install qq
 __brew_cask_install visual-studio-code
 __brew_cask_install vlc
 __brew_cask_install wechat
+
+# osxfuse should installed before ntfs-3g
+__brew_cask_install osxfuse
+__brew_install ntfs-3g
 
 
 # install python package
