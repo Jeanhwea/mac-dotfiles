@@ -1,4 +1,6 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
+export DOTFILES="$HOME/.dotfiles"
+
 BRED="\033[01;31m"
 BBLUE="\033[01;34m"
 BGREEN="\033[01;32m"
