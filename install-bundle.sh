@@ -22,7 +22,6 @@ __git_clone_bundle() {
   fi
 }
 
-BUNDLE=$HOME/.vim/bundle
 __git_clone_bundle tpope/vim-pathogen pathogen
 __git_clone_bundle tpope/vim-abolish abolish
 __git_clone_bundle tpope/vim-commentary commentary
