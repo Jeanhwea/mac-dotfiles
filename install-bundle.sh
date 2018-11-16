@@ -18,7 +18,7 @@ __git_clone_bundle() {
     echo -e "==> git clone $BBLUE$url$DEFAULT $des"
     git clone $url $des
   else
-    echo -e "==> $BBLUE$name$DEFAULT is already linked"
+    echo -e "==> $BBLUE$name$DEFAULT is already installed"
   fi
 }
 
