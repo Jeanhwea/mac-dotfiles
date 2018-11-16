@@ -51,42 +51,6 @@ __linkfile .zshrc
 # vim
 __linkfile .vimrc
 __linkdir .vim
-BUNDLE=$HOME/.vim/bundle
-# __git_clone "https://github.com/VundleVim/Vundle.vim.git" "$BUNDLE/vundle"
-__git_clone "https://github.com/tpope/vim-pathogen.git" "$BUNDLE/pathogen"
-__git_clone "https://github.com/tpope/vim-abolish.git" "$BUNDLE/abolish"
-__git_clone "https://github.com/tpope/vim-commentary.git" "$BUNDLE/commentary"
-__git_clone "https://github.com/tpope/vim-fugitive.git" "$BUNDLE/fugitive"
-__git_clone "https://github.com/tpope/vim-rhubarb.git" "$BUNDLE/rhubarb"
-__git_clone "https://github.com/tpope/vim-repeat.git" "$BUNDLE/repeat"
-__git_clone "https://github.com/tpope/vim-scriptease.git" "$BUNDLE/scriptease"
-__git_clone "https://github.com/tpope/vim-surround.git" "$BUNDLE/surround"
-__git_clone "https://github.com/tpope/vim-unimpaired.git" "$BUNDLE/unimpaired"
-__git_clone "https://github.com/tpope/vim-dispatch.git" "$BUNDLE/dispatch"
-__git_clone "https://github.com/tpope/vim-eunuch.git" "$BUNDLE/eunuch"
-__git_clone "https://github.com/ctrlpvim/ctrlp.vim.git" "$BUNDLE/ctrlp"
-__git_clone "https://github.com/tacahiroy/ctrlp-funky.git" "$BUNDLE/ctrlp-funky"
-__git_clone "https://github.com/majutsushi/tagbar.git" "$BUNDLE/tagbar"
-__git_clone "https://github.com/sjl/gundo.vim.git" "$BUNDLE/gundo"
-__git_clone "git@github.com:Jeanhwea/vim-matchit.git" "$BUNDLE/matchit"
-__git_clone "https://github.com/airblade/vim-gitgutter.git" "$BUNDLE/gitgutter"
-__git_clone "https://github.com/mileszs/ack.vim.git" "$BUNDLE/ack"
-__git_clone "https://github.com/rking/ag.vim.git" "$BUNDLE/ag"
-__git_clone "https://github.com/godlygeek/tabular.git" "$BUNDLE/tabular"
-__git_clone "https://github.com/tommcdo/vim-exchange.git" "$BUNDLE/exchange"
-__git_clone "https://github.com/kana/vim-textobj-user.git" "$BUNDLE/textobj-user"
-__git_clone "https://github.com/jceb/vim-textobj-uri.git" "$BUNDLE/textobj-uri"
-__git_clone "https://github.com/sgur/vim-textobj-parameter.git" "$BUNDLE/textobj-parameter"
-__git_clone "https://github.com/bps/vim-textobj-python.git" "$BUNDLE/textobj-python"
-__git_clone "git@github.com:Jeanhwea/vim-ultisnips-snippets.git" "$BUNDLE/ultisnips-snippets"
-__git_clone "https://github.com/SirVer/ultisnips.git" "$BUNDLE/ultisnips"
-__git_clone "https://github.com/scrooloose/syntastic.git" "$BUNDLE/syntastic"
-__git_clone "https://github.com/altercation/vim-colors-solarized.git" "$BUNDLE/colorscheme-solarized"
-__git_clone "git@github.com:Jeanhwea/vim-viz.git" "$BUNDLE/syntax-viz"
-__git_clone "https://github.com/plasticboy/vim-markdown.git" "$BUNDLE/syntax-markdown"
-__git_clone "https://github.com/hdima/python-syntax.git" "$BUNDLE/syntax-python"
-__git_clone "https://github.com/tpope/vim-rails.git" "$BUNDLE/rails"
-__git_clone "https://github.com/fs111/pydoc.vim.git" "$BUNDLE/pydoc"
 
 # git
 __linkfile .gitconfig
