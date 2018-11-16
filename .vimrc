@@ -144,7 +144,7 @@ set textwidth=100
 set colorcolumn=+1
 set synmaxcol=800
 set undolevels=1000
-set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
+set tabstop=8 softtabstop=8 shiftwidth=8 expandtab
 
 " string options
 set encoding=utf-8
