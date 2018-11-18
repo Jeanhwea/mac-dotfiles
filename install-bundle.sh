@@ -25,6 +25,7 @@ __git_clone_bundle() {
 __git_clone_bundle tpope/vim-pathogen pathogen
 __git_clone_bundle tpope/vim-abolish abolish
 __git_clone_bundle tpope/vim-commentary commentary
+__git_clone_bundle tpope/vim-endwise endwise
 __git_clone_bundle tpope/vim-fugitive fugitive
 __git_clone_bundle tpope/vim-rhubarb rhubarb
 __git_clone_bundle tpope/vim-repeat repeat
