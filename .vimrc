@@ -22,97 +22,6 @@ execute pathogen#infect()
 syntax on
 filetype plugin indent on
 
-" boolean options
-set autoindent
-set autoread
-set autowrite "Automatically save before commands like :next and :make
-set hidden
-set list ruler
-set modeline
-set backup undofile
-set nocursorline nocursorcolumn
-set nowrap nospell
-set incsearch" Incremental search
-
-" numerical options
-set laststatus=2 " show the status line all the time
-set history=1000
-set timeoutlen=1000
-set ttimeoutlen=10
-set textwidth=100
-set colorcolumn=+1
-set synmaxcol=800
-set undolevels=1000
-set tabstop=8 softtabstop=8 shiftwidth=8 expandtab
-
-" string options
-set encoding=utf-8
-set fileencodings=ucs-bom,utf-8,default,latin1
-set helplang=en
-set printoptions=paper:letter
-set commentstring=\/\/\ %s
-set virtualedit=block
-set wildmode=list:longest,full
-set backspace=indent,eol,start
-set wildignore+=*.o,*.obj,*~,*.class,*.pyc
-set wildignore+=*.png,*.jpg,*.gif,*.xpm,*.tiff
-set spelllang=en_us
-set complete=.,w,b,u,t,i
-set completeopt=longest,menu,preview
-set dictionary+=$VIMFILES/dict/words.dict
-let &spellfile = expand($VIMFILES.'/spell/personal.utf-8.add,') .
-               \ expand($VIMFILES.'/spell/nonwords.utf-8.add')
-
-if (&termencoding==#'utf-8'||&encoding==#'utf-8') && version >= 700
-  " tab:▸ ,trail:␣
-  let &listchars = "tab:\u25b8\u0020,trail:\u2423"
-else
-  set listchars=tab:>\ ,trail:-,extends:>,precedes:<
-endif
-if has('clipboard') | set clipboard=unnamed | endif
-if has('unix')
-  let &backupdir = $HOME.'/.vim/tmp/backup,/tmp,.'
-  let &undodir = $HOME.'/.vim/tmp/undo,/tmp,.'
-  let &directory = $HOME.'/.vim/tmp/swap,/tmp,.'
-endif
-
-if executable('grep')
-  set grepprg=grep\ -rnH\
-        \ --exclude='*.swp'\
-        \ --exclude='*~'\
-        \ --exclude='cscope.files'\
-        \ --exclude='cscope.out'\
-        \ --exclude='tags'\
-        \ --exclude-dir='.git'
-endif
-
-" Change cursor shape between insert and normal mode in iTerm2.app
-if $TERM_PROGRAM =~ "iTerm"
-  let &t_EI = "\<Esc>]50;CursorShape=0\x7" " Block in normal mode
-  let &t_SI = "\<Esc>]50;CursorShape=1\x7" " Vertical bar in insert mode
-  let &t_SR = "\<Esc>]50;CursorShape=2\x7" " Underline in replace mode
-endif
-
-if &t_Co==256
-  " disable Background Color Erase (BCE) so that color schemes
-  " render properly when inside 256-color tmux and GNU screen.
-  " see also http://snk.tuxfamily.org/log/vim-256color-bce.html
-  set t_ut=
-endif
-
-if has('gui')&&has('gui_running')
-  set background=light
-  colorscheme solarized
-else
-  " let g:solarized_termcolors=256
-  " let g:solarized_termtrans=1
-  set background=dark
-  colorscheme solarized
-endif
-
-" }}}
-
-
 if has('autocmd')
   filetype plugin indent on
 
@@ -140,28 +49,8 @@ if has('autocmd')
 
 endif "has('autocmd')
 
-" }}}
 
-set guioptions=gm
-if exists('&guifont')
-  if has('mac')
-    set guifont=Monaco:h12
-  elseif has('unix')
-    set guifont=Monospace\ Medium\ 10
-  elseif has('win32')||has('win64')
-    " set guifont=Courier\ New:h10
-    set guifont=Consolas:h11
-  endif
-  command! -bar -nargs=0 Bigger
-        \ :let &guifont=substitute(&guifont,'\d\+$','\=submatch(0)+1','')
-  command! -bar -nargs=0 Smaller
-        \ :let &guifont=substitute(&guifont,'\d\+$','\=submatch(0)-1','')
-endif
 
-" set messages to English
-if has('win32')||has('win64')
-  language messages en_US.utf-8
-endif
 
 
 " "repeat"
