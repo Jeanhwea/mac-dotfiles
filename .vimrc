@@ -1,23 +1,23 @@
-let $VIMFILES = expand('~').'/.vim'
+if &cp || v:version < 700
+  finish
+endif
 
-" environment variables {{{1
+" .vim directory, where stores all personal vim scripts
+let $VIMFILES = expand('~/.vim')
 
-let $PDICT  = $VIMFILES . '/dict'
-let $PSPELL = $VIMFILES . '/spell'
-let $PTAGS  = $VIMFILES . '/tags'
-
-" }}}
-
-" personal settings {{{1
-
-" must set first
 if &compatible | set nocompatible | endif
-set runtimepath=$VIMFILES/bundle/pathogen,$VIMFILES,$VIM,$VIMRUNTIME,$VIMFILES/after
+
+" setup leader key, this must be set at startup.
 let mapleader="\\"
 let g:mapleader="\\"
 let maplocalleader=","
 let g:maplocalleader=","
 
+if filereadable(expand('$VIMFILES./setup/bundles.vim'))
+  echomsg
+  finish
+endif
+set runtimepath+=$VIMFILES/bundle/pathogen
 execute pathogen#infect()
 syntax on
 filetype plugin indent on
@@ -160,9 +160,9 @@ set wildignore+=*.png,*.jpg,*.gif,*.xpm,*.tiff
 set spelllang=en_us
 set complete=.,w,b,u,t,i
 set completeopt=longest,menu,preview
-set dictionary+=$PDICT/words.dict
-let &spellfile = expand($PSPELL . '/personal.utf-8.add,') .
-               \ expand($PSPELL . '/nonwords.utf-8.add')
+set dictionary+=$VIMFILES/dict/words.dict
+let &spellfile = expand($VIMFILES.'/spell/personal.utf-8.add,') .
+               \ expand($VIMFILES.'/spell/nonwords.utf-8.add')
 
 if (&termencoding==#'utf-8'||&encoding==#'utf-8') && version >= 700
   " tab:▸ ,trail:␣
@@ -186,8 +186,6 @@ if executable('grep')
         \ --exclude='tags'\
         \ --exclude-dir='.git'
 endif
-
-if has('syntax') | syntax on | endif
 
 " Change cursor shape between insert and normal mode in iTerm2.app
 if $TERM_PROGRAM =~ "iTerm"
@@ -216,7 +214,6 @@ endif
 " }}}
 
 
-" autocmd related settings {{{1
 if has('autocmd')
   filetype plugin indent on
 
@@ -239,30 +236,14 @@ if has('autocmd')
 
   augroup FTDictionary
     autocmd!
-    autocmd FileType c          setlocal dict+=$PDICT/c.dict
-    autocmd FileType cpp        setlocal dict+=$PDICT/c.dict
-    autocmd FileType cs         setlocal dict+=$PDICT/cs.dict
-    autocmd FileType css        setlocal dict+=$PDICT/css.dict
-    autocmd FileType html       setlocal dict+=$PDICT/html.dict
-    autocmd FileType java       setlocal dict+=$PDICT/java.dict
-    autocmd FileType javascript setlocal dict+=$PDICT/javascript.dict
-    autocmd FileType node       setlocal dict+=$PDICT/node.dict
-    autocmd FileType php        setlocal dict+=$PDICT/php.dict
-    autocmd FileType python     setlocal dict+=$PDICT/python.dict
-    autocmd FileType ruby       setlocal dict+=$PDICT/ruby.dict
-    autocmd FileType tex        setlocal dict+=$PDICT/tex.dict
-    autocmd FileType vim        setlocal dict+=$PDICT/vim.dict
-    autocmd FileType viz        setlocal dict+=$PDICT/viz.dict
+    autocmd FileType vim        setlocal dict+=$VIMFILES/dict/vim.dict
   augroup END
 
 endif "has('autocmd')
 
 " }}}
 
-" GUI related settings {{{1
-" remove toolbar, scrolling bar, menu
-set guioptions-=T guioptions-=e guioptions-=L guioptions-=r
-
+set guioptions=gm
 if exists('&guifont')
   if has('mac')
     set guifont=Monaco:h12
@@ -273,17 +254,12 @@ if exists('&guifont')
     set guifont=Consolas:h11
   endif
   command! -bar -nargs=0 Bigger
-        \ :let &guifont = substitute(&guifont,'\d\+$','\=submatch(0)+1','')
+        \ :let &guifont=substitute(&guifont,'\d\+$','\=submatch(0)+1','')
   command! -bar -nargs=0 Smaller
-        \ :let &guifont = substitute(&guifont,'\d\+$','\=submatch(0)-1','')
+        \ :let &guifont=substitute(&guifont,'\d\+$','\=submatch(0)-1','')
 endif
 
 " set messages to English
 if has('win32')||has('win64')
   language messages en_US.utf-8
 endif
-
-" }}}
-
-
-" vim:set foldmethod=marker spell:
