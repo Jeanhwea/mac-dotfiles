@@ -1,27 +1,8 @@
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"         _                          _                                  "
-"        | |                        | |                                 "
-"        | |   ___    __ _   _ __   | |__   __      __   ___    __ _    "
-"    _   | |  / _ \  / _` | | '_ \  | '_ \  \ \ /\ / /  / _ \  / _` |   "
-"   | |__| | |  __/ | (_| | | | | | | | | |  \ V  V /  |  __/ | (_| |   "
-"    \____/   \___|  \__,_| |_| |_| |_| |_|   \_/\_/    \___|  \__,_|   "
-"                                                                       "
-"                                                                       "
-" This file create on 2017-04-03                                        "
-" It's free for you to use and share.                                   "
-"                                                                       "
-" Author : Jinghui Hu                                                   "
-" Email  : hujinghui@buaa.edu.cn                                        "
-" Github : https://github.com/Jeanhwea/                                 "
-"                                                                       "
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
 if exists('loaded_h') || &cp || v:version < 700
   finish
 endif
 let loaded_h = 1
 
-" Basic {{{
 " \ on Windows unless shellslash is set, / everywhere else.
 fun! h#slash() abort
   return !exists('+shellslash') || &shellslash ? '/' : '\'
@@ -37,9 +18,7 @@ fun! h#newline()
     return "\r"
   endif
 endfun
-" }}}
 
-" Date and Time {{{
 " get current datetime as string
 " like: '2017-04-03 13:46:48'
 fun! h#now()
@@ -49,9 +28,7 @@ endfun
 fun! h#today()
   return strftime('%Y-%m-%d')
 endfun
-" }}}
 
-" Path and File {{{
 " split a path into a list.
 " '/tmp,,/home/user/tmp' -> ['/tmp', '', '/home/user/tmp']
 fun! h#pathsplit(path) abort
@@ -112,9 +89,7 @@ fun! h#pathglob(pattern) abort
   let files = split(glob(a:pattern),"\n")
   return map(files,'substitute(v:val,"[".h#slash()."/]$","","")')
 endfun
-" }}}
 
-" Common escape {{{
 " escape string for use as file name command argument.
 fun! h#fnameescape(string) abort
   if exists('*fnameescape')
@@ -125,7 +100,6 @@ fun! h#fnameescape(string) abort
     return substitute(escape(a:string," \t\n*?[{`$\\%#'\"|!<"),'^[+>]','\\&','')
   endif
 endfun
-" }}}
 
 " Message and Debug {{{
 " print debug message to the message list
