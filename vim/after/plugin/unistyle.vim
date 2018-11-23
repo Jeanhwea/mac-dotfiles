@@ -25,7 +25,7 @@ let loaded_unistyle = 1
 augroup unistyle
   autocmd!
   " set tabstop softtabstop shiftwidth expandtab/noexpandtab
-  autocmd FileType vim,javascript setlocal ts=2 sts=2 sw=2 et
+  autocmd FileType vim,javascript,html,css,ruby setlocal ts=2 sts=2 sw=2 et
   autocmd FileType text,markdown,java setlocal ts=4 sts=4 sw=4 noet
   autocmd FileType make setlocal ts=8 sts=8 sw=8 noet
   " set cindent autoindent
