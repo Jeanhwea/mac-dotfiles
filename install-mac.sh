@@ -103,6 +103,7 @@ __brew_install zsh-autosuggestions
 
 
 # install application
+__brew_cask_install docker
 __brew_cask_install emacs
 __brew_cask_install foxmail
 __brew_cask_install google-chrome
