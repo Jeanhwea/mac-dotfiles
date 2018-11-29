@@ -118,7 +118,7 @@ alias tmp='[ -d $TMPDIR ] && cd $TMPDIR || cd /tmp'
 
 # alias tmux
 alias t='tmux list-sessions'
-alias ta='tmux attach || tmux new-session -s Jinghui'
+alias ta='tmux attach -t Jinghui || tmux new-session -s Jinghui'
 alias td='tmux detach'
 
 # let python don't write byte code
