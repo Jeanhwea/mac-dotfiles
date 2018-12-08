@@ -78,6 +78,7 @@ __brew_install global
 __brew_install graphviz
 __brew_install grip
 __brew_install htop
+__brew_install jq
 __brew_install maven
 __brew_install mplayer
 __brew_install ncdu
