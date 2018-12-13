@@ -82,7 +82,6 @@ source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
 export LANG=en_US.UTF-8
-export LC_ALL=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -143,15 +142,15 @@ fi
 # iTerm2 window/tab color commands
 #   Requires iTerm2 >= Build 1.0.0.20110804
 #   http://code.google.com/p/iterm2/wiki/ProprietaryEscapeCodes
-_setrgb() {
-  echo -ne "\033]6;1;bg;red;brightness;$1\a"
-  echo -ne "\033]6;1;bg;green;brightness;$2\a"
-  echo -ne "\033]6;1;bg;blue;brightness;$3\a"
-}
+# _setrgb() {
+#   echo -ne "\033]6;1;bg;red;brightness;$1\a"
+#   echo -ne "\033]6;1;bg;green;brightness;$2\a"
+#   echo -ne "\033]6;1;bg;blue;brightness;$3\a"
+# }
 
-_reset() {
-  echo -ne "\033]6;1;bg;*;default\a"
-}
+# _reset() {
+#   echo -ne "\033]6;1;bg;*;default\a"
+# }
 
 # Change the color of the tab when using SSH, reset the color after the connection closes
 # _colorssh() {
