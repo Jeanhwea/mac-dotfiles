@@ -24,3 +24,4 @@ cscope.po.out
 # third-part tools
 .meghanada/*
 .projectile
+.dir-locals.el
