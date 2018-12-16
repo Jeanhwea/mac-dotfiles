@@ -70,6 +70,7 @@ __brew_install moreutils
 
 __brew_install ccat
 __brew_install cloc
+__brew_install elm
 __brew_install ffmpeg
 __brew_install ghc
 __brew_install git
