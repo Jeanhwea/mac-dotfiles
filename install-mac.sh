@@ -77,6 +77,7 @@ __brew_install git
 __brew_install git-lfs
 __brew_install git-open
 __brew_install global
+__brew_install gnu-sed
 __brew_install graphviz
 __brew_install grip
 __brew_install htop
