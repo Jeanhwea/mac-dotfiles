@@ -68,6 +68,7 @@ __brew_tap pivotal/tap
 __brew_install coreutils
 __brew_install moreutils
 
+__brew_install aria2
 __brew_install ccat
 __brew_install cloc
 __brew_install elm
