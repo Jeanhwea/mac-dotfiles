@@ -74,3 +74,7 @@ __linkdir .mplayer
 # npm & yarn
 __linkfile .npmrc
 __linkfile .yarnrc
+
+# python
+# export PYTHONSTARTUP=$HOME/.pythonrc.py
+__linkfile .pythonrc.py
