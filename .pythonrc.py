@@ -12,3 +12,5 @@ while True:
     __wdir = os.path.dirname(__wdir)
   else:
     break
+# display a prompt message
+print('>>> os.chdir("{}")'.format(__wdir))
