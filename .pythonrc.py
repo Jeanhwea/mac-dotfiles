@@ -23,13 +23,11 @@ def _insert_to_sys_path():
   cur_dir = os.getcwd()
   sys.path.insert(-1, cur_dir)
   # remove duplicate items
-  path_set = set()
   path_old = sys.path
   sys.path = []
   for p in path_old:
-    if not p or len(p) <= 0 or not os.path.exists(p) or p in path_set:
+    if not p or len(p) <= 0 or not os.path.exists(p) or p in sys.path:
       continue
-    path_set.add(p)
     sys.path.append(p)
   print('sys path -> {}'.format(sys.path))
 
