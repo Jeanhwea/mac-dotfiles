@@ -4,8 +4,8 @@ import os
 import sys
 
 
-# set python shell working path to git top directory
 def _change_working_dir():
+  ''' set python shell working path to git top directory. '''
   work_dir = os.getcwd()
   while True:
     if os.path.exists(os.path.join(work_dir, '.git')):
@@ -19,7 +19,7 @@ def _change_working_dir():
 
 
 def _insert_to_sys_path():
-  # insert current work directory to sys.path
+  ''' insert current work directory to sys.path. '''
   cur_dir = os.getcwd()
   sys.path.insert(-1, cur_dir)
   # remove duplicate items
