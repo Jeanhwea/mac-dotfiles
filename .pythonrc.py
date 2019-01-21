@@ -27,7 +27,7 @@ def _insert_to_sys_path():
   path_old = sys.path
   sys.path = []
   for p in path_old:
-    if p and p in path_set:
+    if not p or len(p) <= 0 or not os.path.exists(p) or p in path_set:
       continue
     path_set.add(p)
     sys.path.append(p)
