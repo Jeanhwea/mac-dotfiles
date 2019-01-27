@@ -45,11 +45,11 @@ __brew_tap() {
 
 __pip_install() {
   local pkg=$1
-  if pip show -q $pkg > /dev/null 2>&1; then
+  if pip3 show -q $pkg > /dev/null 2>&1; then
     echo "==> $BBLUE$pkg$DEFAULT is already installed."
   else
     echo "==> pip install $BGREEN$pkg$DEFAULT"
-    pip install $pkg
+    pip3 install $pkg
   fi
 }
 
@@ -131,10 +131,8 @@ __brew_install ntfs-3g
 
 
 # install python package
-__pip_install ipdb
 __pip_install pep8
 __pip_install pygments
 __pip_install pylint
 __pip_install requests
 __pip_install rope
-__pip_install virtualenv
