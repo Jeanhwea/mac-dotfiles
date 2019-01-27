@@ -83,12 +83,15 @@ __brew_install graphviz
 __brew_install grip
 __brew_install htop
 __brew_install jq
+__brew_install lua
+__brew_install luarocks
 __brew_install maven
 __brew_install mplayer
 __brew_install ncdu
 __brew_install node
 __brew_install p7zip
 __brew_install pandoc
+__brew_install protobuf
 __brew_install python
 __brew_install python3
 __brew_install r
