@@ -68,7 +68,6 @@ HIST_STAMPS="yyyy-mm-dd"
 plugins=(
   docker
   git
-  maven
   pip
   python
   tmux
