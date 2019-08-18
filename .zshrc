@@ -172,3 +172,5 @@ fi
 
 # local settings
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
+
+[ -f /usr/local/etc/profile.d/z.sh ]  && source /usr/local/etc/profile.d/z.sh
