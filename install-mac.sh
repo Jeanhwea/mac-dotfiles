@@ -97,6 +97,7 @@ __brew_install python3
 __brew_install r
 __brew_install readline
 __brew_install reattach-to-user-namespace
+__brew_install rlwrap
 __brew_install ruby
 __brew_install springboot
 __brew_install the_platinum_searcher
