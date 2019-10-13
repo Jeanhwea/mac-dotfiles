@@ -63,10 +63,10 @@
   dfl = "!f() { git diff $1 ^origin/$1; }; f"
 
   # common git repository host
-  hub-clone = "!f() { git clone https://github.com/Jeanhwea/$@.git; }; f"
-  hub-ssh-clone = "!f() { git clone git@github.com:Jeanhwea/$@.git; }; f"
-  lab-clone = "!f() { git clone https://gitlab.com/$@.git; }; f"
-  lab-ssh-clone = "!f() { git clone git@gitlab.com:Jeanhwea/$@.git; }; f"
+  hub-clone = "!f() { git clone git@github.com:Jeanhwea/$@.git; }; f"
+  hub-clone-https = "!f() { git clone https://github.com/Jeanhwea/$@.git; }; f"
+  lab-clone = "!f() { git clone git@gitlab.com:Jeanhwea/$@.git; }; f"
+  lab-clone-https = "!f() { git clone https://gitlab.com/$@.git; }; f"
 
   # list remotes
   rem = "!git config -l | grep remote.*url | tail -n +2"
