@@ -49,8 +49,8 @@ __linkfile .bashrc
 __linkfile .zshrc
 
 # vim
-__linkfile .vimrc
-__linkdir .vim
+#__linkfile .vimrc
+#__linkdir .vim
 
 # git
 __linkfile .gitconfig
