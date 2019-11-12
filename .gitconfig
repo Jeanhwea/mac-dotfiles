@@ -49,13 +49,13 @@
   unstage = reset HEAD --
 
   # useful logger
-  lg = log --date=relative
-  lc = log --pretty=format:'%C(yellow)%h %C(blue)%an:%C(reset)%C(green)%d%C(reset) %s %C(red)(%ad)%C(reset)' --date=relative --abbrev-commit
-  ls = log --oneline --decorate --abbrev-commit
+  lg = log --date=relative -n 9999
+  lc = log --pretty=format:'%C(yellow)%h %C(blue)%an:%C(reset)%C(green)%d%C(reset) %s %C(red)(%ad)%C(reset)' --date=relative --abbrev-commit -n 9999
+  ls = log --oneline --decorate --abbrev-commit -n 9999
   # powerful graphical logger
-  lt = log --graph --pretty=format:'%C(yellow)%h%C(reset) -%C(green)%d%C(reset) %s %C(red)(%ad)%C(reset)' --date=relative --abbrev-commit
-  l = log --graph --oneline --decorate
-  la = log --graph --oneline --decorate --all
+  lt = log --graph --pretty=format:'%C(yellow)%h%C(reset) -%C(green)%d%C(reset) %s %C(red)(%ad)%C(reset)' --date=relative --abbrev-commit -n 9999
+  l = log --graph --oneline --decorate -n 9999
+  la = log --graph --oneline --decorate --all -n 9999
   lol = log --graph --oneline --decorate --all -n 9999
 
   # remote diff
