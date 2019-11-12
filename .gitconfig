@@ -1,15 +1,22 @@
 [user]
-    name = ubuntu64
-    email = ubuntu64@example.com
+  name = Jinghui Hu
+  email = hujinghui@buaa.edu.cn
 
 [push]
-    default = simple
+  default = simple
+
+[core]
+  excludesfile = ~/.gitignore_global
+  attributesfile = ~/.gitattributes_global
+
+[commit]
+  template=~/.gitcommitmsg
 
 [diff]
-    algorithm = patience
+  algorithm = patience
 
 [difftool]
-    prompt = false
+  prompt = false
 
 [diff "spl"]
   binary = true
@@ -20,61 +27,67 @@
   textconv = strings
 
 [mergetool]
-    prompt = false
+  prompt = false
 
 [alias]
-    # porcelain commands abbreviations
-    c = commit
-    d = diff
-    s = status -s
-    b = branch
-    cm = commit
-    bl = blame
-    cl = clone
-    co = checkout
+  # porcelain commands abbreviations
+  c = commit
+  d = diff
+  s = status -s
+  b = branch
+  cm = commit
+  bl = blame
+  cl = clone
+  co = checkout
 
-    m = merge
-    mf = merge --ff
-    mn = merge --no-ff
+  m = merge
+  mf = merge --ff
+  mn = merge --no-ff
 
-    # undo
-    amend = commit --amend
-    unstage = reset HEAD --
+  # undo
+  amend = commit --amend
+  unstage = reset HEAD --
 
-    # useful logger
-    lg = log --date=relative
-    lc = log --pretty=format:'%C(yellow)%h %C(blue)%an:%C(reset)%C(green)%d%C(reset) %s %C(red)(%ad)%C(reset)' --date=relative --abbrev-commit
-    ls = log --oneline --decorate --abbrev-commit
-    # powerful graphical logger
-    lt = log --graph --pretty=format:'%C(yellow)%h%C(reset) -%C(green)%d%C(reset) %s %C(red)(%ad)%C(reset)' --date=relative --abbrev-commit
-    l = log --graph --oneline --decorate
-    la = log --graph --oneline --decorate --all
-    lol = log --graph --oneline --decorate --all -n 9999
+  # useful logger
+  lg = log --date=relative
+  lc = log --pretty=format:'%C(yellow)%h %C(blue)%an:%C(reset)%C(green)%d%C(reset) %s %C(red)(%ad)%C(reset)' --date=relative --abbrev-commit
+  ls = log --oneline --decorate --abbrev-commit
+  # powerful graphical logger
+  lt = log --graph --pretty=format:'%C(yellow)%h%C(reset) -%C(green)%d%C(reset) %s %C(red)(%ad)%C(reset)' --date=relative --abbrev-commit
+  l = log --graph --oneline --decorate
+  la = log --graph --oneline --decorate --all
+  lol = log --graph --oneline --decorate --all -n 9999
 
-    # remote diff
-    dfr = "!f() { git diff origin/$1 ^$1; }; f"
-    dfl = "!f() { git diff $1 ^origin/$1; }; f"
+  # remote diff
+  dfr = "!f() { git diff origin/$1 ^$1; }; f"
+  dfl = "!f() { git diff $1 ^origin/$1; }; f"
 
-    # common git repository host
-    github-clone = "!f() { [ $# == '2' ] && git clone https://github.com/$1.git $2 || git clone https://github.com/$@.git; }; f"
-    github-ssh-clone = "!f() { [ $# == '2' ] && git clone git@github.com:Jeanhwea/$1.git $2 || git clone git@github.com:Jeanhwea/$@.git; }; f"
-    gitlab-clone = "!f() { [ $# == '2' ] && git clone https://gitlab.com/$1.git $2 || git clone https://gitlab.com/$@.git; }; f"
-    gitlab-ssh-clone = "!f() { [ $# == '2' ] && git clone git@gitlab.com:Jeanhwea/$1.git $2 || git clone git@gitlab.com:Jeanhwea/$@.git; }; f"
+  # list remotes
+  rem = "!git config -l | grep remote.*url | tail -n +2"
 
-    # list remotes
-    rem = "!git config -l | grep remote.*url | tail -n +2"
+  # plumbing command abbreviations
+  print = cat-file -p
+  sha = "!f() { find .git/objects -type f | grep -v pack | cut -b 14-15,17-; }; f"
+  create-hash = hash-object -w
+  assume = update-index --assume-unchanged
+  noassume = update-index --no-assume-unchanged
 
-    # plumbing command abbreviations
-    print = cat-file -p
-    sha = "!f() { find .git/objects -type f | grep -v pack | cut -b 14-15,17-; }; f"
-    create-hash = hash-object -w
-    assume = update-index --assume-unchanged
-    noassume = update-index --no-assume-unchanged
+  # list-hidden for git
+  lh = "!git ls-files -v | grep '^h'"
+  # list-ignored files
+  li = ls-files --exclude-standard --ignored --others
 
-    # list-hidden for git
-    lh = "!git ls-files -v | grep '^h'"
-    # list-ignored files
-    li = ls-files --exclude-standard --ignored --others
+  # gitignore pattern
+  ignore = "!f() { curl -L -s https://www.gitignore.io/api/$@ ;}; f"
 
-    # gitignore pattern
-    ignore = "!f() { curl -L -s https://www.gitignore.io/api/$@ ;}; f"
+  # git repository
+  remote-hub= "!f() { git remote add github git@github.com:Jeanhwea/${PWD##*/}.git; }; f"
+  remote-lab= "!f() { git remote add avic ssh://git@192.168.0.202:2222/hujinghui/${PWD##*/}.git; }; f"
+  hub-clone = "!f() { git clone git@github.com:Jeanhwea/$@.git; }; f"
+  lab-clone = "!f() { git clone ssh://git@192.168.0.202:2222/hujinghui/$@.git; }; f"
+
+[filter "lfs"]
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+  required = true
