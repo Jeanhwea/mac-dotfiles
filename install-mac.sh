@@ -68,12 +68,11 @@ __brew_tap pivotal/tap
 __brew_install coreutils
 __brew_install moreutils
 
-__brew_install aria2
+__brew_install aria1
 __brew_install ccat
 __brew_install cloc
 __brew_install elm
 __brew_install ffmpeg
-__brew_install ghc
 __brew_install git
 __brew_install git-lfs
 __brew_install git-open
@@ -89,9 +88,11 @@ __brew_install maven
 __brew_install mplayer
 __brew_install ncdu
 __brew_install node
+__brew_install ntfs-3g
 __brew_install p7zip
 __brew_install pandoc
 __brew_install protobuf
+__brew_install pv
 __brew_install python
 __brew_install python3
 __brew_install r
@@ -104,12 +105,13 @@ __brew_install the_platinum_searcher
 __brew_install the_silver_searcher
 __brew_install tmux
 __brew_install tree
+__brew_install unar
 __brew_install unrar
 __brew_install wget
 __brew_install yarn
 __brew_install you-get
-__brew_install zsh-autosuggestions
 __brew_install z
+__brew_install zsh-autosuggestions
 
 
 # install application
@@ -122,6 +124,7 @@ __brew_cask_install lantern
 __brew_cask_install macpass
 __brew_cask_install mactex
 __brew_cask_install macvim
+__brew_cask_install osxfuse
 __brew_cask_install qq
 __brew_cask_install visual-studio-code
 __brew_cask_install vlc
