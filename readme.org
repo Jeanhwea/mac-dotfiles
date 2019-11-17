@@ -16,8 +16,8 @@ on macOS.
 
 I also have my personal hobbits.
 #+BEGIN_SRC sh
-  source ~/.zshrc.alias
-  source ~/.zshrc.envs
+  source ~/.alias.sh
+  source ~/.envs.sh
 #+END_SRC
 
 * Link
