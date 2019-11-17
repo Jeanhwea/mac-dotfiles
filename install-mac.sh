@@ -62,7 +62,7 @@ fi
 __open_url "javac" "JDK1.8" "https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html"
 
 # tap for springboot
-__brew_tap pivotal/tap
+# __brew_tap pivotal/tap
 
 # install cli
 __brew_install coreutils
@@ -100,7 +100,7 @@ __brew_install readline
 __brew_install reattach-to-user-namespace
 __brew_install rlwrap
 __brew_install ruby
-__brew_install springboot
+# __brew_install springboot
 __brew_install the_platinum_searcher
 __brew_install the_silver_searcher
 __brew_install tmux
@@ -115,7 +115,6 @@ __brew_install zsh-autosuggestions
 
 
 # install application
-__brew_cask_install docker
 __brew_cask_install emacs
 __brew_cask_install foxmail
 __brew_cask_install google-chrome
