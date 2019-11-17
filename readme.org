@@ -14,6 +14,7 @@ on macOS.
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/Jeanhwea/dotfiles/master/install.sh)"
 #+END_SRC
 
+I also have my personal hobbits.
 #+BEGIN_SRC sh
   source ~/.zshrc.alias
   source ~/.zshrc.envs
