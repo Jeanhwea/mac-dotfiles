@@ -1,0 +1,15 @@
+# let python don't write byte code
+export PYTHONDONTWRITEBYTECODE=1
+
+# change homebrew bottle domain
+export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles
+
+# setup zsh-autosuggestions.zsh
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=yellow'
+
+# taobao mirror for npm
+export NVM_NODEJS_ORG_MIRROR=http://npm.taobao.org/mirrors/node
+export SASS_BINARY_SITE=http://npm.taobao.org/mirrors/node-sass
+export ELECTRON_MIRROR=http://npm.taobao.org/mirrors/electron/
+export SQLITE3_BINARY_SITE=http://npm.taobao.org/mirrors/sqlite3
+
