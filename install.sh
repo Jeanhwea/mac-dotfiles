@@ -45,8 +45,6 @@ fi
 __git_clone "git@github.com:Jeanhwea/dotfiles.git" "$HOME/.dotfiles"
 
 # zsh
-__linkfile .bashrc
-__linkfile .zshrc
 __linkfile .zshrc.alias
 __linkfile .zshrc.envs
 
