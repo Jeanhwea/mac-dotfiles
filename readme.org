@@ -14,6 +14,11 @@ on macOS.
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/Jeanhwea/dotfiles/master/install.sh)"
 #+END_SRC
 
+#+BEGIN_SRC sh
+  source ~/.zshrc.alias
+  source ~/.zshrc.envs
+#+END_SRC
+
 * Link
 
 1. [[https://github.com/Jeanhwea/emacs.d][Emacs Configuration files]]
