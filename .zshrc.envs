@@ -13,3 +13,9 @@ export SASS_BINARY_SITE=http://npm.taobao.org/mirrors/node-sass
 export ELECTRON_MIRROR=http://npm.taobao.org/mirrors/electron/
 export SQLITE3_BINARY_SITE=http://npm.taobao.org/mirrors/sqlite3
 
+# setup sqlplus to chinese simplified
+export NLS_LANG="AMERICAN_AMERICA.AL32UTF8"
+export NLS_LANG="SIMPLIFIED CHINESE_CHINA.AL32UTF8"
+
+# let git log page more friendly
+export LESS="-F -X $LESS"
