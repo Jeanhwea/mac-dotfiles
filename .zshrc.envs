@@ -5,6 +5,8 @@ export PYTHONDONTWRITEBYTECODE=1
 export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles
 
 # setup zsh-autosuggestions.zsh
+# 1. git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+# 2. add plugins=(zsh-autosuggestions) to ~/.zshrc
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=yellow'
 
 # taobao mirror for npm
