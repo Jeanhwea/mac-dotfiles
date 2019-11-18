@@ -23,3 +23,6 @@ alias lsl='ls -alF `find $(pwd) -type l`'
 alias t='tmux list-sessions'
 alias ta='tmux attach -t Jinghui || tmux new-session -s Jinghui'
 alias td='tmux detach'
+
+
+alias cg='cd $(git rev-parse --show-toplevel)'
