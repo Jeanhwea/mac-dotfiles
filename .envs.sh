@@ -28,5 +28,5 @@ export SQLITE3_BINARY_SITE=http://npm.taobao.org/mirrors/sqlite3
 # Section 3: Localization
 
 # setup sqlplus to chinese simplified
+# export NLS_LANG="SIMPLIFIED CHINESE_CHINA.AL32UTF8"
 export NLS_LANG="AMERICAN_AMERICA.AL32UTF8"
-export NLS_LANG="SIMPLIFIED CHINESE_CHINA.AL32UTF8"
