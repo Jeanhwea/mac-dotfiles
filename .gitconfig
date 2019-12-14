@@ -18,6 +18,7 @@
 [difftool]
   prompt = false
 
+# ignore *.spl file in diff
 [diff "spl"]
   binary = true
   textconv = /bin/true
@@ -39,6 +40,7 @@
   bl = blame
   cl = clone
   co = checkout
+  st = status
 
   m = merge
   mf = merge --ff
@@ -49,14 +51,11 @@
   unstage = reset HEAD --
 
   # useful logger
-  lg = log --date=relative -n 9999
-  lc = log --pretty=format:'%C(yellow)%h %C(blue)%an:%C(reset)%C(green)%d%C(reset) %s %C(red)(%ad)%C(reset)' --date=relative --abbrev-commit -n 9999
-  ls = log --oneline --decorate --abbrev-commit -n 9999
-  # powerful graphical logger
-  lt = log --graph --pretty=format:'%C(yellow)%h%C(reset) -%C(green)%d%C(reset) %s %C(red)(%ad)%C(reset)' --date=relative --abbrev-commit -n 9999
-  l = log --graph --oneline --decorate -n 9999
-  la = log --graph --decorate --all -n 9999
-  lol = log --graph --oneline --decorate --all -n 9999
+  l   = log --graph --date=relative --decorate -n 9999
+  ll  = log --graph --date=relative --decorate --all -n 9999
+  lo  = log --graph --oneline --decorate -n 9999
+  lol = log --graph --oneline --decorate -all -n 9999
+  lg  = log --date=relative -n 9999
 
   # remote diff
   dfr = "!f() { git diff origin/$1 ^$1; }; f"
