@@ -55,7 +55,7 @@
   # powerful graphical logger
   lt = log --graph --pretty=format:'%C(yellow)%h%C(reset) -%C(green)%d%C(reset) %s %C(red)(%ad)%C(reset)' --date=relative --abbrev-commit -n 9999
   l = log --graph --oneline --decorate -n 9999
-  la = log --graph --oneline --decorate --all -n 9999
+  la = log --graph --decorate --all -n 9999
   lol = log --graph --oneline --decorate --all -n 9999
 
   # remote diff
