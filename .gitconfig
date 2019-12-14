@@ -77,7 +77,8 @@
   li = ls-files --exclude-standard --ignored --others
 
   # gitignore pattern
-  ignore = "!f() { curl -L -s https://www.gitignore.io/api/$@ ;}; f"
+  ig = "!f() { curl -sL https://www.gitignore.io/api/$@ ;}; f"
+  igs = "!f() { curl -sL https://www.gitignore.io/api/list ;}; f"
 
   # git repository
   remote-hub= "!f() { git remote add github git@github.com:Jeanhwea/${PWD##*/}.git; }; f"
