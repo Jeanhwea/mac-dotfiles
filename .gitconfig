@@ -68,11 +68,12 @@
   print = cat-file -p
   sha = "!f() { find .git/objects -type f | grep -v pack | cut -b 14-15,17-; }; f"
   create-hash = hash-object -w
+
+  # local hidden file management
   assume = update-index --assume-unchanged
   noassume = update-index --no-assume-unchanged
-
-  # list-hidden for git
   lh = "!git ls-files -v | grep '^h'"
+
   # list-ignored files
   li = ls-files --exclude-standard --ignored --others
 
@@ -80,7 +81,7 @@
   ig = "!f() { curl -sL https://www.gitignore.io/api/$@ ;}; f"
   igs = "!f() { curl -sL https://www.gitignore.io/api/list ;}; f"
 
-  # git repository
+  # github and gitlab remote repository management
   remote-hub= "!f() { git remote add github git@github.com:Jeanhwea/${PWD##*/}.git; }; f"
   remote-lab= "!f() { git remote add avic ssh://git@192.168.0.202:2222/hujinghui/${PWD##*/}.git; }; f"
   hub-clone = "!f() { git clone git@github.com:Jeanhwea/$@.git; }; f"
