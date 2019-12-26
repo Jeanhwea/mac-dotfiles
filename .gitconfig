@@ -54,7 +54,7 @@
   l   = log --graph --date=relative --decorate -n 9999
   ll  = log --graph --date=relative --decorate --all -n 9999
   lo  = log --graph --oneline --decorate -n 9999
-  lol = log --graph --oneline --decorate -all -n 9999
+  lol = log --graph --oneline --decorate --all -n 9999
   lg  = log --date=relative -n 9999
 
   # remote diff
