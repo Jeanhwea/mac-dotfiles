@@ -65,7 +65,14 @@ __open_url "javac" "JDK1.8" "https://www.oracle.com/technetwork/java/javase/down
 # __brew_tap pivotal/tap
 
 # install cli
+__brew_install binutils
 __brew_install coreutils
+__brew_install dateutils
+__brew_install diffutils
+__brew_install findutils
+__brew_install gputils
+__brew_install icoutils
+__brew_install inetutils
 __brew_install moreutils
 
 __brew_install aria2
