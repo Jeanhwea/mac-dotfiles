@@ -79,6 +79,7 @@ __brew_install aria2
 __brew_install ccat
 __brew_install cloc
 __brew_install elm
+__brew_install editorconfig
 __brew_install ffmpeg
 __brew_install git
 __brew_install git-lfs
