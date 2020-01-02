@@ -11,6 +11,8 @@ export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=yellow'
 
 # let python don't write byte code
 export PYTHONDONTWRITEBYTECODE=1
+# setup pip cache folder
+export PIP_DOWNLOAD_CACHE=$HOME/.pip/cache
 
 ################################################################################
 # Section 2: Better Download Experience
