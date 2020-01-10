@@ -26,3 +26,4 @@ alias td='tmux detach'
 
 
 alias cg='cd $(git rev-parse --show-toplevel)'
+alias sp='rlwrap -c sqlplus'
