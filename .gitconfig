@@ -82,10 +82,14 @@
   igs = "!f() { curl -sL https://www.gitignore.io/api/list ;}; f"
 
   # github and gitlab remote repository management
-  remote-hub= "!f() { git remote add github git@github.com:Jeanhwea/${PWD##*/}.git; }; f"
-  remote-lab= "!f() { git remote add avic ssh://git@192.168.0.202:2222/hujinghui/${PWD##*/}.git; }; f"
-  hub-clone = "!f() { git clone git@github.com:Jeanhwea/$@.git; }; f"
-  lab-clone = "!f() { git clone ssh://git@192.168.0.202:2222/hujinghui/$@.git; }; f"
+  remote-hub   = "!f() { git remote add github git@github.com:Jeanhwea/${PWD##*/}.git; }; f"
+  clone-hub    = "!f() { git clone -o github git@github.com:Jeanhwea/$@.git; }; f"
+  remote-avic  = "!f() { git remote add avic ssh://git@192.168.0.202:2222/hujinghui/${PWD##*/}.git; }; f"
+  clone-avic   = "!f() { git clone -o avic ssh://git@192.168.0.202:2222/hujinghui/$@.git; }; f"
+  remote-minix = "!f() { git remote add minix ssh://git@minix.jeanhwea.io:2222/hujinghui/${PWD##*/}.git; }; f"
+  clone-minix  = "!f() { git clone -o minix ssh://git@minix.jeanhwea.io:2222/hujinghui/$@.git; }; f"
+  remote-dev58 = "!f() { git remote add dev58 ssh://git@dev58.mti.avic.com:2222/hujinghui/${PWD##*/}.git; }; f"
+  clone-dev58  = "!f() { git clone -o dev58 ssh://git@dev58.mti.avic.com:2222/hujinghui/$@.git; }; f"
 
 [filter "lfs"]
   clean = git-lfs clean -- %f
