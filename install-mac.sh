@@ -100,6 +100,7 @@ __brew_install node
 __brew_install ntfs-3g
 __brew_install p7zip
 __brew_install pandoc
+__brew_install pgformatter
 __brew_install protobuf
 __brew_install pv
 __brew_install python
