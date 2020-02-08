@@ -31,4 +31,5 @@ export SQLITE3_BINARY_SITE=http://npm.taobao.org/mirrors/sqlite3
 
 # setup sqlplus to chinese simplified
 # export NLS_LANG="SIMPLIFIED CHINESE_CHINA.AL32UTF8"
-export NLS_LANG="AMERICAN_AMERICA.AL32UTF8"
+export NLS_LANG='AMERICAN_AMERICA.AL32UTF8'
+export NLS_DATE_FORMAT='YYYY-MM-DD HH24:MI:SS'
