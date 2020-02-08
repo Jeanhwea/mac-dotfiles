@@ -89,6 +89,7 @@ __brew_install gnu-sed
 __brew_install graphviz
 __brew_install grip
 __brew_install htop
+__brew_install httpie
 __brew_install jq
 __brew_install lua
 __brew_install luarocks
@@ -126,7 +127,7 @@ __brew_install zsh-autosuggestions
 __brew_cask_install emacs
 __brew_cask_install foxmail
 __brew_cask_install google-chrome
-__brew_cask_install iterm2
+# __brew_cask_install iterm2
 # __brew_cask_install lantern
 __brew_cask_install macpass
 __brew_cask_install mactex
