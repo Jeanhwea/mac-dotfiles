@@ -21,9 +21,12 @@ export PIP_DOWNLOAD_CACHE=$HOME/.pip/cache
 export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles
 
 # taobao mirror for npm
-export NVM_NODEJS_ORG_MIRROR=http://npm.taobao.org/mirrors/node
-export SASS_BINARY_SITE=http://npm.taobao.org/mirrors/node-sass
+export CHROMEDRIVER_CDNURL=http://npm.taobao.org/mirrors/chromedriver
 export ELECTRON_MIRROR=http://npm.taobao.org/mirrors/electron/
+export NVM_NODEJS_ORG_MIRROR=http://npm.taobao.org/mirrors/node
+export PHANTOMJS_CDNURL=http://npm.taobao.org/mirrors/phantomjs
+export SASS_BINARY_SITE=http://npm.taobao.org/mirrors/node-sass
+export SELENIUM_CDNURL=http://npm.taobao.org/mirrorss/selenium
 export SQLITE3_BINARY_SITE=http://npm.taobao.org/mirrors/sqlite3
 
 ################################################################################
