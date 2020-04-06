@@ -76,10 +76,11 @@ __brew_install inetutils
 __brew_install moreutils
 
 __brew_install aria2
+__brew_install asciidoctor
 __brew_install ccat
 __brew_install cloc
-__brew_install elm
 __brew_install editorconfig
+__brew_install elm
 __brew_install ffmpeg
 __brew_install git
 __brew_install git-lfs
@@ -110,7 +111,6 @@ __brew_install readline
 __brew_install reattach-to-user-namespace
 __brew_install rlwrap
 __brew_install ruby
-# __brew_install springboot
 __brew_install the_platinum_searcher
 __brew_install the_silver_searcher
 __brew_install tmux
@@ -122,7 +122,6 @@ __brew_install yarn
 __brew_install you-get
 __brew_install z
 __brew_install zsh-autosuggestions
-
 
 # install application
 __brew_cask_install emacs
