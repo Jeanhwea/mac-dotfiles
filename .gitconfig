@@ -5,6 +5,9 @@
 [push]
   default = simple
 
+[pull]
+  rebase = false
+
 [core]
   excludesfile = ~/.gitignore_global
   attributesfile = ~/.gitattributes_global
