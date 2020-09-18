@@ -29,6 +29,7 @@ export PYTHONPATH=.:${PYTHONPATH:+:${PYTHONPATH}}
 export PIP_DOWNLOAD_CACHE=$HOME/.pip/cache
 # anaconda
 export CONDA_HOME=/usr/local/anaconda3
+export PATH=$CONDA_HOME/bin:$PATH
 alias py='$CONDA_HOME/bin/python'
 alias ipy='$CONDA_HOME/bin/ipython'
 alias act='source $CONDA_HOME/bin/activate'
