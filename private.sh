@@ -1,6 +1,11 @@
 ################################################################################
 # Section 1: Comfortable Environment
 
+# setup zsh-autosuggestions.zsh
+# 1. git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+# 2. add plugins=(zsh-autosuggestions) to ~/.zshrc
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=yellow'
+
 # let git log page more friendly
 export LESS="-F -X $LESS"
 
@@ -17,17 +22,10 @@ alias t='tmux list-sessions'
 alias ta='tmux attach -t Jinghui || tmux new-session -s Jinghui'
 alias td='tmux detach'
 
-# setup zsh-autosuggestions.zsh
-# 1. git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-# 2. add plugins=(zsh-autosuggestions) to ~/.zshrc
-export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=yellow'
-
-# let python don't write byte code
+# python & anaconda
 export PYTHONDONTWRITEBYTECODE=1
 export PYTHONPATH=.:${PYTHONPATH:+:${PYTHONPATH}}
-# setup pip cache folder
 export PIP_DOWNLOAD_CACHE=$HOME/.pip/cache
-# anaconda
 export CONDA_HOME=/usr/local/anaconda3
 export PATH=$CONDA_HOME/bin:$PATH
 alias py='$CONDA_HOME/bin/python'
@@ -44,6 +42,7 @@ export PGPORT=5432
 alias cdph="cd $PGHOME"
 alias p0="$PGHOME/bin/pg_ctl stop"
 alias p1="$PGHOME/bin/pg_ctl -D $PGDATA -l $PGDATA/logfile start"
+
 
 ################################################################################
 # Section 2: Better Download Experience
