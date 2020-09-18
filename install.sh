@@ -74,3 +74,4 @@ __linkfile .npmrc
 # python
 # export PYTHONSTARTUP=$HOME/.pythonrc.py
 __linkfile .pythonrc.py
+__linkfile .condarc
