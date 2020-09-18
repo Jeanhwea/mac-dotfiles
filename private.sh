@@ -34,6 +34,16 @@ alias py='$CONDA_HOME/bin/python'
 alias ipy='$CONDA_HOME/bin/ipython'
 alias act='source $CONDA_HOME/bin/activate'
 
+# postgres
+export PGHOME=/usr/local/pgsql
+export PGDATA=/usr/local/pgsql/data
+export PATH=$PGHOME/bin:$PATH
+export PGUSER=hujinghui
+export PGDATABASE=postgres
+export PGPORT=5432
+alias cdph="cd $PGHOME"
+alias p0="$PGHOME/bin/pg_ctl stop"
+alias p1="$PGHOME/bin/pg_ctl -D $PGDATA -l $PGDATA/logfile start"
 
 ################################################################################
 # Section 2: Better Download Experience
