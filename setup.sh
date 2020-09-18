@@ -24,12 +24,14 @@ export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=yellow'
 
 # let python don't write byte code
 export PYTHONDONTWRITEBYTECODE=1
+export PYTHONPATH=.:${PYTHONPATH:+:${PYTHONPATH}}
 # setup pip cache folder
 export PIP_DOWNLOAD_CACHE=$HOME/.pip/cache
 # anaconda
 export CONDA_HOME=/usr/local/anaconda3
 alias py='$CONDA_HOME/bin/python'
 alias ipy='$CONDA_HOME/bin/ipython'
+alias act='source $CONDA_HOME/bin/activate'
 
 
 ################################################################################
