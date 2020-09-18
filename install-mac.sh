@@ -107,6 +107,7 @@ __brew_install pv
 __brew_install python
 __brew_install python3
 __brew_install r
+__brew_install ranger
 __brew_install readline
 __brew_install reattach-to-user-namespace
 __brew_install rlwrap
