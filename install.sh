@@ -44,10 +44,6 @@ fi
 
 __git_clone "git@github.com:Jeanhwea/dotfiles.git" "$HOME/.dotfiles"
 
-# zsh
-__linkfile .alias.sh
-__linkfile .envs.sh
-
 # vim
 #__linkfile .vimrc
 #__linkdir .vim
