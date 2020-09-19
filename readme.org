@@ -16,11 +16,9 @@ on macOS.
 
 I also have my personal hobbits.
 #+BEGIN_SRC sh
-  source ~/.alias.sh
-  source ~/.envs.sh
+  source ~/.dotfiles/private.sh
 #+END_SRC
 
 * Link
 
 1. [[https://github.com/Jeanhwea/emacs.d][Emacs Configuration files]]
-
