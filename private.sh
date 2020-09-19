@@ -59,7 +59,6 @@ alias h1="$HADOOP_HOME/sbin/start-all.sh"
 
 # change homebrew bottle domain
 export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles
-# export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.aliyun.com/homebrew/homebrew-bottles
 
 # taobao mirror for npm
 export CHROMEDRIVER_CDNURL=http://npm.taobao.org/mirrors/chromedriver
