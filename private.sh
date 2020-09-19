@@ -47,8 +47,8 @@ alias p1="$PGHOME/bin/pg_ctl -D $PGDATA -l $PGDATA/logfile start"
 export JAVA_HOME=${JAVA_HOME:/usr/local/java/jdk1.8.0_191}
 export HADOOP_HOME=${HADOOP_HOME:/usr/local/java/hadoop-2.7.7}
 alias jc="java -jar ~/.emacs.d/resource/javarepl-428.jar"
-alias hd0="$HADOOP_HOME/sbin/stop-all.sh"
-alias hd1="$HADOOP_HOME/sbin/start-all.sh"
+alias h0="$HADOOP_HOME/sbin/stop-all.sh"
+alias h1="$HADOOP_HOME/sbin/start-all.sh"
 
 
 ################################################################################
