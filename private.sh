@@ -43,6 +43,13 @@ alias cdph="cd $PGHOME"
 alias p0="$PGHOME/bin/pg_ctl stop"
 alias p1="$PGHOME/bin/pg_ctl -D $PGDATA -l $PGDATA/logfile start"
 
+# java
+export JAVA_HOME=${JAVA_HOME:/usr/local/java/jdk1.8.0_191}
+export HADOOP_HOME=${HADOOP_HOME:/usr/local/java/hadoop-2.7.7}
+alias jc="java -jar ~/.emacs.d/resource/javarepl-428.jar"
+alias hd0="$HADOOP_HOME/sbin/stop-all.sh"
+alias hd1="$HADOOP_HOME/sbin/start-all.sh"
+
 
 ################################################################################
 # Section 2: Better Download Experience
@@ -73,6 +80,5 @@ export NLS_DATE_FORMAT='YYYY-MM-DD HH24:MI:SS'
 # Section 4: Misc
 alias r='ranger'
 alias em='emacsclient -n'
-alias jc="java -jar ~/.emacs.d/resource/javarepl-428.jar"
 alias cg='cd $(git rev-parse --show-toplevel)'
 alias sp='rlwrap -c sqlplus'
