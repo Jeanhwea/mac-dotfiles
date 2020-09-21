@@ -44,10 +44,10 @@ alias p0="$PGHOME/bin/pg_ctl stop"
 alias p1="$PGHOME/bin/pg_ctl -D $PGDATA -l $PGDATA/logfile start"
 
 # java
-export JAVA_HOME=${JAVA_HOME:/usr/local/java/jdk1.8.0_191}
+export JAVA_HOME=${JAVA_HOME:-/usr/local/java/jdk1.8.0_191}
 alias jc="java -jar ~/.emacs.d/resource/javarepl-428.jar"
 
-export HADOOP_HOME=${HADOOP_HOME:/usr/local/java/hadoop-2.7.7}
+export HADOOP_HOME=${HADOOP_HOME:-/usr/local/java/hadoop-2.7.7}
 export HADOOP_DATA="$HADOOP_HOME/data"
 export PATH="$HADOOP_HOME/bin:$PATH"
 alias h0="$HADOOP_HOME/sbin/stop-all.sh"
