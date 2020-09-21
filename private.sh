@@ -27,7 +27,7 @@ export PYTHONDONTWRITEBYTECODE=1
 export PYTHONPATH=.${PYTHONPATH:+:${PYTHONPATH}}
 export PIP_DOWNLOAD_CACHE=$HOME/.pip/cache
 export CONDA_HOME=${CONDA_HOME:-/usr/local/anaconda3}
-export PATH=$PATH:$CONDA_HOME/bin
+export PATH="$PATH:$CONDA_HOME/bin"
 alias py="$CONDA_HOME/bin/python"
 alias ipy="$CONDA_HOME/bin/ipython"
 alias act="source $CONDA_HOME/bin/activate"
@@ -49,10 +49,10 @@ export MAVEN_HOME=${MAVEN_HOME:-/usr/local/java/apache-maven-3.6.3}
 export HADOOP_HOME=${HADOOP_HOME:-/usr/local/java/hadoop-2.7.7}
 export HADOOP_DATA="$HADOOP_HOME/data"
 export PATH="$JAVA_HOME/bin:$MAVEN_HOME/bin:$HADOOP_HOME/bin:$PATH"
+alias jc="java -jar ~/.emacs.d/resource/javarepl-428.jar"
+alias cdhh="cd $HADOOP_HOME"
 alias h0="$HADOOP_HOME/sbin/stop-all.sh"
 alias h1="$HADOOP_HOME/sbin/start-all.sh"
-
-alias jc="java -jar ~/.emacs.d/resource/javarepl-428.jar"
 
 ################################################################################
 # Section 2: Better Download Experience
