@@ -24,35 +24,35 @@ alias td='tmux detach'
 
 # python & anaconda
 export PYTHONDONTWRITEBYTECODE=1
-export PYTHONPATH=.:${PYTHONPATH:+:${PYTHONPATH}}
+export PYTHONPATH=.${PYTHONPATH:+:${PYTHONPATH}}
 export PIP_DOWNLOAD_CACHE=$HOME/.pip/cache
-export CONDA_HOME=/usr/local/anaconda3
+export CONDA_HOME=${CONDA_HOME:-/usr/local/anaconda3}
 export PATH=$PATH:$CONDA_HOME/bin
 alias py="$CONDA_HOME/bin/python"
 alias ipy="$CONDA_HOME/bin/ipython"
 alias act="source $CONDA_HOME/bin/activate"
 
 # postgres
-export PGHOME=/usr/local/pgsql
-export PGDATA=/usr/local/pgsql/data
+export PGHOME=${PGHOME:-/usr/local/pgsql}
+export PGDATA=$PGHOME/data
 export PATH=$PGHOME/bin:$PATH
-export PGUSER=hujinghui
-export PGDATABASE=postgres
-export PGPORT=5432
+export PGUSER=${PGUSER:-postgres}
+export PGDATABASE=${PGDATABASE-postgres}
+export PGPORT=${PGPORT-5432}
 alias cdph="cd $PGHOME"
 alias p0="$PGHOME/bin/pg_ctl stop"
 alias p1="$PGHOME/bin/pg_ctl -D $PGDATA -l $PGDATA/logfile start"
 
 # java
 export JAVA_HOME=${JAVA_HOME:-/usr/local/java/jdk1.8.0_191}
-alias jc="java -jar ~/.emacs.d/resource/javarepl-428.jar"
-
+export MAVEN_HOME=${MAVEN_HOME:-/usr/local/java/apache-maven-3.6.3}
 export HADOOP_HOME=${HADOOP_HOME:-/usr/local/java/hadoop-2.7.7}
 export HADOOP_DATA="$HADOOP_HOME/data"
-export PATH="$HADOOP_HOME/bin:$PATH"
+export PATH="$JAVA_HOME/bin:$MAVEN_HOME/bin:$HADOOP_HOME/bin:$PATH"
 alias h0="$HADOOP_HOME/sbin/stop-all.sh"
 alias h1="$HADOOP_HOME/sbin/start-all.sh"
 
+alias jc="java -jar ~/.emacs.d/resource/javarepl-428.jar"
 
 ################################################################################
 # Section 2: Better Download Experience
