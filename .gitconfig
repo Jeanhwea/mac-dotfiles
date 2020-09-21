@@ -13,7 +13,7 @@
   attributesfile = ~/.gitattributes_global
 
 [commit]
-  template=~/.gitcommitmsg
+  template = ~/.gitcommitmsg
 
 [diff]
   algorithm = patience
