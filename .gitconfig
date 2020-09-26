@@ -95,7 +95,7 @@
   clone-dev58  = "!f() { git clone -o dev58 ssh://git@dev58.mti.avic.com:2222/hujinghui/$@.git; }; f"
 
   # pull and push
-  sync = "!f() { for R in `git remote`; do git pull $R && git push $R --all && git push $R --tags; done; }; f"
+  sync = "!f() { for R in `git remote`; do git pull $R master && git fetch $R --all && git push $R --all && git push $R --tags; done; }; f"
 
 [filter "lfs"]
   clean = git-lfs clean -- %f
