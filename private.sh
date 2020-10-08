@@ -30,7 +30,8 @@ export CONDA_HOME=${CONDA_HOME:-/usr/local/anaconda3}
 export PATH="$PATH:$CONDA_HOME/bin"
 alias py="$CONDA_HOME/bin/python"
 alias ipy="$CONDA_HOME/bin/ipython"
-alias act="source $CONDA_HOME/bin/activate"
+alias b0="source $CONDA_HOME/bin/deactive"
+alias b1="source $CONDA_HOME/bin/activate"
 
 # postgres
 export PGHOME=${PGHOME:-/usr/local/pgsql}
