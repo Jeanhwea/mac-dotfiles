@@ -84,6 +84,7 @@ export NLS_DATE_FORMAT='YYYY-MM-DD HH24:MI:SS'
 ################################################################################
 # Section 4: Misc
 alias r='ranger'
+alias vi='vim'
 alias em='emacsclient -n'
 alias cg='cd $(git rev-parse --show-toplevel)'
 alias sp='rlwrap -c sqlplus'
