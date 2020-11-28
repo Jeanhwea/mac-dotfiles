@@ -56,6 +56,10 @@ alias cdhh="cd $HADOOP_HOME"
 alias h0="$HADOOP_HOME/sbin/stop-all.sh"
 alias h1="$HADOOP_HOME/sbin/start-all.sh"
 
+# node & npm
+export NPM_BIN="$HOME/.npm/node_modules/bin"
+export PATH="$NPM_BIN:$PATH"
+
 ################################################################################
 # Section 2: Better Download Experience
 
@@ -70,7 +74,6 @@ export PHANTOMJS_CDNURL=http://npm.taobao.org/mirrors/phantomjs
 export SASS_BINARY_SITE=http://npm.taobao.org/mirrors/node-sass
 export SELENIUM_CDNURL=http://npm.taobao.org/mirrorss/selenium
 export SQLITE3_BINARY_SITE=http://npm.taobao.org/mirrors/sqlite3
-
 
 ################################################################################
 # Section 3: Localization
